@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>StartScreen</name>
+    <events>
+        <include>Common</include>
+        <event-block sid="533236133072307">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="843362151523093" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="275448741166300" type="System" />
+                <action id="7" name="Set CSS style" sid="521833706930863" type="Input">
+                    <param id="0" name="Property name">&quot;opacity&quot;</param>
+                    <param id="1" name="Value">&quot;0&quot;</param>
+                </action>
+                <action disabled="1" id="7" name="Set CSS style" sid="222865416991758" type="Input">
+                    <param id="0" name="Property name">&quot;text-transform&quot;</param>
+                    <param id="1" name="Value">&quot;uppercase&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="220547307333337" type="Function">
+                    <param id="0" name="Name">&quot;setInputPlaceholder&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="692707660712452" type="System">
+                    <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="3" name="Set visible" sid="921224927500503" type="Input">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Request URL" sid="955382939064069" type="AJAX">
+                    <param id="0" name="Tag">&quot;CharImagePoints&quot;</param>
+                    <param id="1" name="URL">IMG_ROOT&amp;&quot;../chars_mapping.xml?v=&quot;&amp;projectversion</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="251502673238521">
+                    <conditions>
+                        <condition id="-20" name="Is on mobile device" sid="830814344240022" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set read-only" sid="187001314323995" type="Input">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="487988277478046">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set text" sid="895803026260579" type="Input">
+                            <param id="0" name="Text">Browser.QueryParam(&quot;room&quot;)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="650440018151196" type="Function">
+                            <param id="0" name="Name">&quot;inputChanged&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="420908155873091">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="680142781715221" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="933729129743860" type="Text">
+                            <param id="0" name="Text">&quot;v. &quot;&amp;projectversion</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="419449860939667">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="429118756782571" type="System">
+                            <param id="0" name="Seconds">1.5</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="504039095044926" type="System">
+                            <param id="0" name="Object to create">Char</param>
+                            <param id="1" name="Layer">&quot;Preload&quot;</param>
+                            <param id="2" name="X">2253</param>
+                            <param id="3" name="Y">415</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="333566887109926">
+            <conditions>
+                <condition id="0" name="On completed" sid="400962288661994" type="AJAX">
+                    <param id="0" name="Tag">&quot;CharImagePoints&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Load" sid="531609747961740" type="CharImagePoints">
+                    <param id="0" name="XML">AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="759195587479374" title="ImageLoading">
+            <sub-events>
+                <variable constant="0" name="checks" sid="960458055018158" static="1" type="number">0</variable>
+                <event-block sid="749254738848235">
+                    <conditions>
+                        <condition id="0" name="On function" sid="506602427616876" type="Function">
+                            <param id="0" name="Name">&quot;imageLoadingCompleted&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="475060783829798" type="System">
+                            <param id="0" name="Variable">checks</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="552479411047209">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="868000970521464" type="System">
+                            <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Opacity">90</param>
+                        </condition>
+                        <condition id="34" name="Is joined to a room" sid="310925707745536" type="Photon" />
+                        <condition id="-14" name="Compare variable" sid="844449811528661" type="System">
+                            <param id="0" name="Variable">checks</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="800072632499417" type="System">
+                            <param id="0" name="Variable">checks</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="961675541312817" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="299447162669525" type="System">
+                            <param id="0" name="Layout">Vote</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="448307710587233" title="join">
+            <sub-events>
+                <event-block any="1" sid="338925237394986">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="875593686835308" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="960488304309247" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="788777911715337">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="750322647356912" type="Button">
+                                    <param id="0" name="Animation">&quot;Join&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="458253998507171" type="Text">
+                                    <param id="0" name="Instance variable">role</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;error&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="999131887014364">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="197324973629044" type="System">
+                                            <param id="0" name="First value">len(Input.Text)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="534630800871246" type="Text">
+                                            <param id="0" name="Text">&quot;Введіть 4 цифри&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="932802791650236">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="628178389862843" type="Icon">
+                                                    <param id="0" name="Animation">&quot;Alert&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="772076091999046" type="Icon">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="672483149824541">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="472726168178222" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set read-only" sid="166932799251206" type="Input">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="445293054933047" type="Text">
+                                            <param id="0" name="Text">&quot;Підключення...&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="285758114183978" type="System">
+                                            <param id="0" name="Variable">code</param>
+                                            <param id="1" name="Value">Input.Text</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="184185532260922" type="Function">
+                                            <param id="0" name="Name">&quot;JoinRoom&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="771116663747801">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="776030213446278" type="Icon">
+                                            <param id="0" name="Animation">&quot;Alert&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="216279096309105" type="Icon">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="279742581340598" title="input">
+                    <sub-events>
+                        <event-block any="1" sid="955316705676328">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="347180467189127" type="Keyboard">
+                                    <param id="0" name="Key">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="323569385257495" type="Input">
+                                    <param id="0" name="Text">left(Self.Text, len(Self.Text)-1)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="214271884661678" type="Function">
+                                    <param id="0" name="Name">&quot;inputChanged&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="853143321980304">
+                            <conditions>
+                                <condition id="16" name="On hold over object" sid="455592650583560" type="Touch">
+                                    <param id="0" name="Object">Keys</param>
+                                </condition>
+                                <condition id="2" name="Is playing" sid="915445724712059" type="Keys">
+                                    <param id="0" name="Animation">&quot;Backspace&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="687091924643774" type="Input">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="215769619378532" type="Function">
+                                    <param id="0" name="Name">&quot;inputChanged&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="123251270157694">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="832874376041041" type="Touch">
+                                    <param id="0" name="Object">Keys</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="783355380514593">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="656823246071883" type="Keys">
+                                            <param id="0" name="Animation">&quot;Backspace&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="812760595032516" type="Input">
+                                            <param id="0" name="Text">left(Self.Text, len(Self.Text)-1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="191753058112396">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="909333919472448" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="588769230653196" type="Input">
+                                            <param id="0" name="Text">Self.Text&amp;Keys.value</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="460342566968003">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="345764672001099" type="Function">
+                                            <param id="0" name="Name">&quot;inputChanged&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="119535166710881">
+                            <conditions>
+                                <condition id="1" name="On text changed" sid="246478304589554" type="Input" />
+                                <condition id="0" name="On function" sid="241270327323329" type="Function">
+                                    <param id="0" name="Name">&quot;inputChanged&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="640272746492495" type="CodeTxt">
+                                    <param id="0" name="Color">rgb(160,52,31)</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="425523231627392" type="CodeTxt">
+                                    <param id="0" name="Size (pt)">92</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="836057685474700">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="953085178754344" type="System">
+                                            <param id="0" name="First value">len(Input.Text)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="750246207355703" type="Input">
+                                            <param id="0" name="Text">left(Input.Text,4)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="915386934702259">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Set text" sid="465276985883657" type="CodeTxt">
+                                            <param id="0" name="Text">&quot; &quot;&amp;Input.Text &amp; &quot; &quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="141911229539836">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="269137405665641" type="Input">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                            <param id="1" name="Case">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="422321665451542" type="Function">
+                                            <param id="0" name="Name">&quot;setInputPlaceholder&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="348212701244567">
+                            <conditions>
+                                <condition id="0" name="On function" sid="574517075954955" type="Function">
+                                    <param id="0" name="Name">&quot;setInputPlaceholder&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="620388114410999" type="CodeTxt">
+                                    <param id="0" name="Color">rgb(163,59,24)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="924597063157516" type="CodeTxt">
+                                    <param id="0" name="Text">&quot;Введіть код учителя&quot;</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="729271645792577" type="CodeTxt">
+                                    <param id="0" name="Size (pt)">45</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="567702912936425">
+                            <conditions>
+                                <condition id="0" inverted="1" name="Compare text" sid="319975871784227" type="Input">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                    <param id="1" name="Case">0</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="383883477005784" type="System">
+                                    <param id="0" name="Interval (seconds)">1.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="102962686431663" type="CodeTxt">
+                                    <param id="0" name="Text">&quot; &quot;&amp;mid(Self.Text,1,len(CodeTxt.Text)-2)&amp;&quot;|&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="854340209192546" type="System">
+                                    <param id="0" name="Seconds">0.75</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="660229042209863">
+                                    <conditions>
+                                        <condition id="0" inverted="1" name="Compare text" sid="246111894434452" type="CodeTxt">
+                                            <param id="0" name="Text to compare">&quot;Введіть код учителя&quot;</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="983850189759646" type="CodeTxt">
+                                            <param id="0" name="Text">&quot; &quot;&amp;mid(Self.Text,1,len(CodeTxt.Text)-2)&amp;&quot; &quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="898745661985582">
+                            <conditions>
+                                <condition id="14" name="On tap" sid="946554074550740" type="Touch" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set focused" sid="788740134566270" type="Input" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="190800451128698" title="Photon">
+                    <sub-events>
+                        <event-block any="1" sid="999492900909361">
+                            <conditions>
+                                <condition id="0" name="On function" sid="233570804051077" type="Function">
+                                    <param id="0" name="Name">&quot;JoinRoom&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="797543125829032">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="644162012759766" type="System">
+                                            <param id="0" name="First value">Function.Call(&quot;isLoading&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-17" name="Compare opacity" sid="511234216807987" type="System">
+                                            <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Opacity">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="10" name="Connect" sid="876814684565136" type="Photon" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="384121066505646">
+                            <conditions>
+                                <condition id="14" name="On join room" sid="397897850727594" type="Photon" />
+                                <condition id="-7" name="Compare instance variable" sid="867344090709111" type="Text">
+                                    <param id="0" name="Instance variable">role</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;error&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="101995470554069" type="Text">
+                                    <param id="0" name="Text">&quot;Успіх&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="322098991281154" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}100{###}0.15</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="224241197348823" type="System">
+                                    <param id="0" name="Variable">code</param>
+                                    <param id="1" name="Value">Input.Text</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="870219614342775">
+                            <conditions>
+                                <condition id="0" name="On error" sid="825380224477920" type="Photon" />
+                                <condition id="-14" name="Compare variable" sid="364687181020983" type="System">
+                                    <param id="0" name="Variable">code</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="704841227112066" type="Text">
+                                    <param id="0" name="Instance variable">role</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;error&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="487529302918527" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">Photon.ErrorCode</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="597734298550144">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="549736076697083" type="System">
+                                            <param id="0" name="First value">Photon.ErrorCode</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">32758</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="729695620004011" type="Text">
+                                            <param id="0" name="Text">&quot;Такий код не існує&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="501966351652743">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="281689831474492" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="636258263062624" type="System">
+                                            <param id="0" name="First value">Photon.ErrorCode</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1101</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="268860245193693" type="Text">
+                                            <param id="0" name="Text">&quot;Кімнату переповнено!&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="729640745113073">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="346427582756404" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="908900366375216" type="System">
+                                            <param id="0" name="First value">Photon.ErrorCode</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">32764</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="441390491229554" type="Text">
+                                            <param id="0" name="Text">&quot;Гру завершено&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="948986021038115">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="362214756947158" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="645132950724888" type="Text">
+                                            <param id="0" name="Text">&quot;Перепідключаємось..&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="122157475944093">
+                                    <conditions>
+                                        <condition id="-20" inverted="1" name="Is on mobile device" sid="932605201490559" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set read-only" sid="182214697259069" type="Input">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="671013945845455">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="194898705003820" type="Icon">
+                                            <param id="0" name="Animation">&quot;Alert&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="731263717412671" type="Icon">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block any="1" sid="168018546171711">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="844086852713215" type="Mouse">
+                    <param id="0" name="Object">Play</param>
+                </condition>
+                <condition id="7" name="Cursor is over object" sid="626247146025378" type="Mouse">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="993575336773618" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="643783837201893">
+            <conditions>
+                <condition id="-22" name="Else" sid="182167127101449" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="906803480092572" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

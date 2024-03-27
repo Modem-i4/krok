@@ -1,0 +1,184 @@
+{"c2array":true,"size":[100,100,4],"data":[
+
+[["start"],
+["","Привіт! Мене звати {boy1}, мені 9 років. Мені подобається ходити до школи.","bg&bio_class&1|appear&boy1&3&1"],
+["","Моя вчителька дуже хороша, а ще в мене багато друзів у моєму класі.",""],
+["","Вчора, щоб не чути як сваряться між собою батьки, я весь вечір...","ask&what_did_i_do_last_night|emote&boy1&hideEyes"]],
+
+	[["sat_in_shelf"],["boy1","Треба було знайти схованку і для сестрички. Вона ще маленька та не зможе сидіти на місці так довго.","overlay&prts_boyInShelf&2.7|emote&boy1&sad|move&boy1&4"],
+	["","","plot&i_stay_in_school"]],
+	[["listened_to_music"],["boy1","Бабуся каже, що так я псую собі слух. Але це допомогає мені забути про все, що відбувається довкола.","overlay&prts_boyListenToMusic&2.7|emote&boy1&sad|move&boy1&4"],
+	["","","plot&i_stay_in_school"]],
+	[["tried_to_fall_asleep"],["boy1","Якщо міцно-міцно притиснути подушками вуха, здається, що довкола тебе тиша.","overlay&prts_boyTryToFallAsleep&2.7|emote&boy1&sad|move&boy1&4"],
+	["","","plot&i_stay_in_school"]],
+	
+[["i_stay_in_school"],["boy1","Я часто залишаюсь у школі після уроків, бо мені подобається допомагати вчительці. Я боюся повертатися додому, в школі мені — краще.","move&boy1&3|emote&boy1&hideEyes|overlay&Default"],["boy1","Сьогодні спробую залишитись у школі після уроку математики","emote&boy1&default|ask&who_i_stay_with"]],
+
+	[["stay_alone"],["","Я допоможу {teacher1|Світлані Василівні|Ользі Петрівні|Надії Іванівні|Ларисі Ігорівні} пересадити вазони.",""],
+	["teacher1","Ти великий молодець! Дякую, що допомогаєш мені озеленити клас","appear&teacher1&2|move&boy1&4|emote&teacher1&smile"],
+	["","","plot&plantsAreAir"]],
+	[["stay_with_gf"],["","Ми допоможемо {teacher1|Світлані Василівні|Ользі Петрівні|Надії Іванівні|Ларисі Ігорівні} пересадити вазони.","appear&girl1&5"],
+	["teacher1","Ви такі молодці! Дякую, що допомагаєте мені озеленити клас.","appear&teacher1&1|emote&teacher1&smile"],
+	["","","plot&plantsAreAir"]],
+	[["stay_with_friend"],["","Ми допоможемо {teacher1|Світлані Василівні|Ользі Петрівні|Надії Іванівні|Ларисі Ігорівні} пересадити вазони.","appear&boy2&5"],
+	["teacher1","Ви такі молодці! Дякую, що допомагаєте мені озеленити клас.","appear&teacher1&1|emote&teacher1&smile"],
+	["","","plot&plantsAreAir"]],
+
+[["plantsAreAir"],["teacher1","Рослини — це кисень, потрібний для нормального функціонування нашого організму.","emote&boy1&smile|emote&boy2&smile|emote&girl1&smile|animate&boy2&jump|animate&girl1&jump"],
+["teacher1","{boy1|Олексію|Дмитрику|Тимку|Грицьку}, ти майже щодня допомагаєш мені після уроків, чи попередив ти батьків, щоб вони не хвилювались і знали, де ти?","emote&teacher1&worried|emote&boy1&default"],
+["","Що ж сказати.. Я не хотів би, щоб про моїх батьків думали погано.","ask&do_parents_know"]],
+
+	[["sincereAnswer"],
+	["boy1","Мама не помічає, що я пізніше повертаюсь зі школи. А татові я не хочу говорити, він завжди дуже злиться.","emote&boy1&sad|emote&boy2&default|emote&girl1&default|mirror&boy1&1"],
+	["teacher1","Давно вони так себе поводять? Можливо, ти хотів би з кимось про це поговорити?",""],
+	["boy1","Вони просто тяжко працюють... У всіх так, немає про що говорити.",""],
+	["","","plot&backToWork"]],
+	[["evasiveAnswer"],
+	["boy1","Не хвилюйтесь, все добре. Я ж не так і пізно повертаюсь зі школи.","emote&boy1&hideEyes"],
+	["teacher1","Ну добре",""],
+	["","","plot&backToWork"]],
+	[["lieAnswer"],
+	["boy1","Звісно вони знають. Я ж допомогаю вам не вперше.","emote&boy1&hideEyes|mirror&boy1&1"],
+	["teacher1","Добре.",""],
+	["","","plot&backToWork"]],
+	
+	
+[["backToWork"],
+["teacher1","Ну гаразд. Приступаймо до роботи!","emote&teacher1&default|emote&boy1&default"],
+["","","if&stayWith&alone&workWithSleevesUp|if&stayWith&girl&withGirlInClassroom|if&stayWith&boy&withBoyInClassroom"]],
+
+	[["withGirlInClassroom"],
+	["teacher1","{boy1|Олексію|Дмитрику|Тимку|Грицьку}, набери, будь ласка, водички для наших рослин. А ми з {girl1|Марічкою|Софійкою|Надійкою|Христею} поки підготуємо вазони.",""],
+	["girl1","Ніііі. Чого уся брудна робота дівчатам?","emote&girl1&anger"],
+	["girl1","Я хотіла б зайнятися поливанням, а {boy1|Олексійко|Дмитрик|Тимко|Грицько} може допомогти вам із квітами.",""],
+	["teacher1","Звісно, якщо {boy1|Олексійко|Дмитрик|Тимко|Грицько} не проти, ви можете помінятися.",""],
+	["boy1","Я не проти. Я ніколи раніше не пересаджував квіти. Буде цікаво спробувати!","emote&girl1&smile|emote&boy1&smile"],
+	["girl1","Добре, тоді я пішла!",""],
+	["","","disappear&girl1&7|mirror&girl1&1|plot&workWithSleevesUp"]],
+	
+	[["withBoyInClassroom"],
+	["teacher1","{boy2|Тарасе|Васю|Владе|Михайле}, набери, будь ласка, водички для рослин. Можеш одразу полити квіти в сусідньому класі.",""],
+	["boy2","Добре. Я туди й назад!","emote&boy2&smile"],
+	["teacher1","{boy1|Олексію|Дмитрику|Тимку|Грицьку}, а ми можемо підготувати нові горщики для рослин.","mirror&boy2&1|disappear&boy2&7.5|mirror&girl1&1"],
+	["","","plot&workWithSleevesUp"]],
+
+[["workWithSleevesUp"],
+["teacher1","Обов'язково треба засукати рукава перед тим, як пересипати ґрунт, щоб не забруднитись.","move&boy1&4|move&teacher1&2|emote&teacher1&withShowelSleevesUp|playSound&sleeves_up|mirror&boy1&1|emote&boy1&default"],
+["","Підняти рукави... Але на руках може бути видно синці.","emote&boy1&sad|ask&rise_sleeves_ask"]],
+
+	[["agreeToRiseSleeves"],
+	["boy1","Так правда зручніше працювати. А головне — мамі не доведеться прати одяг!","emote&boy1&smile"],
+	["","","plot&whyBruises"]],
+	
+	
+	[["denyToRiseSleeves"],
+	["boy1","Я дуже обережний, тому впораюсь і без цього.",""],
+	["teacher1","Я впевнена, що ти і так, і так впораєшся. Але краще засукай рукави, щоб мама не сварилася за брудний одяг.",""],
+	["","","plot&whyBruises"]],
+	
+	
+	[["ignoreToRiseSleeves"],
+	["teacher1","{boy1|Олексію|Дмитрику|Тимку|Грицьку}, чому ти не засукав рукави? Так же зручніше працювати.",""],
+	["boy1","Ну навіщо це... Я б і так прекрасно впорався.",""],
+	["boy1","Ну гаразд. Зайвим точно не буде.",""],
+	["","","plot&whyBruises"]],
+	
+[["whyBruises"],
+["teacher1","{boy1|Олексію|Дмитрику|Тимку|Грицьку}, чому в тебе синці на передпліччі? Як це сталось?","emote&teacher1&worriedSleevesUp|emote&boy1&defaultSleevesUp|playSound&sleeves_up|ask&why_bruises"]
+],
+
+
+
+	[["trueAboutBruises"],
+	["boy1","Вчора тато прийшов додому напідпитку, почав сваритись із мамою....","emote&boy1&sadSleevesUp"],
+	["boy1","А потім її вдарив.",""],
+	["teacher1","Минулого тижня синець на нозі від гойдалки — це також зробив твій батько?",""],
+	["","","plot&truthAboutBruises2"]
+	],
+	[["evadeAboutBruises"],
+	["boy1","Бабуся мені заборонила розповідати. Вона сказала, що це стосується тільки нашої сім'ї.","emote&boy1&hideEyesSleevesUp"],
+	["","","plot&leftHandWithBrussies"]
+	],
+	[["lieAboutBruises"],
+	["boy1","Вчора йшов додому, послизнувся.","emote&boy1&hideEyesSleevesUp"],
+	["","","plot&leftHandWithBrussies"]
+	],
+	
+	[["leftHandWithBrussies"],
+	["teacher1","Ліва рука також в синцях! {boy1|Олексію|Дмитрику|Тимку|Грицьку}, що насправді сталось?","ask&why_bruises_2"]],
+
+		[["truthAboutBruises2"],
+		["boy1","Я хотів захистити маму... Тато був дуже злий... Він і мене побив.","emote&boy1&tearsSleevesUp"],
+		["",". . .","emote&boy1&tears|playSound&sleeves_down"],
+		["","","plot&youCanTrustMe"]
+		],
+		[["evadeAboutBruises2"],
+		["boy1","Я не скажу... Тато сказав, якщо я буду плескати язиком – буде ще гірше.","emote&boy1&angerSleevesUp"],
+		["",". . .","emote&boy1&anger|playSound&sleeves_down"],
+		["","","plot&youCanTrustMe"]
+		],
+		[["lieAboutBruises2"],
+		["boy1","Надворі справді слизько, я просто впав.","emote&boy1&default|playSound&sleeves_down"],
+		["","","plot&youCanTrustMe"]
+		],
+		
+[["youCanTrustMe"],
+["teacher1","Я хочу тобі допомогти. Мені ти можеш довіряти і все розповісти, не бійся, будь ласка.","emote&teacher1&compassionSleevesUp|mirror&boy1&0|ask&tell_me_more"]
+],
+	[["tellMoreTakeTheBlame"],
+	["boy1","Тато сказав, що всі його проблеми через нас із мамою... Може, якби мене не було – батьки не сварились.","emote&boy1&sad"],
+	["teacher1","Це жахливо, так не повинно бути... Що каже твоя мама, вона комусь про це розповідала?","ask&what_your_mom_say"]
+	],
+	[["tellMoreEvade"],
+	["boy1","Я вам буду допомагати пересаджувати вазони, якщо ви мене більше не будете ні про що питати.",""],
+	["","","plot&doesFatherBeatYou"]
+	],
+	[["tellNoMore"],
+	["boy1","Ви мені не допоможете... Ніхто не допоможе.","emote&boy1&tears"],
+	["","","plot&doesFatherBeatYou"]
+	],
+		[["doesFatherBeatYou"],
+		["teacher1","Батько тобі погрожував?.. Він тебе б'є?","emote&teacher1&worriedSleevesUp"],
+		["","","plot&justifyFather"]
+		],
+		
+	[["momQuote"],
+	["boy1","Мама сказала, що якщо про це хтось дізнається, то тато нас покине... Не хочу, щоб тато йшов від нас.","emote&boy1&sad"],
+	["","","plot&finalTeacherAsk"]
+	],
+	[["tellTheStory"],
+	["boy1","Тато прийшов додому напідпитку, а я просто попав \"під гарячу руку\"... Мамі теж дісталось.",""],
+	["boy1","А раніше – то я сам винний. Тато дратується, коли я плачу.",""],
+	["","","plot&finalTeacherAsk"]
+	],
+	[["justifyFather"],
+	["boy1","Це було лише один раз. Тато сказав, що такого більше не буде.",""],
+	["boy1","Але якщо ви комусь скажете – він знову зробить мені боляче!","boy1&emote&anger"],
+	["","","plot&finalTeacherAsk"]
+	],
+	
+[["finalTeacherAsk"],
+["teacher1","{boy1|Олексійку|Дмитрику|Тимку|Грицьку}, не соромся, твоєї вини тут немає.","mirror&boy1&1"],
+["teacher1","На жаль, такі ситуації в сім'ях – не рідкість.",""],
+["teacher1","Завтра перед уроками ми разом повідомимо нашу шкільну психологиню. Вона обов'язково допоможе вашій сім'ї.",""],
+["teacher1","Давай я поговорю з твоєю мамою. Ми разом вирішимо, що робити далі.",""],
+["teacher1","Пам'ятай, що ти не сам.","ask&youre_not_alone"]],
+
+
+	[["finalAccept"],
+	["boy1","Добре, я спробую, буду чекати вас біля кабінету психологині. Дякую вам!","emote&boy1&sad"],
+	["","","finish"]
+	],
+	[["finalIgnore"],
+	["boy1","В мене все добре і рука вже не болить. Я вам допоміг із вазонами і побіжу додому.","emote&boy1&hideEyes"],
+	["","","plot&finalPhrase"]
+	],
+	[["finalReject"],
+	["boy1","Я нікому нічого не розповім. Мені не потрібна допомога. Я вже піду додому.","emote&boy1&sad"],
+	["","","plot&finalPhrase"]
+	],
+[["finalPhrase"],
+["teacher1","Добре, {boy1|Олексійку|Дмитрику|Тимку|Грицьку}... Але якщо ти передумаєш, або будеш відчувати небезпеку — ти завжди можеш звернутися до мене, ми спробуємо все вирішити разом.",""],
+["","","finish"]
+]
+]}

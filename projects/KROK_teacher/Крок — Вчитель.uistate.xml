@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">PropsScreen</layout>
+        <event-sheet active="1" order="1">Menu</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="TextFaders" />
+        <family expanded="1" name="InterBlack" />
+        <family expanded="1" name="CandaraBold" />
+        <family expanded="1" name="InterSemiBold" />
+        <family expanded="1" name="InterMedium" />
+        <family expanded="1" name="Candara" />
+        <family expanded="0" name="Hoverable" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Vote/" />
+        <folder expanded="1" path="object-folder/Variative/" />
+        <folder expanded="1" path="object-folder/Chat/" />
+        <folder expanded="1" path="object-folder/Scroll/" />
+        <folder expanded="1" path="object-folder/Loading/" />
+        <folder expanded="1" path="object-folder/EmoScale/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="layout-folder/Includes/" />
+        <folder expanded="1" path="layout-folder/Main/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/Layouts/" />
+        <folder expanded="1" path="event-folder/Includes/" />
+        <folder expanded="1" path="event-folder/Important/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/plots/Classic/9. SexChat/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/9. SexChat/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/8. War/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/8. War/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/7. Sexting/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/7. Sexting/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/6. Cyber/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/6. Cyber/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/5. Different/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/5. Different/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/4. Boy/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/4. Boy/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/3. Teacher/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/3. Teacher/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/2. Bullying/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/2. Bullying/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/10. Refugee/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/10. Refugee/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/1. Parents/g1/" />
+        <folder expanded="1" path="file-folder/plots/Classic/1. Parents/g2/" />
+        <folder expanded="1" path="file-folder/plots/Classic/9. SexChat/" />
+        <folder expanded="1" path="file-folder/plots/Classic/8. War/" />
+        <folder expanded="1" path="file-folder/plots/Classic/7. Sexting/" />
+        <folder expanded="1" path="file-folder/plots/Classic/6. Cyber/" />
+        <folder expanded="1" path="file-folder/plots/Classic/5. Different/" />
+        <folder expanded="1" path="file-folder/plots/Classic/4. Boy/" />
+        <folder expanded="1" path="file-folder/plots/Classic/3. Teacher/" />
+        <folder expanded="1" path="file-folder/plots/Classic/2. Bullying/" />
+        <folder expanded="1" path="file-folder/plots/Classic/10. Refugee/" />
+        <folder expanded="1" path="file-folder/plots/Classic/1. Parents/" />
+        <folder expanded="1" path="file-folder/plots/New/12. Money/" />
+        <folder expanded="1" path="file-folder/plots/New/11. Bulimia/" />
+        <folder expanded="1" path="file-folder/plots/New/13. Relations/" />
+        <folder expanded="1" path="file-folder/plots/New/14. Bully/" />
+        <folder expanded="1" path="file-folder/plots/New/10. Anorexy/" />
+        <folder expanded="1" path="file-folder/plots/New/15. Enemy/" />
+        <folder expanded="1" path="file-folder/plots/New/16. Friends/" />
+        <folder expanded="1" path="file-folder/plots/0. Test/" />
+        <folder expanded="0" path="file-folder/plots/Classic/" />
+        <folder expanded="1" path="file-folder/plots/New/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="file-folder/plots/" />
+        <folder expanded="0" path="file-folder/fonts/" />
+        <folder expanded="1" path="animation-folder/PercentageTracker/" />
+        <folder expanded="1" path="animation-folder/Char/" />
+        <folder expanded="1" path="animation-folder/Char/Girl/" />
+        <folder expanded="1" path="animation-folder/GUI_Bg/" />
+        <folder expanded="1" path="animation-folder/Overlay/" />
+        <folder expanded="1" path="animation-folder/CharCircle/" />
+        <folder expanded="1" path="animation-folder/Preview/" />
+        <folder expanded="1" path="animation-folder/Bg/" />
+        <folder expanded="1" path="animation-folder/ScenarioBtn/" />
+        <folder expanded="1" path="animation-folder/ChatAvatar/" />
+        <folder expanded="1" path="animation-folder/ChatBg/" />
+        <folder expanded="1" path="animation-folder/ScrollThumb/" />
+        <folder expanded="1" path="animation-folder/StartBg/" />
+        <folder expanded="1" path="animation-folder/ProgressGem/" />
+        <folder expanded="1" path="animation-folder/LoadingBar/" />
+        <folder expanded="1" path="animation-folder/EmoScaleBar/" />
+        <folder expanded="1" path="animation-folder/EmoScaleProgress/" />
+        <folder expanded="1" path="animation-folder/StoryWindow/" />
+        <folder expanded="1" path="animation-folder/Option/" />
+        <folder expanded="1" path="animation-folder/Play/" />
+        <folder expanded="1" path="animation-folder/Info/" />
+        <folder expanded="1" path="animation-folder/Button/" />
+        <folder expanded="1" path="animation-folder/DarkShader/" />
+        <folder expanded="1" path="animation-folder/CharBg/" />
+        <folder expanded="1" path="animation-folder/Placeholder/" />
+        <folder expanded="1" path="animation-folder/Blur/" />
+        <folder expanded="1" path="animation-folder/Arrow/" />
+        <folder expanded="1" path="animation-folder/PageIndicator/" />
+        <folder expanded="1" path="animation-folder/SliderArrow/" />
+        <folder expanded="1" path="animation-folder/qr/" />
+        <folder expanded="1" path="animation-folder/VoteCounter/" />
+        <folder expanded="1" path="animation-folder/Hyperlink/" />
+        <folder expanded="1" path="animation-folder/Tags/" />
+        <folder expanded="1" path="animation-folder/TagOverlay/" />
+        <folder expanded="1" path="animation-folder/ScenarioOverlay/" />
+        <folder expanded="1" path="animation-folder/PropsTagInfo/" />
+        <folder expanded="1" path="animation-folder/TagsToggleThumb/" />
+        <folder expanded="1" path="animation-folder/TagsToggleBar/" />
+        <folder expanded="1" path="animation-folder/CharNames/" />
+        <folder expanded="1" path="animation-folder/CharNameBg/" />
+        <folder expanded="1" path="animation-folder/Loader/" />
+        <folder expanded="1" path="animation-folder/TagsDifficultyIcon/" />
+    </folders-expanded>
+</c2uistate>

@@ -1,0 +1,2150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Крок — Учень</name>
+    <description></description>
+    <version>2.0.1.1</version>
+    <author>Modemi4</author>
+    <author-email>vasyl.chukhilevych@etcetera.org.ua</author-email>
+    <author-website>https://etcetera.org.ua/</author-website>
+    <app-id>com.etc.krok-stud</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Exit Games" id="Photon" version="1">Photon</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="XML" version="1">XML</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="lunarray" id="lunarray_LiteTween" version="1.700000048">LiteTween</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="R0J0hound" id="outline">Outline</effect>
+        <effect author="Scirra" id="radialblur">Radial blur</effect>
+        <effect author="Scirra" id="screen">Screen</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Loading</first-layout>
+    <use-loader-layout>1</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Vote">
+            <object-type name="VotePercentageText" sid="659959251895485">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="FadeIn" sid="645353809985258">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>VotePercentageText</type>
+                    <type>PercentageTracker</type>
+                    <type>Option</type>
+                    <type>OptionText</type>
+                </container>
+            </object-type>
+            <object-type name="OptionMsgText" sid="823417066049360">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="391289089028488">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="Fade" sid="255256441220086">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="Outline">
+                        <effect id="outline" />
+                    </effect-type>
+                </effects>
+                <container>
+                    <type>OptionMsg</type>
+                    <type>OptionMsgText</type>
+                </container>
+            </object-type>
+            <object-type name="PercentageTracker" sid="794890511141059">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="FadeIn" sid="974391448931856">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>VotePercentageText</type>
+                    <type>PercentageTracker</type>
+                    <type>Option</type>
+                    <type>OptionText</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="298784471306734" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Red" pingpong="0" repeatcount="1" repeatto="0" sid="740478146659526" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Variative" />
+        <object-type name="Function" sid="992340546430234">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Browser" sid="796470609242164">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Touch" sid="937134120086759">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type global="1" name="Answers" sid="265030247017064">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Option" sid="623033019763806">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="action" sid="375840863003538" type="string" />
+                <instance-variable name="id" sid="860241264297264" type="number" />
+                <instance-variable name="chosen" sid="779357871957341" type="number" />
+                <instance-variable name="percentage" sid="713896125215845" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="189188657490613">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>VotePercentageText</type>
+                <type>PercentageTracker</type>
+                <type>Option</type>
+                <type>OptionText</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Active" pingpong="0" repeatcount="1" repeatto="0" sid="669484674567060" speed="5">
+                    <frame duration="1" hotspotX="0.501992" hotspotY="0.124294" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 5\PNG\voting_btn (1).png">
+                        <collision-poly>
+                            <point x="0.0278884" y="0.079096" />
+                            <point x="0.5" y="0" />
+                            <point x="0.972112" y="0.079096" />
+                            <point x="0.998008" y="0.497175" />
+                            <point x="0.972112" y="0.920904" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0278884" y="0.920904" />
+                            <point x="0.00199203" y="0.497175" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Inactive" pingpong="0" repeatcount="1" repeatto="0" sid="736267419012826" speed="5">
+                    <frame duration="1" hotspotX="0.500998" hotspotY="0.124294" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 5\PNG\voting_btn (3).png">
+                        <collision-poly>
+                            <point x="0.0259481" y="0.0734463" />
+                            <point x="0.499002" y="0" />
+                            <point x="0.974052" y="0.0734463" />
+                            <point x="1" y="0.497175" />
+                            <point x="0.974052" y="0.926554" />
+                            <point x="0.499002" y="1" />
+                            <point x="0.0259481" y="0.926554" />
+                            <point x="0" y="0.497175" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Selected" pingpong="0" repeatcount="1" repeatto="0" sid="150442708603003" speed="5">
+                    <frame duration="1" hotspotX="0.500998" hotspotY="0.121359" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 5\PNG\Asset 5.png">
+                        <collision-poly>
+                            <point x="0.00199601" y="0.5" />
+                            <point x="0.0259481" y="0.0792683" />
+                            <point x="0.499002" y="0.00609756" />
+                            <point x="0.974052" y="0.0792683" />
+                            <point x="1" y="0.5" />
+                            <point x="0.974052" y="0.920732" />
+                            <point x="0.499002" y="1" />
+                            <point x="0.0259481" y="0.920732" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="OptionText" sid="652522859743813">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="749413566189445">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>VotePercentageText</type>
+                <type>PercentageTracker</type>
+                <type>Option</type>
+                <type>OptionText</type>
+            </container>
+        </object-type>
+        <object-type name="Keyboard" sid="422100602941937">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Audio" sid="858072007701439">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Play" sid="330670049142317">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Singleplayer" pingpong="0" repeatcount="1" repeatto="0" sid="419171604232076" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.486301" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\start_screen\btn (3).png">
+                        <collision-poly>
+                            <point x="0.0427807" y="0.0185185" />
+                            <point x="0.957219" y="0.0185185" />
+                            <point x="0.998663" y="0.485185" />
+                            <point x="0.965241" y="0.974074" />
+                            <point x="0.5" y="0.992593" />
+                            <point x="0.0360963" y="0.97037" />
+                            <point x="0.0013369" y="0.485185" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Prejoin" pingpong="0" repeatcount="1" repeatto="0" sid="203879031769509" speed="5">
+                    <frame duration="1" hotspotX="0.500832" hotspotY="0.486301" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\start_screen\btn (2).png">
+                        <collision-poly>
+                            <point x="0.0427807" y="0.0185185" />
+                            <point x="0.957219" y="0.0185185" />
+                            <point x="0.998663" y="0.485185" />
+                            <point x="0.965241" y="0.974074" />
+                            <point x="0.5" y="0.992593" />
+                            <point x="0.0360963" y="0.97037" />
+                            <point x="0.0013369" y="0.485185" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Create" pingpong="0" repeatcount="1" repeatto="0" sid="379139795816290" speed="5">
+                    <frame duration="1" hotspotX="0.500832" hotspotY="0.482759" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\start_screen\btn (1).png">
+                        <collision-poly>
+                            <point x="0.0427807" y="0.0185185" />
+                            <point x="0.957219" y="0.0185185" />
+                            <point x="0.998663" y="0.485185" />
+                            <point x="0.965241" y="0.974074" />
+                            <point x="0.5" y="0.992593" />
+                            <point x="0.0360963" y="0.97037" />
+                            <point x="0.0013369" y="0.485185" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="423550641997169">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Text" sid="642022029604755">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="role" sid="375588439149479" type="string" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Button" sid="994369300679296">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Start" pingpong="0" repeatcount="1" repeatto="0" sid="185688735332423" speed="5">
+                    <frame duration="1" hotspotX="0.501035" hotspotY="0.506579" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\upd2\buttons\btn (2).png">
+                        <collision-poly>
+                            <point x="0.045929" y="0.145695" />
+                            <point x="0.498956" y="0.0860927" />
+                            <point x="0.954071" y="0.145695" />
+                            <point x="0.951983" y="0.496689" />
+                            <point x="0.933194" y="0.788079" />
+                            <point x="0.498956" y="0.913907" />
+                            <point x="0.0647182" y="0.794702" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Join" pingpong="0" repeatcount="1" repeatto="0" sid="684428537687318" speed="5">
+                    <frame duration="1" hotspotX="0.501089" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 3\ввід коду_btn.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="close" pingpong="0" repeatcount="1" repeatto="0" sid="811705779562849" speed="5">
+                    <frame duration="1" hotspotX="0.502825" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\upd2\join_screen\btn_close.png">
+                        <collision-poly>
+                            <point x="0.169492" y="0.163043" />
+                            <point x="0.497175" y="0.0597826" />
+                            <point x="0.813559" y="0.179348" />
+                            <point x="0.932203" y="0.5" />
+                            <point x="0.80226" y="0.809783" />
+                            <point x="0.497175" y="0.929348" />
+                            <point x="0.175141" y="0.831522" />
+                            <point x="0.0338983" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="LaunchGame" pingpong="0" repeatcount="1" repeatto="0" sid="679706809747571" speed="5">
+                    <frame duration="1" hotspotX="0.501044" hotspotY="0.503311" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\upd2\buttons\btn (1).png">
+                        <collision-poly>
+                            <point x="0.045929" y="0.145695" />
+                            <point x="0.498956" y="0.0860927" />
+                            <point x="0.954071" y="0.145695" />
+                            <point x="0.951983" y="0.496689" />
+                            <point x="0.933194" y="0.788079" />
+                            <point x="0.498956" y="0.913907" />
+                            <point x="0.0647182" y="0.794702" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="back" pingpong="0" repeatcount="1" repeatto="0" sid="361834602592062" speed="5">
+                    <frame duration="1" hotspotX="0.504274" hotspotY="0.504" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\крок_ui_3\btn_home.png">
+                        <collision-poly>
+                            <point x="0.136752" y="0.128" />
+                            <point x="0.495726" y="0.008" />
+                            <point x="0.863248" y="0.128" />
+                            <point x="1" y="0.496" />
+                            <point x="0.82906" y="0.84" />
+                            <point x="0.495726" y="0.944" />
+                            <point x="0.17094" y="0.84" />
+                            <point x="0" y="0.496" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="MainScreen" pingpong="0" repeatcount="1" repeatto="0" sid="344312502534531" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\upd2\end_screen\btn.png">
+                        <collision-poly>
+                            <point x="0.015625" y="0.0555556" />
+                            <point x="0.5" y="0" />
+                            <point x="0.984375" y="0.0555556" />
+                            <point x="0.984375" y="0.5" />
+                            <point x="0.964286" y="0.873016" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0334821" y="0.880952" />
+                            <point x="0.0133929" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501171" hotspotY="0.503937" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРок_14\0_UI+updates\1_end_game\btn (2).png">
+                        <collision-poly>
+                            <point x="0.0327869" y="0.110236" />
+                            <point x="0.498829" y="0" />
+                            <point x="0.967213" y="0.110236" />
+                            <point x="1" y="0.496063" />
+                            <point x="0.967213" y="0.889764" />
+                            <point x="0.498829" y="1" />
+                            <point x="0.0327869" y="0.889764" />
+                            <point x="0" y="0.496063" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Next" pingpong="0" repeatcount="1" repeatto="0" sid="827161827689981" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\text_game\btn_next.png">
+                        <collision-poly>
+                            <point x="0.0441176" y="0.1125" />
+                            <point x="0.5" y="0.0125" />
+                            <point x="0.955882" y="0.1125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.955882" y="0.8875" />
+                            <point x="0.5" y="0.9875" />
+                            <point x="0.0441176" y="0.8875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Continue" pingpong="0" repeatcount="1" repeatto="0" sid="718032814974879" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Downloads\btn_continue.png">
+                        <collision-poly>
+                            <point x="0.0562659" y="0.143437" />
+                            <point x="0.637681" y="0.0159375" />
+                            <point x="1" y="0.143437" />
+                            <point x="1" y="0.6375" />
+                            <point x="1" y="1" />
+                            <point x="0.637681" y="1" />
+                            <point x="0.0562659" y="1" />
+                            <point x="0" y="0.6375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="NextHidden" pingpong="0" repeatcount="1" repeatto="0" sid="290357921990448" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Menu" pingpong="0" repeatcount="1" repeatto="0" sid="889402059079972" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503226" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_12\0_Pause\btn_menu.png">
+                        <collision-poly>
+                            <point x="0.0489362" y="0.148387" />
+                            <point x="0.5" y="0.0645161" />
+                            <point x="0.951064" y="0.148387" />
+                            <point x="0.978723" y="0.496774" />
+                            <point x="0.951064" y="0.851613" />
+                            <point x="0.5" y="0.935484" />
+                            <point x="0.0489362" y="0.851613" />
+                            <point x="0.0212766" y="0.496774" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="MenuGreen" pingpong="0" repeatcount="1" repeatto="0" sid="388739206220199" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРок_14\0_UI+updates\7_waiting (закидон №3756)\btn (4).png">
+                        <collision-poly>
+                            <point x="0.0456432" y="0.144737" />
+                            <point x="0.5" y="0.0855263" />
+                            <point x="0.954357" y="0.144737" />
+                            <point x="0.952282" y="0.5" />
+                            <point x="0.93361" y="0.789474" />
+                            <point x="0.5" y="0.914474" />
+                            <point x="0.0622407" y="0.802632" />
+                            <point x="0.0456432" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Pause" pingpong="0" repeatcount="1" repeatto="0" sid="419699746363941" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504587" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_12\0_Pause\btn_pause.png">
+                        <collision-poly>
+                            <point x="0.138889" y="0.137615" />
+                            <point x="0.5" y="0" />
+                            <point x="0.861111" y="0.137615" />
+                            <point x="1" y="0.495413" />
+                            <point x="0.851852" y="0.853211" />
+                            <point x="0.5" y="0.990826" />
+                            <point x="0.148148" y="0.853211" />
+                            <point x="0.00925926" y="0.495413" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="ContinuePlot" pingpong="0" repeatcount="1" repeatto="0" sid="783331339469974" speed="5">
+                    <frame duration="1" hotspotX="0.501119" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРок_14\0_UI+updates\6_pause_new\btn (2).png">
+                        <collision-poly>
+                            <point x="0.049217" y="0.146667" />
+                            <point x="0.498881" y="0.0666667" />
+                            <point x="0.950783" y="0.146667" />
+                            <point x="0.982103" y="0.5" />
+                            <point x="0.950783" y="0.853333" />
+                            <point x="0.498881" y="0.926667" />
+                            <point x="0.0514541" y="0.846667" />
+                            <point x="0.0201342" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Photon" sid="424661466843984">
+            <plugin id="Photon" />
+        </object-type>
+        <object-type name="DarkShader" sid="426374631629252">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="func" sid="515780381208379" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="259396872452448" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Shader2" pingpong="0" repeatcount="1" repeatto="0" sid="151558363855026" speed="5">
+                    <frame duration="1" hotspotX="0.502591" hotspotY="0.506173" original-source="C:\Users\vasea\Downloads\Rectangle 12 (2).png">
+                        <collision-poly>
+                            <point x="0.0194489" y="0.0895522" />
+                            <point x="0.49919" y="0.0373134" />
+                            <point x="0.980551" y="0.0895522" />
+                            <point x="0.991896" y="0.5" />
+                            <point x="0.980551" y="0.910448" />
+                            <point x="0.49919" y="0.962687" />
+                            <point x="0.0194489" y="0.910448" />
+                            <point x="0.00810373" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="EmoScale" pingpong="0" repeatcount="1" repeatto="0" sid="456156990086254" speed="5">
+                    <frame duration="1" hotspotX="0.501639" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 9\bg_word.png">
+                        <collision-poly>
+                            <point x="0.0229508" y="0.0729167" />
+                            <point x="0.498361" y="0" />
+                            <point x="0.977049" y="0.0729167" />
+                            <point x="0.996721" y="0.5" />
+                            <point x="0.977049" y="0.927083" />
+                            <point x="0.498361" y="0.989583" />
+                            <point x="0.0229508" y="0.927083" />
+                            <point x="0.00327869" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Input" sid="919789095881964">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type global="1" name="Options" sid="841114490195769">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="LocalStorage" sid="784094347866985">
+            <plugin id="LocalStorage" />
+        </object-type>
+        <object-type name="CodeTxt" sid="930375457862682">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="AJAX" sid="658986102248101">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type global="1" name="LayersToLerp" sid="969160051425579">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Keys" sid="297032321718898">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="value" sid="777334258789958" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Keys" pingpong="0" repeatcount="1" repeatto="0" sid="986817211362622" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Backspace" pingpong="0" repeatcount="1" repeatto="0" sid="738970551214882" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Icon" sid="314351330388663">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Alert" pingpong="0" repeatcount="1" repeatto="0" sid="917606429484537" speed="5">
+                    <frame duration="1" hotspotX="0.508772" hotspotY="0.509434" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРок_15\UPD_UI\КОД\alert_icon.png">
+                        <collision-poly>
+                            <point x="0.298246" y="0.320755" />
+                            <point x="0.491228" y="0.113208" />
+                            <point x="0.754386" y="0.490566" />
+                            <point x="0.807018" y="0.792453" />
+                            <point x="0.491228" y="0.830189" />
+                            <point x="0.175439" y="0.811321" />
+                            <point x="0.192982" y="0.490566" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Hyperlink" sid="541531454967097">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="link" sid="429584830781090" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="415322968678237" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SubtitleText" sid="893953505198696">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="role" sid="752001617921632" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="FadeOut" sid="813769995410014">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Char" sid="450945632012853">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="name" sid="542986539770959" type="string" />
+                <instance-variable name="emotion" sid="376012871197233" type="string" />
+                <instance-variable name="pos" sid="906740071278501" type="number" />
+                <instance-variable name="targetX" sid="835704405649626" type="number" />
+                <instance-variable name="leaving" sid="839188092614987" type="boolean" />
+                <instance-variable name="mirrored" sid="423329461323224" type="boolean" />
+                <instance-variable name="inited" sid="614053537791186" type="boolean" />
+                <instance-variable name="offsetX" sid="185006732175896" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Jump" sid="679783488287609">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="FadeIn" sid="895118817377088">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="924366108846840">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation-folder name="Girl">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="195036667928508" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.78" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРОК_5_сценарій\characters\main_character\strained.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Girl_Sad" pingpong="0" repeatcount="0" repeatto="0" sid="680144960830835" speed="0">
+                        <frame duration="1" hotspotX="0.501618" hotspotY="0.7825" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="general">
+                    <animation framecount="1" loop="0" name="boy1" pingpong="0" repeatcount="1" repeatto="0" sid="357533270968522" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy2" pingpong="0" repeatcount="1" repeatto="0" sid="180281273146678" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl1" pingpong="0" repeatcount="1" repeatto="0" sid="317637196778651" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="teacher1" pingpong="0" repeatcount="1" repeatto="0" sid="176575026162864" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl2" pingpong="0" repeatcount="1" repeatto="0" sid="493931870608200" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="uncle1" pingpong="0" repeatcount="1" repeatto="0" sid="621450817856448" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="woman1" pingpong="0" repeatcount="1" repeatto="0" sid="993532067848707" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="kid1" pingpong="0" repeatcount="1" repeatto="0" sid="553495425771611" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="kid2" pingpong="0" repeatcount="1" repeatto="0" sid="940361754424416" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy3" pingpong="0" repeatcount="1" repeatto="0" sid="372930349424374" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy4" pingpong="0" repeatcount="1" repeatto="0" sid="624978329205428" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy5" pingpong="0" repeatcount="1" repeatto="0" sid="997183551791170" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="teacher2" pingpong="0" repeatcount="1" repeatto="0" sid="860735950748150" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl3" pingpong="0" repeatcount="1" repeatto="0" sid="735104381063010" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl4" pingpong="0" repeatcount="1" repeatto="0" sid="709659669439528" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy6" pingpong="0" repeatcount="1" repeatto="0" sid="621221137360044" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy7" pingpong="0" repeatcount="1" repeatto="0" sid="197980976151553" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy8" pingpong="0" repeatcount="1" repeatto="0" sid="872346188054469" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="man1" pingpong="0" repeatcount="1" repeatto="0" sid="996116917974766" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy9" pingpong="0" repeatcount="1" repeatto="0" sid="268189096439007" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy10" pingpong="0" repeatcount="1" repeatto="0" sid="724484687593062" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="boy11" pingpong="0" repeatcount="1" repeatto="0" sid="774164806698462" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="man2" pingpong="0" repeatcount="1" repeatto="0" sid="549239690533542" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl5" pingpong="0" repeatcount="1" repeatto="0" sid="855822095179935" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl6" pingpong="0" repeatcount="1" repeatto="0" sid="610349217383406" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl7" pingpong="0" repeatcount="1" repeatto="0" sid="749793752954282" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl8" pingpong="0" repeatcount="1" repeatto="0" sid="185832140789991" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl9" pingpong="0" repeatcount="1" repeatto="0" sid="517367391093404" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl10" pingpong="0" repeatcount="1" repeatto="0" sid="305181153007704" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl11" pingpong="0" repeatcount="1" repeatto="0" sid="763652150509735" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="woman2" pingpong="0" repeatcount="1" repeatto="0" sid="228209094216033" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="doctor1" pingpong="0" repeatcount="1" repeatto="0" sid="296892902846535" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl12" pingpong="0" repeatcount="1" repeatto="0" sid="303677753865504" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="girl13" pingpong="0" repeatcount="1" repeatto="0" sid="199463156071152" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </animation-folder>
+        </object-type>
+        <object-type name="Overlay" sid="934701788402052">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeOut" sid="946267332263714">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="FadeIn" sid="415260405826374">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="814871928961189" speed="5">
+                    <frame duration="1" hotspotX="0.68" hotspotY="0.652" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\characters_upd\memoirs\1 (1).png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Load" pingpong="0" repeatcount="1" repeatto="0" sid="746354014737456" speed="5">
+                    <frame duration="1" hotspotX="0.68" hotspotY="0.652" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bg" sid="908020575359851">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeOut" sid="953172453008224">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="FadeIn" sid="237435229485969">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Loader" pingpong="0" repeatcount="1" repeatto="0" sid="106412438381768" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="VoteBg" pingpong="0" repeatcount="1" repeatto="0" sid="925769208021253" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\game_children\bg.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Empty" pingpong="0" repeatcount="1" repeatto="0" sid="227077715428296" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Black" pingpong="0" repeatcount="1" repeatto="0" sid="193193293448101" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="2" loop="0" name="Bg" pingpong="0" repeatcount="0" repeatto="0" sid="297170026810833" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="DataPack" sid="400952262299781">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="StoryWindow" sid="729541610271335">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="308881943051759" speed="5">
+                    <frame duration="1" hotspotX="0.500539" hotspotY="0.502604" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 4\text_mobile (1).png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StoryBox" sid="531255109835514">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="targetText" sid="218415531524083" type="string" />
+            </instance-variables>
+        </object-type>
+        <object-type name="CharBg" sid="598024824701565">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="754381713074519" speed="5">
+                    <frame duration="1" hotspotX="0.546448" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\крок_1\text_game\player.png">
+                        <collision-poly>
+                            <point x="0.0435693" y="0.148649" />
+                            <point x="0.544543" y="0.243243" />
+                            <point x="1" y="0.195946" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.837838" />
+                            <point x="0.0435693" y="0.851351" />
+                            <point x="0.00182149" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Speaker" sid="287576289401524">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="CharCircle" sid="254492442771400">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="352005010476602" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_12\icons\girl.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.152824" y="0.847176" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Teacher1" pingpong="0" repeatcount="1" repeatto="0" sid="740085561389704" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Downloads\icon (1).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Boy1" pingpong="0" repeatcount="1" repeatto="0" sid="765060185161058" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Downloads\icon (2).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Boy2" pingpong="0" repeatcount="1" repeatto="0" sid="581331604793333" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Downloads\icon (4).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Boy3" pingpong="0" repeatcount="1" repeatto="0" sid="127932298315440" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\крок_3\icons\icons (1).png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.847176" y="0.847176" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Boy4" pingpong="0" repeatcount="1" repeatto="0" sid="335965077081720" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Downloads\icon_5.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Girl1" pingpong="0" repeatcount="1" repeatto="0" sid="379598505762690" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Downloads\icon (3).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Girl2" pingpong="0" repeatcount="1" repeatto="0" sid="595279584136113" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_другий_сценарій\characters_icons\girl.png">
+                        <collision-poly>
+                            <point x="0.159136" y="0.159136" />
+                            <point x="0.498369" y="0.0156146" />
+                            <point x="0.844125" y="0.155875" />
+                            <point x="0.987647" y="0.498369" />
+                            <point x="0.844125" y="0.844125" />
+                            <point x="0.498369" y="0.987647" />
+                            <point x="0.155875" y="0.844125" />
+                            <point x="0.0156146" y="0.498369" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Woman1" pingpong="0" repeatcount="1" repeatto="0" sid="616902334597863" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_другий_сценарій\characters_icons\mother.png">
+                        <collision-poly>
+                            <point x="0.152824" y="0.152824" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Uncle1" pingpong="0" repeatcount="1" repeatto="0" sid="633721724797851" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_другий_сценарій\characters_icons\uncle.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.847176" y="0.152824" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="teacher2" pingpong="0" repeatcount="1" repeatto="0" sid="354564620093045" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРОК_5_сценарій\icons\OLD_teacher.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy5" pingpong="0" repeatcount="1" repeatto="0" sid="449932364773062" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_6\icons\classmates_idiots.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.152824" y="0.847176" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy6" pingpong="0" repeatcount="1" repeatto="0" sid="789224278224553" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРОК_4_сценраій\icons\classmates-friend.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl3" pingpong="0" repeatcount="1" repeatto="0" sid="611243066939190" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРОК_4_сценраій\icons\girlfriends_1.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl4" pingpong="0" repeatcount="1" repeatto="0" sid="632856355790237" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРОК_4_сценраій\icons\girlfriends_2.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy7" pingpong="0" repeatcount="1" repeatto="0" sid="187331414925563" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРОК_5_сценарій\icons\main_character.png">
+                        <collision-poly>
+                            <point x="0.152824" y="0.152824" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy8" pingpong="0" repeatcount="1" repeatto="0" sid="560096324282866" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_6\icons\main_character.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.152824" y="0.847176" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="man1" pingpong="0" repeatcount="1" repeatto="0" sid="346750084651275" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_6\icons\physics_teacher_mustache.png">
+                        <collision-poly>
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.501661" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332224" y="0.498339" />
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.501661" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy9" pingpong="0" repeatcount="1" repeatto="0" sid="139770997137739" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_7\icons\boy_2.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy10" pingpong="0" repeatcount="1" repeatto="0" sid="523368320276993" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_7\icons\boy_1.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy11" pingpong="0" repeatcount="1" repeatto="0" sid="827587682143381" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_7\icons\main_character.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl5" pingpong="0" repeatcount="1" repeatto="0" sid="183184388030499" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_8\Icons\girl.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.847176" y="0.847176" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="man2" pingpong="0" repeatcount="1" repeatto="0" sid="487611217630974" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_8\Icons\father.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl6" pingpong="0" repeatcount="1" repeatto="0" sid="734504444183917" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_9\icons\NEW.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.847176" y="0.152824" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl7" pingpong="0" repeatcount="1" repeatto="0" sid="794244824087487" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_10\icons\main_girl.png">
+                        <collision-poly>
+                            <point x="0.147157" y="0.147651" />
+                            <point x="0.498328" y="0" />
+                            <point x="0.852843" y="0.147651" />
+                            <point x="1" y="0.5" />
+                            <point x="0.852843" y="0.852349" />
+                            <point x="0.498328" y="1" />
+                            <point x="0.147157" y="0.852349" />
+                            <point x="0.00334448" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl8" pingpong="0" repeatcount="1" repeatto="0" sid="117308743387145" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_10\icons\secong_girl.png">
+                        <collision-poly>
+                            <point x="0.147157" y="0.147157" />
+                            <point x="0.498328" y="0.00334448" />
+                            <point x="0.852843" y="0.147157" />
+                            <point x="1" y="0.498328" />
+                            <point x="0.852843" y="0.852843" />
+                            <point x="0.498328" y="1" />
+                            <point x="0.147157" y="0.852843" />
+                            <point x="0.00334448" y="0.498328" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl9" pingpong="0" repeatcount="1" repeatto="0" sid="140105794465669" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\icons\friend.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00664452" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.996678" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anonym1" pingpong="0" repeatcount="1" repeatto="0" sid="727593460516470" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (1).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anonym2" pingpong="0" repeatcount="1" repeatto="0" sid="851419136707765" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (2).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.145455" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.145455" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.854545" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.854545" />
+                            <point x="0.00925926" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anonym3" pingpong="0" repeatcount="1" repeatto="0" sid="744164893085869" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (3).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anonym4" pingpong="0" repeatcount="1" repeatto="0" sid="494830415469990" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (4).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl10" pingpong="0" repeatcount="1" repeatto="0" sid="272835346806460" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_12\icons\girl.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.152824" y="0.847176" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="doctor" pingpong="0" repeatcount="1" repeatto="0" sid="235297069425459" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yaroslavas\Desktop\Крок_12\preview_scenario_&amp;_illustrations\icon_message.png">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl11" pingpong="0" repeatcount="1" repeatto="0" sid="885028743352048" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 8\icons (1).png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.996678" y="0.498339" />
+                            <point x="0.850498" y="0.850498" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.152824" y="0.847176" />
+                            <point x="0.00664452" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="woman2" pingpong="0" repeatcount="1" repeatto="0" sid="921304289531543" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 8\icons.png">
+                        <collision-poly>
+                            <point x="0.149502" y="0.149502" />
+                            <point x="0.498339" y="0.00332226" />
+                            <point x="0.850498" y="0.149502" />
+                            <point x="0.993355" y="0.498339" />
+                            <point x="0.847176" y="0.847176" />
+                            <point x="0.498339" y="0.993355" />
+                            <point x="0.149502" y="0.850498" />
+                            <point x="0.00332226" y="0.498339" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="doctor1" pingpong="0" repeatcount="1" repeatto="0" sid="725530506419619" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\КРОК_7\icon_doctor.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                            <point x="0.85" y="0.15" />
+                            <point x="0.996667" y="0.5" />
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="0.996667" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl12" pingpong="0" repeatcount="1" repeatto="0" sid="351652865806831" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\КРОК_7\icon_girl12.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                            <point x="0.85" y="0.15" />
+                            <point x="0.996667" y="0.5" />
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="0.996667" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl13" pingpong="0" repeatcount="1" repeatto="0" sid="274029894008566" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\КРОК_7\icon_girl13.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                            <point x="0.85" y="0.15" />
+                            <point x="0.996667" y="0.5" />
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="0.996667" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Blur" sid="901504246194049">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeIn" sid="521703588715532">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="308277600506601">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="503921172287557">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Screen">
+                    <effect id="screen" />
+                </effect-type>
+                <effect-type name="RadialBlur">
+                    <effect id="radialblur" />
+                </effect-type>
+                <effect-type name="BlurHorizontal">
+                    <effect id="blurhorizontal" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="405319870763921" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChatAvatar" sid="328574355236148">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeIn" sid="945807692649385">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="725410136664425">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="693934690756140">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ChatBg</type>
+                <type>ChatMsg</type>
+                <type>ChatNickname</type>
+                <type>ChatAvatar</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="855973206484566" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="anonym1" pingpong="0" repeatcount="1" repeatto="0" sid="465479160129295" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (1).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.497355" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.497355" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.497355" y="0.994709" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.497355" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anonym2" pingpong="0" repeatcount="1" repeatto="0" sid="559489047183377" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (2).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.145455" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.145455" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.854545" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.854545" />
+                            <point x="0.00925926" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anonym3" pingpong="0" repeatcount="1" repeatto="0" sid="827539103158491" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (3).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="anonym4" pingpong="0" repeatcount="1" repeatto="0" sid="958590329914356" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\Крок_11\preview_scenario_&amp;_illustrations\avatar  (4).png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="girl8" pingpong="0" repeatcount="1" repeatto="0" sid="154531098111741" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="doctor" pingpong="0" repeatcount="1" repeatto="0" sid="406903062045397" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yaroslavas\Desktop\Крок_12\preview_scenario_&amp;_illustrations\icon_message.png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851852" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851852" y="0.851852" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148148" y="0.851852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="boy9" pingpong="0" repeatcount="1" repeatto="0" sid="291386167296377" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="boy11" pingpong="0" repeatcount="1" repeatto="0" sid="903040085102124" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="girl9" pingpong="0" repeatcount="1" repeatto="0" sid="363125072291472" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="girl10" pingpong="0" repeatcount="1" repeatto="0" sid="672493958111223" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="girl5" pingpong="0" repeatcount="1" repeatto="0" sid="658590532435213" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="boy10" pingpong="0" repeatcount="1" repeatto="0" sid="859185720010552" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="girl6" pingpong="0" repeatcount="1" repeatto="0" sid="521840952657545" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="girl1" pingpong="0" repeatcount="1" repeatto="0" sid="200846632980225" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="girl2" pingpong="0" repeatcount="1" repeatto="0" sid="496249233147731" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="man2" pingpong="0" repeatcount="1" repeatto="0" sid="334425005440398" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="uncle1" pingpong="0" repeatcount="1" repeatto="0" sid="297171161791791" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="woman1" pingpong="0" repeatcount="1" repeatto="0" sid="301854052137195" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="teacher1" pingpong="0" repeatcount="1" repeatto="0" sid="326159168830257" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChatNickname" sid="993141836030419">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="117379946530941">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="FadeIn" sid="829100254591691">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="930400731183478">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ChatBg</type>
+                <type>ChatMsg</type>
+                <type>ChatNickname</type>
+                <type>ChatAvatar</type>
+            </container>
+        </object-type>
+        <object-type name="ChatBg" sid="127361832462034">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="curY" sid="329213344102974" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="953826213002399">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="FadeIn" sid="302093345665487">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="243247823336417">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="277046679382387">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ChatBg</type>
+                <type>ChatMsg</type>
+                <type>ChatNickname</type>
+                <type>ChatAvatar</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219503846341327" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 4\message (1).png">
+                        <image-point name="Avatar" x="-0.0798319" y="0.5" />
+                        <image-point name="Nickname" x="0.0829832" y="0.191919" />
+                        <image-point name="Msg" x="0.0829832" y="0.343434" />
+                        <collision-poly>
+                            <point x="0.0265393" y="0.132979" />
+                            <point x="0.5" y="0" />
+                            <point x="0.9862" y="0.0691489" />
+                            <point x="0.998938" y="0.5" />
+                            <point x="0.985138" y="0.925532" />
+                            <point x="0.5" y="0.994681" />
+                            <point x="0.0265393" y="0.867021" />
+                            <point x="0.00955414" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Me" pingpong="0" repeatcount="1" repeatto="0" sid="667871519479252" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 4\message (2).png">
+                        <image-point name="Avatar" x="1.07983" y="0.5" />
+                        <image-point name="Nickname" x="0.0514706" y="0.191919" />
+                        <image-point name="Msg" x="0.0514706" y="0.343434" />
+                        <collision-poly>
+                            <point x="0.014862" y="0.0744681" />
+                            <point x="0.5" y="0.00531915" />
+                            <point x="0.973461" y="0.132979" />
+                            <point x="0.991507" y="0.5" />
+                            <point x="0.974522" y="0.87234" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0138004" y="0.930851" />
+                            <point x="0.00106157" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="PhotoAttached" pingpong="0" repeatcount="1" repeatto="0" sid="804799914526479" speed="5">
+                    <frame duration="1" hotspotX="0.500982" hotspotY="0.505376" original-source="C:\Users\yaroslavas\Desktop\Крок_12\preview_scenario_&amp;_illustrations\panel_message (4).png">
+                        <collision-poly>
+                            <point x="0.0176817" y="0.0967742" />
+                            <point x="0.499018" y="0.0537634" />
+                            <point x="0.97053" y="0.16129" />
+                            <point x="0.97053" y="0.83871" />
+                            <point x="0.499018" y="0.924731" />
+                            <point x="0.021611" y="0.88172" />
+                            <point x="0.00589391" y="0.494624" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Banned" pingpong="0" repeatcount="1" repeatto="0" sid="647778370332204" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yaroslavas\Desktop\Крок_12\preview_scenario_&amp;_illustrations\panel_message (2).png">
+                        <collision-poly>
+                            <point x="0.0294118" y="0.15625" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.976471" y="0.125" />
+                            <point x="0.988235" y="0.5" />
+                            <point x="0.978431" y="0.885417" />
+                            <point x="0.5" y="0.927083" />
+                            <point x="0.0294118" y="0.84375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Banned2" pingpong="0" repeatcount="1" repeatto="0" sid="422664206668703" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yaroslavas\Desktop\upd_плашки\sample (2).png">
+                        <collision-poly>
+                            <point x="0.02" y="0.103704" />
+                            <point x="0.5" y="0.0444444" />
+                            <point x="0.975714" y="0.125926" />
+                            <point x="0.975714" y="0.874074" />
+                            <point x="0.5" y="0.940741" />
+                            <point x="0.0214286" y="0.888889" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="MailMessage" pingpong="0" repeatcount="1" repeatto="0" sid="989725370691219" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="C:\Users\yaroslavas\Desktop\Крок_12\preview_scenario_&amp;_illustrations\panel_message (3).png">
+                        <collision-poly>
+                            <point x="0.0260223" y="0.141414" />
+                            <point x="0.5" y="0.111111" />
+                            <point x="0.960967" y="0.212121" />
+                            <point x="0.988848" y="0.494949" />
+                            <point x="0.957249" y="0.767677" />
+                            <point x="0.5" y="0.929293" />
+                            <point x="0.0241636" y="0.868687" />
+                            <point x="0.0148699" y="0.494949" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="MailMessageKotek" pingpong="0" repeatcount="1" repeatto="0" sid="833434909673898" speed="5">
+                    <frame duration="1" hotspotX="0.500949" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРок_14\preview_scenario_&amp;_illustrations\message (2).png">
+                        <collision-poly>
+                            <point x="0.0151803" y="0.0869565" />
+                            <point x="0.499051" y="0.076087" />
+                            <point x="0.967742" y="0.184783" />
+                            <point x="0.99241" y="0.5" />
+                            <point x="0.962049" y="0.782609" />
+                            <point x="0.499051" y="0.956522" />
+                            <point x="0.0132827" y="0.923913" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="MailMessageKus9" pingpong="0" repeatcount="1" repeatto="0" sid="262109851036295" speed="5">
+                    <frame duration="1" hotspotX="0.500942" hotspotY="0.505263" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\КРок_14\preview_scenario_&amp;_illustrations\message (3).png">
+                        <collision-poly>
+                            <point x="0.0169492" y="0.0947368" />
+                            <point x="0.499058" y="0.0736842" />
+                            <point x="0.966102" y="0.189474" />
+                            <point x="0.984934" y="0.494737" />
+                            <point x="0.958569" y="0.768421" />
+                            <point x="0.499058" y="0.926316" />
+                            <point x="0.0169492" y="0.905263" />
+                            <point x="0" y="0.494737" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="PhotoSent" pingpong="0" repeatcount="1" repeatto="0" sid="339249020775662" speed="5">
+                    <frame duration="1" hotspotX="0.500994" hotspotY="0.505376" original-source="C:\Users\vasea\OneDrive\Робочий стіл\16,17,18 сценарії\17 сценарій сексчатинг старша\preview_scenario_&amp;_illustrations\NEW_panel_message (1).png">
+                        <collision-poly>
+                            <point x="0.0218688" y="0.11828" />
+                            <point x="0.499006" y="0.0645161" />
+                            <point x="0.980119" y="0.107527" />
+                            <point x="0.992048" y="0.494624" />
+                            <point x="0.980119" y="0.892473" />
+                            <point x="0.499006" y="0.935484" />
+                            <point x="0.0218688" y="0.88172" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="PhotoReceived" pingpong="0" repeatcount="1" repeatto="0" sid="476466312454447" speed="5">
+                    <frame duration="1" hotspotX="0.501014" hotspotY="0.505263" original-source="C:\Users\vasea\OneDrive\Робочий стіл\16,17,18 сценарії\17 сценарій сексчатинг старша\preview_scenario_&amp;_illustrations\NEW_panel_message (2).png">
+                        <collision-poly>
+                            <point x="0.0223124" y="0.115789" />
+                            <point x="0.977688" y="0.115789" />
+                            <point x="1" y="0.494737" />
+                            <point x="0.985801" y="0.926316" />
+                            <point x="0.498986" y="0.957895" />
+                            <point x="0.0141988" y="0.926316" />
+                            <point x="0" y="0.494737" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="FileAttached" pingpong="0" repeatcount="1" repeatto="0" sid="739888761159109" speed="5">
+                    <frame duration="1" hotspotX="0.501006" hotspotY="0.5" original-source="C:\Users\yaroslavas\Desktop\upd_плашки\sample (1).png">
+                        <collision-poly>
+                            <point x="0.0160966" y="0.0909091" />
+                            <point x="0.498994" y="0.0340909" />
+                            <point x="0.985915" y="0.0795455" />
+                            <point x="0.997988" y="0.5" />
+                            <point x="0.985915" y="0.920455" />
+                            <point x="0.498994" y="0.954545" />
+                            <point x="0.0181087" y="0.897727" />
+                            <point x="0.00603622" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Telegram" pingpong="0" repeatcount="1" repeatto="0" sid="447668232425775" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\yaroslavas\Desktop\upd_плашки\sample (3).png">
+                        <collision-poly>
+                            <point x="0.0141129" y="0.0795455" />
+                            <point x="0.5" y="0.0340909" />
+                            <point x="0.985887" y="0.0795455" />
+                            <point x="0.995968" y="0.5" />
+                            <point x="0.983871" y="0.909091" />
+                            <point x="0.5" y="0.954545" />
+                            <point x="0.016129" y="0.909091" />
+                            <point x="0.00403226" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Instagram" pingpong="0" repeatcount="1" repeatto="0" sid="331000093804614" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505747" original-source="C:\Users\yaroslavas\Desktop\upd_плашки\sample (4).png">
+                        <collision-poly>
+                            <point x="0.0141129" y="0.0804598" />
+                            <point x="0.5" y="0.0344828" />
+                            <point x="0.985887" y="0.0804598" />
+                            <point x="0.985887" y="0.91954" />
+                            <point x="0.5" y="0.965517" />
+                            <point x="0.016129" y="0.908046" />
+                            <point x="0.00403226" y="0.494253" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="YouBanned" pingpong="0" repeatcount="1" repeatto="0" sid="397888376929950" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505747" original-source="C:\Users\yaroslavas\Desktop\upd_плашки\sample (5).png">
+                        <collision-poly>
+                            <point x="0.0141129" y="0.0804598" />
+                            <point x="0.5" y="0.0344828" />
+                            <point x="0.985887" y="0.0804598" />
+                            <point x="0.985887" y="0.91954" />
+                            <point x="0.5" y="0.965517" />
+                            <point x="0.016129" y="0.908046" />
+                            <point x="0.00403226" y="0.494253" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="LinkReceived" pingpong="0" repeatcount="1" repeatto="0" sid="798339306712937" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\20 сценарій- заробітчани старша\preview_scenario_&amp;_illustrations\NEW_MESSAGE (1).png">
+                        <collision-poly>
+                            <point x="0.018" y="0.102273" />
+                            <point x="0.5" y="0.0568182" />
+                            <point x="0.984" y="0.0909091" />
+                            <point x="0.986" y="0.920455" />
+                            <point x="0.5" y="0.977273" />
+                            <point x="0.018" y="0.897727" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="WorldWork" pingpong="0" repeatcount="1" repeatto="0" sid="210268384305328" speed="5">
+                    <frame duration="1" hotspotX="0.501002" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\20 сценарій- заробітчани старша\preview_scenario_&amp;_illustrations\NEW_MESSAGE (2).png">
+                        <collision-poly>
+                            <point x="0.0180361" y="0.102273" />
+                            <point x="0.498998" y="0.0568182" />
+                            <point x="0.983968" y="0.0909091" />
+                            <point x="0.985972" y="0.920455" />
+                            <point x="0.498998" y="0.965909" />
+                            <point x="0.0160321" y="0.909091" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="PhotoDeleted" pingpong="0" repeatcount="1" repeatto="0" sid="388262159581975" speed="5">
+                    <frame duration="1" hotspotX="0.500994" hotspotY="0.505495" original-source="C:\Users\yaroslavas\Desktop\UPD_26.01\message.png">
+                        <collision-poly>
+                            <point x="0.0198807" y="0.10989" />
+                            <point x="0.499006" y="0.0769231" />
+                            <point x="0.978131" y="0.120879" />
+                            <point x="0.982107" y="0.901099" />
+                            <point x="0.499006" y="0.967033" />
+                            <point x="0.0178926" y="0.901099" />
+                            <point x="0.00795229" y="0.494505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChatMsg" sid="732306088708200">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="632127796241468">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="FadeIn" sid="346402692202315">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="FadeOut" sid="705956999545267">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>ChatBg</type>
+                <type>ChatMsg</type>
+                <type>ChatNickname</type>
+                <type>ChatAvatar</type>
+            </container>
+        </object-type>
+        <object-type global="1" name="NameTranslations" sid="655813093725051">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type global="1" name="Charlist" sid="800805716455681">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="GodVoiceText" sid="774592215945871">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GUI_Bg" sid="877746609086562">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="FadeOut" sid="939075279697315">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="FadeIn" sid="565403037082772">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Empty" pingpong="0" repeatcount="1" repeatto="0" sid="406557929996330" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Pause" pingpong="0" repeatcount="1" repeatto="0" sid="130992396938375" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500626" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Беклог Крока\UPD\пауза\board.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="BoardWait" pingpong="0" repeatcount="1" repeatto="0" sid="470086663116311" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 4\board (2).png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Black" pingpong="0" repeatcount="1" repeatto="0" sid="273351565970478" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="BoardCode" pingpong="0" repeatcount="1" repeatto="0" sid="552080875727920" speed="5">
+                    <frame duration="1" hotspotX="0.500284" hotspotY="0.500463" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 6\board.png">
+                        <collision-poly>
+                            <point x="0.0414773" y="0.0675301" />
+                            <point x="0.5" y="0.0212766" />
+                            <point x="0.963636" y="0.0592044" />
+                            <point x="0.982955" y="0.499537" />
+                            <point x="0.975568" y="0.960222" />
+                            <point x="0.0238636" y="0.961147" />
+                            <point x="0.0164773" y="0.499537" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="VoteEndBoard" pingpong="0" repeatcount="1" repeatto="0" sid="461404604191853" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 4\board (3).png">
+                        <collision-poly>
+                            <point x="0.0386364" y="0.0610961" />
+                            <point x="0.5" y="0.000898473" />
+                            <point x="0.959659" y="0.0637916" />
+                            <point x="0.982955" y="0.499551" />
+                            <point x="0.975568" y="0.961366" />
+                            <point x="0.0238636" y="0.962264" />
+                            <point x="0.0164773" y="0.499551" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="EmoScaleTitle" pingpong="0" repeatcount="1" repeatto="0" sid="530799488855089" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 9\title.png">
+                        <collision-poly>
+                            <point x="0.0473441" y="0.178261" />
+                            <point x="0.5" y="0.113043" />
+                            <point x="0.952656" y="0.178261" />
+                            <point x="0.965358" y="0.5" />
+                            <point x="0.946882" y="0.8" />
+                            <point x="0.5" y="0.847826" />
+                            <point x="0.0531178" y="0.8" />
+                            <point x="0.0357968" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StartBg" sid="849182347874143">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="210244468582376" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka\1_loading\bg.png">
+                        <collision-poly>
+                            <point x="0.000517063" y="0.00092081" />
+                            <point x="0.999483" y="0.00092081" />
+                            <point x="0.998966" y="0.998158" />
+                            <point x="0.00103413" y="0.998158" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Bar" pingpong="0" repeatcount="1" repeatto="0" sid="116073131483511" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka\8_loading\bar (3).png">
+                        <collision-poly>
+                            <point x="0.00542005" y="0.142857" />
+                            <point x="0.5" y="0.0357143" />
+                            <point x="0.99458" y="0.142857" />
+                            <point x="0.99458" y="0.857143" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00542005" y="0.857143" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LoadingBar" sid="103296767573942">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Bar" pingpong="0" repeatcount="1" repeatto="0" sid="206043248912320" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka\8_loading\bar (3).png">
+                        <collision-poly>
+                            <point x="0.00542005" y="0.142857" />
+                            <point x="0.5" y="0.0357143" />
+                            <point x="0.99458" y="0.142857" />
+                            <point x="0.99458" y="0.857143" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00542005" y="0.857143" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LoadingBarBlend" sid="403929219262862">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka\8_loading\bar (2).png" />
+        </object-type>
+        <object-type name="ProgressGem" sid="439108183451291">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="129737542050768" speed="5">
+                    <frame duration="1" hotspotX="0.509804" hotspotY="0.509804" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka\8_loading\bar (1).png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="FontsLoader" sid="362759275526919">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="OptionMsg" sid="140315099386677">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="362362781265818">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="555453768382518">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <container>
+                <type>OptionMsg</type>
+                <type>OptionMsgText</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748735920207460" speed="5">
+                    <frame duration="1" hotspotX="0.50101" hotspotY="0.398907" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 6\panel (2).png">
+                        <collision-poly>
+                            <point x="0.0259481" y="0.0792683" />
+                            <point x="0.499002" y="0" />
+                            <point x="0.974052" y="0.0792683" />
+                            <point x="1" y="0.5" />
+                            <point x="0.974052" y="0.920732" />
+                            <point x="0.499002" y="0.993902" />
+                            <point x="0.0259481" y="0.920732" />
+                            <point x="0.00199601" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EmoScaleText" sid="826374062270817">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="id" sid="961307798431718" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="EmoScaleBar" sid="494689564240317">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="lastEmoScale" sid="758581177078903" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="766591858709000" speed="5">
+                    <frame duration="1" hotspotX="0.500322" hotspotY="0.511111" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 9\bar_student.png">
+                        <collision-poly>
+                            <point x="0.00321543" y="0.111111" />
+                            <point x="0.499678" y="0.0666667" />
+                            <point x="0.996785" y="0.111111" />
+                            <point x="0.996785" y="0.888889" />
+                            <point x="0.499678" y="0.977778" />
+                            <point x="0.00385852" y="0.866667" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EmoScaleProgress" sid="665918384851739">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="active" sid="604201982878464" type="boolean" />
+                <instance-variable name="percentage" sid="679874242463649" type="number" />
+                <instance-variable name="dummy" sid="524420489105858" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Sine" sid="743619880115002">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="LiteTween" sid="601174085536903">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="535082627896301">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Active" pingpong="0" repeatcount="1" repeatto="0" sid="419059817732750" speed="5">
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.508197" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 9\icon (1).png">
+                        <collision-poly>
+                            <point x="0.490196" y="0" />
+                            <point x="1" y="0.490196" />
+                            <point x="0.490196" y="1" />
+                            <point x="0.0196078" y="0.490196" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Dummy" pingpong="0" repeatcount="1" repeatto="0" sid="598518082799137" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503401" original-source="C:\Users\vasea\OneDrive\Робочий стіл\Krok Suka 9\icon (5).png">
+                        <collision-poly>
+                            <point x="0.490196" y="0" />
+                            <point x="1" y="0.490196" />
+                            <point x="0.490196" y="1" />
+                            <point x="0.0196078" y="0.490196" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Loader" sid="454728313617689">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="type" sid="906001413098779" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="407593602445247" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="CharImagePoints" sid="703751251243163">
+            <plugin id="XML" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="InterBlack" plugin-id="Text" sid="309363670041467">
+            <members>
+                <member>ChatNickname</member>
+                <member>SubtitleText</member>
+            </members>
+        </family>
+        <family name="CandaraBold" plugin-id="Text" sid="212831101044566">
+            <members>
+                <member>ChatMsg</member>
+                <member>CodeTxt</member>
+                <member>GodVoiceText</member>
+                <member>OptionText</member>
+                <member>Text</member>
+            </members>
+        </family>
+        <family name="Candara" plugin-id="Text" sid="290919806678776">
+            <members>
+                <member>OptionMsgText</member>
+                <member>StoryBox</member>
+            </members>
+        </family>
+        <family name="InterSemiBold" plugin-id="Text" sid="503620899606577">
+            <members>
+                <member>EmoScaleText</member>
+                <member>Speaker</member>
+                <member>VotePercentageText</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>GameObjects.xml</layout>
+        <layout>StartScreen.xml</layout>
+        <layout>Vote.xml</layout>
+        <layout>Loading.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-folder name="Includes">
+            <event-sheet>Common.xml</event-sheet>
+            <event-sheet>Photon.xml</event-sheet>
+            <event-sheet>Sync.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Layouts">
+            <event-sheet>StartScreen.xml</event-sheet>
+            <event-sheet>Vote.xml</event-sheet>
+        </event-folder>
+        <event-sheet>Loading.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Function" uid="8" />
+        <global-instance type="Browser" uid="10" />
+        <global-instance type="Touch" uid="11">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="21" />
+        <global-instance type="Audio" uid="27">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="32" />
+        <global-instance type="Photon" uid="46">
+            <properties>
+                <appid>6f7d2992-20d4-4e11-a80c-f34c10ae820c</appid>
+                <appversion>1.0</appversion>
+                <protocol>wss</protocol>
+                <region>ru</region>
+                <hosttype>Photon Cloud</hosttype>
+                <selfhostedaddress>127.0.0.1:9090</selfhostedaddress>
+                <loglevel>INFO</loglevel>
+            </properties>
+        </global-instance>
+        <global-instance type="LocalStorage" uid="95" />
+        <global-instance type="AJAX" uid="123" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="fonts">
+            <file name="candara_bold.woff" />
+            <file name="candara_bold.woff2" />
+            <file name="fonts.css" />
+            <file name="inter-black.woff" />
+            <file name="inter-black.woff2" />
+            <file name="candara.woff" />
+            <file name="candara.woff2" />
+            <file name="inter-semibold.woff2" />
+            <file name="inter-semibold.woff" />
+            <file name="inter-medium.woff2" />
+            <file name="inter-medium.woff" />
+        </file-folder>
+    </files-folder>
+</c2project>

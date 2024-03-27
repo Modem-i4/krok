@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>StartScreen</name>
+    <events>
+        <include>Common</include>
+        <variable constant="0" name="GameMode" sid="106463536597921" static="0" type="text"></variable>
+        <event-block sid="533236133072307">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="843362151523093" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="275448741166300" type="System" />
+                <action id="-9" name="Set value" sid="615509585459920" type="System">
+                    <param id="0" name="Variable">code</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="859611294881953" type="System">
+                    <param id="0" name="Layer">&quot;project-info&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="735306770231032" type="System">
+                    <param id="0" name="Layer">&quot;about-info&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="357824701825482" type="System">
+                    <param id="0" name="Layer">&quot;Tutorial&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="398827874315222" type="System">
+                    <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="238384649286400" type="System">
+                    <param id="0" name="Variable">GameMode</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="1" name="Request project file" sid="839951363572304" type="AJAX">
+                    <param id="0" name="Tag">&quot;data&quot;</param>
+                    <param id="1" name="File">Data.xml</param>
+                </action>
+                <action id="0" name="Request URL" sid="446885066139459" type="AJAX">
+                    <param id="0" name="Tag">&quot;CharImagePoints&quot;</param>
+                    <param id="1" name="URL">IMG_ROOT&amp;&quot;../chars_mapping.xml?v=&quot;&amp;projectversion</param>
+                </action>
+                <action id="201" name="Reset" sid="494182060907188" type="Photon" />
+                <action id="3" name="Clear" sid="255483574467002" type="DataPack" />
+                <action id="1" name="Get item" sid="676263383884633" type="LocalStorage">
+                    <param id="0" name="Key">&quot;NamesTranslations&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="476281319836198" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="0" name="Call function" sid="671816183474282" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}0{###}0.15{###}1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="792718749321482">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="108560116675424" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="267937108717891" type="Text">
+                            <param id="0" name="Text">&quot;ver. &quot;&amp;projectversion</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="340008877180478">
+            <conditions>
+                <condition id="0" name="On completed" sid="728110111591712" type="AJAX">
+                    <param id="0" name="Tag">&quot;data&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Load" sid="445202714391546" type="Data">
+                    <param id="0" name="XML">AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="472517693788456">
+            <conditions>
+                <condition id="0" name="On completed" sid="811438632336645" type="AJAX">
+                    <param id="0" name="Tag">&quot;CharImagePoints&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Load" sid="955483840806990" type="CharImagePoints">
+                    <param id="0" name="XML">AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="290167886071286">
+            <conditions>
+                <condition id="1" name="On item get" sid="252649912998665" type="LocalStorage">
+                    <param id="0" name="Key">&quot;NamesTranslations&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Load" sid="262966004758062" type="NamesTranslations">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="892636018337025">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="819783235996790" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="178923570276061" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Tutorial&quot;{###}0{###}0.15</param>
+                </action>
+                <action id="0" name="Call function" sid="682554441168500" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;project-info&quot;{###}0{###}0.15</param>
+                </action>
+                <action id="0" name="Call function" sid="459967108215448" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;about-info&quot;{###}0{###}0.15</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="944596979406552">
+            <conditions>
+                <condition id="-17" name="Compare opacity" sid="217565153494643" type="System">
+                    <param id="0" name="Layer">&quot;Tutorial&quot;</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Opacity">2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="538755192051001">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="350311249119299" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="151782601114566">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="267686578971175" type="Button">
+                                    <param id="0" name="Animation">&quot;OpenTutorial&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="867714643255035" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Tutorial&quot;{###}0{###}0.15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="482528343924188">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="701622385776759" type="Button">
+                                    <param id="0" name="Animation">&quot;close&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="181913278912613" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Tutorial&quot;{###}0{###}0.15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="974734690937716">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="364562687882100" type="System">
+                    <param id="0" name="Variable">GameMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Singleplayer&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="117144256988950" type="System">
+                    <param id="0" name="Variable">GameMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Create&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="609354147606442" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="405486800886225">
+            <conditions>
+                <condition id="17" name="On tap object" sid="870582917560400" type="Touch">
+                    <param id="0" name="Object">Play</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="522021700803610" type="System">
+                    <param id="0" name="Layer">&quot;Tutorial&quot;</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">2</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="697259983256175" type="System">
+                    <param id="0" name="Layer">&quot;project-info&quot;</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">2</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="410935595414170" type="System">
+                    <param id="0" name="Layer">&quot;about-info&quot;</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="702238785011270">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="131968545613232" type="Play">
+                            <param id="0" name="Animation">&quot;Tutorial&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="399255467960019" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Tutorial&quot;{###}100{###}0.15</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="263945633975167">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="427194148998776" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="795260421535524" type="System">
+                            <param id="0" name="Variable">GameMode</param>
+                            <param id="1" name="Value">Play.AnimationName</param>
+                        </action>
+                        <action id="0" name="Call function" sid="413613073872169" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}100{###}0.15</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="796256147254036" title="about">
+            <sub-events>
+                <event-block sid="557345707136890">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="849277399774530" type="System">
+                            <param id="0" name="Layer">&quot;project-info&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                        <condition id="-16" name="Is on layer" sid="953170121140261" type="Hoverable">
+                            <param id="0" name="Layer">&quot;project-info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="908735416179431">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="547606122337362" type="Mouse">
+                                    <param id="0" name="Object">Hoverable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="352962727218742" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="737102062402030">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="716137585940995" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="499027579556792" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="320276513628835">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="289982764946488" type="System" />
+                        <condition id="-17" name="Compare opacity" sid="736909074798162" type="System">
+                            <param id="0" name="Layer">&quot;about-info&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                        <condition id="-16" name="Is on layer" sid="761904292494882" type="Hoverable">
+                            <param id="0" name="Layer">&quot;about-info&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="451279380283872">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="577707810182380" type="Mouse">
+                                    <param id="0" name="Object">Hoverable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="297858292021466" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="105941070375009">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="351494064880795" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="715937616791706" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="812166009225615">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="771527478250604" type="System" />
+                        <condition id="-17" name="Compare opacity" sid="207822685901179" type="System">
+                            <param id="0" name="Layer">&quot;Tutorial&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                        <condition id="-16" name="Is on layer" sid="700322028135400" type="Hoverable">
+                            <param id="0" name="Layer">&quot;Tutorial&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="948524968164561">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="692804461519356" type="Mouse">
+                                    <param id="0" name="Object">Hoverable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="553764556590702" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="300963823574173">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="540668597226433" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="264663364031367" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="533605007759423">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="994681438734298" type="System" />
+                        <condition id="-16" name="Is on layer" sid="467168997713462" type="Hoverable">
+                            <param id="0" name="Layer">&quot;main&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="168018546171711">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="855748770830450" type="Mouse">
+                                    <param id="0" name="Object">Hoverable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="993575336773618" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="643783837201893">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="182167127101449" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="906803480092572" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="359523960950835">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="665227394340808" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="836834372436377" type="System">
+                            <param id="0" name="Layer">&quot;Tutorial&quot;</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">20</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="984794089012234" type="System">
+                            <param id="0" name="Layer">&quot;project-info&quot;</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">20</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="294723470349362" type="System">
+                            <param id="0" name="Layer">&quot;about-info&quot;</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">20</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="417246273059576">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="561390401013435" type="Button">
+                                    <param id="0" name="Animation">&quot;Project&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="343009060673652" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;project-info&quot;{###}100{###}0.15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="220773942445151">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="555582358212345" type="Button">
+                                    <param id="0" name="Animation">&quot;Etc&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="713035996069369" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;about-info&quot;{###}100{###}0.15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="971188300482509">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="782258610458816" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="188840701368823" type="Button">
+                            <param id="0" name="Animation">&quot;close&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="183620069188461">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="102496499343013" type="System">
+                                    <param id="0" name="Layer">&quot;project-info&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="546503224303602" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;project-info&quot;{###}0{###}0.15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="327670230748994">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="967725106139383" type="System">
+                                    <param id="0" name="Layer">&quot;about-info&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="260467947204918" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;about-info&quot;{###}0{###}0.15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="115803114714494">
+            <conditions>
+                <condition id="3" name="On touched object" sid="322724051852733" type="Touch">
+                    <param id="0" name="Object">Hyperlink</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="585262150082752" type="System">
+                    <param id="0" name="Object">Hyperlink</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="572717041239028" type="System">
+                    <param id="0" name="Layer">Hyperlink.LayerName</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Opacity">80</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="684644721842148">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="835928798037916" type="System">
+                            <param id="0" name="First value">find(Hyperlink.link, &quot;tel:&quot;)</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Go to URL" sid="301734652884604" type="Browser">
+                            <param id="0" name="URL">Hyperlink.link</param>
+                            <param id="1" name="Target">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="309410835509414">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="949367626721768" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Open URL in new window" sid="375567757200088" type="Browser">
+                            <param id="0" name="URL">Hyperlink.link</param>
+                            <param id="1" name="Tag">&quot;link&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="564891806110838" title="Tutorial">
+            <sub-events>
+                <variable constant="0" name="page" sid="122100293352127" static="1" type="number">0</variable>
+                <variable constant="1" name="MAXPAGES" sid="877235120821287" static="0" type="number">10</variable>
+                <event-block sid="341501999193110">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="159150536675954" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="762875291869979" type="System">
+                            <param id="0" name="Variable">page</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="967796538910793" type="Function">
+                            <param id="0" name="Name">&quot;setPageContent&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="189490362179112">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="737423171556700" type="SliderArrow">
+                            <param id="0" name="Animation">&quot;left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="712754176818473">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="296216205014103" type="System">
+                                    <param id="0" name="Variable">page</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="165103015340760" type="SliderArrow">
+                                    <param id="0" name="Opacity">lerp(Self.Opacity, 0, 0.15)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="843628184736256">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="676887635912581" type="System">
+                                    <param id="0" name="Variable">page</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="742356136154938" type="SliderArrow">
+                                    <param id="0" name="Opacity">lerp(Self.Opacity, 100, 0.15)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block any="1" sid="902898018850727">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="375406411332554" type="Touch">
+                                            <param id="0" name="Object">SliderArrow</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="512252475073835" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="808301433039883" type="Function">
+                                            <param id="0" name="Name">&quot;setPageContent&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="855683883838530">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="668172636033426" type="SliderArrow">
+                            <param id="0" name="Animation">&quot;DoubleRight&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="184395795745836">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="982757635131909" type="System">
+                                    <param id="0" name="Variable">page</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">MAXPAGES</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="713247564322114" type="SliderArrow">
+                                    <param id="0" name="Opacity">lerp(Self.Opacity, 100, 0.15)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="443765376511019">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="603065503231484" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="326599898641828" type="SliderArrow">
+                                    <param id="0" name="Opacity">lerp(Self.Opacity, 0, 0.15)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="328272456281655">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="466906074434110" type="SliderArrow">
+                            <param id="0" name="Animation">&quot;right&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="144519333383218">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="409383660762447" type="Touch">
+                                    <param id="0" name="Object">SliderArrow</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="431993977430126" type="System">
+                                    <param id="0" name="Variable">page</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="450284760761105">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="157539285489130" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">MAXPAGES+1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="504862059551921" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="894823754517530">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="204464442600756" type="Function">
+                                            <param id="0" name="Name">&quot;setPageContent&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="387368473486782">
+                    <conditions>
+                        <condition id="0" name="On function" sid="718241534829389" type="Function">
+                            <param id="0" name="Name">&quot;setPageContent&quot;</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="316313413041082" type="Info">
+                            <param id="0" name="Animation">&quot;Instruction&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="505969715530814" type="Info">
+                            <param id="0" name="Frame number">page</param>
+                        </action>
+                        <action id="0" name="Set text" sid="636897919872611" type="InstructionPage">
+                            <param id="0" name="Text">page+1&amp;&quot;/&quot;&amp;MAXPAGES+1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

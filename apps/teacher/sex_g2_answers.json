@@ -1,0 +1,51 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["photoPick"],
+["Селфі","plot&photoPick_selfie"],
+["Фото в моменті","plot&photoPick_momentPhoto"],
+["Спільне фото","plot&photoPick_commonPhoto"]
+],
+
+[["whatIDo"],
+["Відповісти на коментар","plot&whatIDo_answer"],
+["Переглянути профіль","plot&whatIDo_profile"],
+["Ігнорувати","plot&whatIDo_ignore"]
+],
+
+[["howIAnswer"],
+["Привітно","plot&howIAnswer_friendly|set&ignore&no"],
+["Коротко","plot&howIAnswer_short|set&ignore&no"],
+["Ігнорувати","plot&howIAnswer_ignore|set&ignore&yes"]
+],
+
+[["whatIAnswer"],
+["Зацікавлено","plot&whatIAnswer_interest"],
+["Нейтрально","plot&whatIAnswer_neutral"],
+["Байдуже","plot&whatIAnswer_indifferently"]
+],
+
+[["photoSend"],
+["Надіслати фото","plot&photoSend_send"],
+["Відмовитись","plot&photoSend_refuse"],
+["Перевести тему","plot&photoSend_changeTopic"]
+],
+
+[["shouldIsend"],
+["Надіслати","plot&shouldIsend_send"],
+["Відмовитись","plot&shouldIsend_refuse"],
+["Перевести тему","plot&shouldIsend_changeTopic"]
+],
+
+[["sendNudes"],
+["Надіслати","plot&sendNudes_send"],
+["Відмовитись","plot&sendNudes_refuse"],
+["Перевести тему","plot&sendNudes_changeTopic"]
+],
+
+[["whatISay"],
+["Довіритись","plot&whatISay_truth"],
+["Перевести тему","plot&whatISay_changeTopic"],
+["Збрехати","plot&whatISay_lie"]
+]
+
+]}

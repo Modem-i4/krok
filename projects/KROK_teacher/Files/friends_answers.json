@@ -1,0 +1,45 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+    [["newBoy"],
+    ["Байдужість","plot&newBoy_indifference"],
+    ["Розгубленість","plot&newBoy_confusion"],
+    ["Невдоволення","plot&newBoy_discontent"]
+    ],
+    
+    [["boyConflict"],
+    ["Ігнорувати","plot&boyConflict_ignore"],
+    ["Перевести тему","plot&boyConflict_evade"],
+    ["Заспокоїти","plot&boyConflict_calmDown"]
+    ],
+    
+    [["tellGuys"],
+    ["Пояснити","plot&tellGuys_explain"],
+    ["Натякнути","plot&tellGuys_hint"],
+    ["Перевести тему","plot&tellGuys_evade"]
+    ],
+    
+    [["frameMark"],
+    ["Ступор","plot&frameMark_stun"],
+    ["Розгубленість","plot&frameMark_confusion"],
+    ["Невдоволення","plot&frameMark_discontent"]
+    ],
+    
+    [["fight"],
+    ["Кричати","plot&fight_scream|set&fight&ignore"],
+    ["Розбороняти","plot&fight_help|set&fight&help"],
+    ["Дивитися","plot&fight_watch|set&fight&ignore"]
+    ],
+    
+    [["tellTeacher"],
+    ["Захистити Марка","plot&tellTeacher_Mark"],
+    ["\"Чому я перший?\"","plot&tellTeacher_evade"],
+    ["Захистити друзів","plot&tellTeacher_friends"]
+    ],
+    
+    [["tellTeacher2"],
+    ["Сказати правду","plot&tellTeacher_Mark"],
+    ["Мовчати","plot&tellTeacher2_silent"],
+    ["Збрехати","plot&tellTeacher_friends"]
+    ]                                
+    
+    ]}

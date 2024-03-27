@@ -1,0 +1,38 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["wanna_walk"],
+["Погодитись","plot&wanna_walk_Agree"],
+["Запропонувати інше","plot&wanna_walk_Other"],
+["Відмовитись","plot&wanna_walk_Disagree"]
+],
+
+[["speak_free_to_me"],
+["Вибачитись","plot&speak_free_to_me_Sorry"],
+["Засумніватись","plot&speak_free_to_me_Doubt"],
+["Не погодитись","plot&speak_free_to_me_Disagree"]
+],
+
+[["accept_scarf"],
+["Прийняти","plot&accept_scarf_Accept"],
+["Ухилитись від відповіді","plot&accept_scarf_Evade"],
+["Відмовитись","plot&accept_scarf_Decline"]
+],
+
+[["have_you_had_boyfriend"],
+["Розказати","plot&have_you_had_boyfriend_Tell"],
+["Ухилитись від відповіді","plot&have_you_had_boyfriend_Evade"],
+["Не відповідати","plot&have_you_had_boyfriend_Mute"]
+],
+
+[["sex"],
+["Бути відвертою","plot&sex_yes"],
+["Перевести тему","plot&sex_evade"],
+["Заборонити","plot&sex_no"]
+],
+
+[["where_you_been"],
+["Збрехати","plot&where_you_been_Lie"],
+["Змінити тему","plot&where_you_been_Evade"],
+["Розповісти","plot&where_you_been_Tell"]
+]
+]}

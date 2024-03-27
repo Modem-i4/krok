@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'intermedium';
+    src: url('inter-medium.woff2') format('woff2'),
+         url('inter-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'candara';
+    src: url('candara.woff2') format('woff2'),
+         url('candara.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'candarabold';
+    src: url('candara_bold.woff2') format('woff2'),
+         url('candara_bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'interblack';
+    src: url('inter-black.woff2') format('woff2'),
+         url('inter-black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'intersemibold';
+    src: url('inter-semibold.woff2') format('woff2'),
+         url('inter-semibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

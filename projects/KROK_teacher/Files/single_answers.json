@@ -1,0 +1,33 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["whatIDo"],
+["Розповісти","plot&whatIDo_tell"],
+["Перевести тему","plot&whatIDo_changeTopic"],
+["Збрехати","plot&whatIDo_lie"]
+],
+
+[["whatISay"],
+["Розповісти","plot&whatISay_tell"],
+["Перевести тему","plot&whatISay_changeTopic"],
+["Збрехати","plot&whatISay_lie"]
+],
+
+[["whatDoIFeel"],
+["Здивування","plot&whatDoIFeel_surprise"],
+["Образу","plot&whatDoIFeel_offense"],
+["Роздратування","plot&whatDoIFeel_anger"]
+],
+
+[["advice"],
+["Байдужість","plot&advice_idc"],
+["Образу","plot&advice_offenseAnger"],
+["Роздратування","plot&advice_offenseAnger"]
+],
+
+[["whatIDoFinal"],
+["Ігнорувати всіх","plot&whatIDoFinal_ignore"],
+["Відплатити {boy6|Максу|Вадиму|Захару|Артему}","plot&whatIDoFinal_fight"],
+["Поговорити з {boy6|Максом|Вадимом|Захаром|Артемом}","plot&whatIDoFinal_speak"]
+]
+
+]}

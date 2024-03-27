@@ -1,0 +1,270 @@
+<root>
+<boy1>
+	<default x="194" y="826"/>
+	<defaultSleevesUp x="190" y="826"/>
+	<hideEyes x="182" y="824"/>
+	<hideEyesSleevesUp x="184" y="826"/>
+	<sad x="182" y="824"/>
+	<sadSleevesUp x="183" y="824"/>
+	<tears x="182" y="824"/>
+	<tearsSleevesUp x="182" y="824"/>
+	<smile x="290" y="827"/>
+</boy1>
+<boy2>
+	<default x="170" y="842"/>
+	<smile x="215" y="851"/>
+</boy2>
+<girl1>
+	<default x="250" y="731"/>
+	<smile x="284" y="731"/>
+	<anger x="196" y="731"/>
+	<cranky x="224" y="728"/>
+</girl1>
+<teacher1>
+	<default x="220" y="936"/>
+	<smile x="320" y="936"/>
+	<worried x="204" y="936"/>
+	<withShowelSleevesUp x="287" y="936"/>
+	<compassionSleevesUp x="289" y="936"/>
+	<worriedSleevesUp x="263" y="936"/>
+	<angry x="220" y="936"/>
+	<dreaming x="217" y="906"/>
+</teacher1>
+<girl2>
+	<cry x="115" y="856"/>
+	<default x="115" y="869"/>
+	<dreaming x="115" y="868"/>
+	<happy x="115" y="869"/>
+	<hideEyes x="115" y="856"/>
+	<sad x="115" y="869"/>
+	<worried x="152" y="868"/>
+	<embarrassed x="153" y="868"/>
+	<scared x="152" y="868"/>
+	<angry x="117" y="868"/>
+</girl2>
+<uncle1>
+	<default x="212" y="992"/>
+	<angry x="185" y="992"/>
+	<sad x="178" y="995"/>
+	<withScarf x="377" y="995"/>
+	<withWallet x="137" y="984"/>
+	<withChocolate x="137" y="984"/>
+</uncle1>
+<woman1>
+	<default x="253" y="955"/>
+	<tense x="215" y="940"/>
+	<angry x="254" y="944"/>
+	<worried x="215" y="945"/>
+	<dreaming x="247" y="948"/>
+	<angrySpeech x="251" y="951"/>
+</woman1>
+<kid1>
+	<default x="362" y="749"/>
+</kid1>
+<kid2>
+	<default x="228" y="740"/>
+</kid2>
+<boy3>
+	<default x="226" y="819"/>
+	<sad x="226" y="818"/>
+	<angry x="226" y="818"/>
+	<cry x="226" y="819"/>
+	<strained x="226" y="818"/>
+	<hideEyes x="226" y="819"/>
+</boy3>
+<boy4>
+	<default x="226" y="819"/>
+	<telling x="344" y="818"/>
+	<angry x="226" y="819"/>
+	<mockery x="226" y="819"/>
+	<worried x="214" y="818"/>
+	<happy x="214" y="818"/>
+</boy4>
+<boy5>
+	<default x="226" y="818"/>
+	<angry x="299" y="832"/>
+	<cross x="299" y="832"/>
+	<mockery x="300" y="832"/>
+</boy5>
+<teacher2>
+	<default x="288" y="1048"/>
+	<smile x="271" y="1047"/>
+	<withSheet x="444" y="1044"/>
+	<angry x="274" y="1040"/>
+</teacher2>
+<girl3>
+	<angry x="157" y="911"/>
+	<default x="212" y="906"/>
+	<happy x="212" y="905"/>
+	<mockery x="221" y="909"/>
+</girl3>
+<girl4>
+	<default x="333" y="838"/>
+	<capricious x="245" y="838"/>
+</girl4>
+<boy6>
+	<default x="321" y="918"/>
+	<happy x="267" y="918"/>
+	<worried x="267" y="918"/>
+	<mockery x="334" y="918"/>
+	<angry x="267" y="918"/>
+</boy6>
+<boy7>
+	<default x="230" y="826"/>
+	<embarrassed x="221" y="826"/>
+	<happy x="375" y="826"/>
+	<sad x="221" y="826"/>
+	<hideEyes x="195" y="826"/>
+	<angry x="195" y="826"/>
+	<mockery x="195" y="826"/>
+	<crying x="206" y="826"/>
+</boy7>
+<boy8>
+	<default x="230" y="792"/>
+	<happy x="231" y="792"/>
+	<sad x="231" y="792"/>
+	<angry x="230" y="792"/>
+	<hideEyes x="231" y="792"/>
+</boy8>
+<man1>
+	<default x="309" y="1007"/>
+	<angry x="308" y="1007"/>
+	<happy x="495" y="1007"/>
+	<surprised x="308" y="1007"/>
+</man1>
+<boy9>
+	<default x="272" y="892"/>
+	<happy x="272" y="892"/>
+	<angry x="272" y="892"/>
+	<mockery x="415" y="892"/>
+	<sad x="272" y="892"/>
+	<embarrassed x="272" y="892"/>
+	<hideEyes x="272" y="892"/>
+	<cry x="272" y="892"/>
+	<dreaming x="272" y="892"/>
+</boy9>
+<boy10>
+	<default x="295" y="926"/>
+	<happy x="295" y="926"/>
+	<angry x="368" y="926"/>
+	<mockery x="295" y="926"/>
+</boy10>
+<boy11>
+	<default x="246" y="922"/>
+	<happy x="269" y="922"/>
+	<dreaming x="278" y="922"/>
+	<sad x="252" y="910"/>
+	<angry x="330" y="922"/>
+	<crying x="257" y="899"/>
+	<hideEyes x="257" y="912"/>
+	<sadWet x="257" y="911"/>
+	<hideEyesWet x="257" y="911"/>
+	<mockery x="257" y="912"/>
+	<worried x="252" y="912"/>
+</boy11>
+<man2>
+	<default x="287" y="903"/>
+	<dreaming x="287" y="903"/>
+	<happy x="471" y="903"/>
+	<sad x="287" y="903"/>
+	<angry x="287" y="903"/>
+</man2>
+<girl5>
+	<default x="238" y="893"/>
+	<angry x="401" y="893"/>
+	<confused x="269" y="893"/>
+	<depressed x="238" y="893"/>
+	<happy x="238" y="893"/>
+	<sad x="238" y="893"/>
+	<givesDocuments x="238" y="893"/>
+	<laugh x="287" y="897"/>
+	<mockery x="254" y="896"/>
+</girl5>
+<girl6>
+	<default x="273" y="872"/>
+	<angry x="267" y="870"/>
+	<cry x="270" y="870"/>
+	<dreaming x="266" y="870"/>
+	<happy x="355" y="869"/>
+	<mockery x="265" y="870"/>
+	<sad x="263" y="869"/>
+	<tense x="267" y="870"/>
+	<laugh x="281" y="884"/>
+</girl6>
+<girl7>
+	<default x="206" y="823"/>
+	<angry x="218" y="823"/>
+	<happy x="200" y="822"/>
+	<cry x="167" y="835"/>
+	<sad x="167" y="835"/>
+	<tense x="224" y="824"/>
+</girl7>
+<girl8>
+	<default x="217" y="760"/>
+	<happy x="215" y="760"/>
+	<angry x="330" y="760"/>
+	<hideEyes x="175" y="763"/>
+	<tense x="217" y="757"/>
+	<sad x="191" y="768"/>
+	<mockery x="202" y="765"/>
+</girl8>
+<girl9>
+	<confused x="228" y="804"/>
+	<default x="234" y="801"/>
+	<dreaming x="204" y="811"/>
+	<happy x="255" y="802"/>
+	<sad x="171" y="791"/>
+	<tense x="234" y="802"/>
+	<embarrassed x="195" y="807"/>
+	<surprised x="336" y="787"/>
+	<cry x="171" y="791"/>
+	<angry x="237" y="788"/>
+	<holdCoat x="189" y="793"/>
+	<holdCoat_sad x="187" y="776"/>
+	<wetCoat_cry x="195" y="796"/>
+	<wetCoat_sad x="187" y="776"/>
+</girl9>
+<girl10>
+	<angry x="297" y="846"/>
+	<confused x="297" y="845"/>
+	<default x="290" y="845"/>
+	<dreaming x="289" y="837"/>
+	<happy x="373" y="847"/>
+	<sad x="285" y="836"/>
+	<cry x="285" y="837"/>
+</girl10>
+<girl11>
+	<default x="351" y="824"/>
+	<angry x="331" y="823"/>
+	<embarrassed x="295" y="826"/>
+	<happy x="328" y="827"/>
+	<sad x="294" y="827"/>
+	<sportSuite x="356" y="835"/>
+	<sportSuite_angry x="354" y="838"/>
+	<sportSuite_sad x="353" y="838"/>
+</girl11>
+<woman2>
+	<default x="284" y="927"/>
+	<happy x="432" y="930"/>
+	<sad x="254" y="927"/>
+	<surprised x="295" y="929"/>
+	<worried x="253" y="923"/>
+</woman2>
+<doctor1>
+	<default x="355" y="953"/>
+	<worried x="365" y="953"/>
+</doctor1>
+<girl12>
+	<angry x="207" y="844"/>
+	<default x="192" y="847"/>
+	<happy x="231" y="844"/>
+	<sad x="200" y="836"/>
+	<sick x="193" y="835"/>
+</girl12>
+<girl13>
+	<angry x="372" y="844"/>
+	<default x="230" y="845"/>
+	<dreaming x="236" y="840"/>
+	<mockery x="243" y="840"/>
+</girl13>
+</root>

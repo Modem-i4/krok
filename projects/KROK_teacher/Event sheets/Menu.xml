@@ -1,0 +1,2058 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu</name>
+    <events>
+        <include>Common</include>
+        <include>Setup</include>
+        <variable constant="0" name="scenario" sid="315669877942439" static="0" type="text"></variable>
+        <event-block sid="708301646157336">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="904126892291209" type="System" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="502767544367314" type="System">
+                    <param id="0" name="Layer">&quot;curtain&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="831962233253505" type="System">
+                    <param id="0" name="Variable">scenario</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="231146136506722" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}0{###}0.15</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="327181378913764" type="System">
+                    <param id="0" name="Layer">&quot;Properties&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="256357259157017" type="System">
+                    <param id="0" name="Variable">cur_msg</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="-9" name="Set value" sid="775335367504063" type="System">
+                    <param id="0" name="Variable">isStoryTyping</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="969010969199460" type="System">
+                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="582344058078198" type="System">
+                    <param id="0" name="Layer">&quot;NamesBlend&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="384922629688462">
+            <conditions />
+            <actions>
+                <action disabled="1" id="14" name="Log" sid="443481137400116" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">cpuutilisation</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="147940911319642">
+            <conditions>
+                <condition id="17" name="On tap object" sid="784567199606860" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="410699538898049" type="Button">
+                    <param id="0" name="Animation">&quot;back&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="818286940456230" type="System">
+                    <param id="0" name="Variable">scenario</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="593906366437912" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}100{###}0.15</param>
+                </action>
+                <action id="-9" name="Set value" sid="725211647655931" type="System">
+                    <param id="0" name="Variable">GameMode</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="309640604388528" type="System">
+                    <param id="0" name="Layout">StartScreen</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="975031798439156" title="PropsScreen">
+            <sub-events>
+                <event-block sid="493759413668917">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="426278270277261" type="System">
+                            <param id="0" name="Variable">scenario</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>TODO: remove limitator</comment>
+                        <event-block sid="453967870705516">
+                            <conditions>
+                                <condition id="17" name="On tap object" sid="975828159615745" type="Touch">
+                                    <param id="0" name="Object">Button</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="218053741327555">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="631021932675192" type="Button">
+                                            <param id="0" name="Animation">&quot;Start&quot;</param>
+                                        </condition>
+                                        <condition id="-17" name="Compare opacity" sid="582342119584618" type="System">
+                                            <param id="0" name="Layer">&quot;Names&quot;</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Opacity">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="822142952794280" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}100{###}0.15</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="198729950785667" type="Function">
+                                            <param id="0" name="Name">&quot;setup&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="510638371202186">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="595775999078332" type="Button">
+                                            <param id="0" name="Animation">&quot;close&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="807630185663859">
+                                            <conditions>
+                                                <condition id="-17" name="Compare opacity" sid="242987998701680" type="System">
+                                                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Opacity">10</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="534212958202230" type="System">
+                                                    <param id="0" name="Variable">scenario</param>
+                                                    <param id="1" name="Value">&quot;&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="991386492404034" type="Function">
+                                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Properties&quot;{###}0{###}0.2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="701863533096068">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="798784378593494" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="996423112502767" type="Function">
+                                                    <param id="0" name="Name">&quot;closeNamesPane&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="560910097044661">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="327126240884442" type="Keyboard">
+                                    <param id="0" name="Key">27</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="506814174468925">
+                                    <conditions>
+                                        <condition id="-17" name="Compare opacity" sid="384802865785008" type="System">
+                                            <param id="0" name="Layer">&quot;Names&quot;</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Opacity">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="783197750105202" type="System">
+                                            <param id="0" name="Variable">scenario</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="830955071978147" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Properties&quot;{###}0{###}0.2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="797170999520462">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="689759222950320" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="316405655140704" type="Function">
+                                            <param id="0" name="Name">&quot;closeNamesPane&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="893747566231887">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="983599700861134" type="System">
+                    <param id="0" name="Variable">scenario</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+                <condition id="-16" inverted="1" name="Is on layer" sid="732928709554698" type="Hoverable">
+                    <param id="0" name="Layer">&quot;Properties&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="780216737164452">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="974164689044335" type="Mouse">
+                            <param id="0" name="Object">Hoverable</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="776458097203520" type="Hoverable" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="793973391681777" type="Mouse">
+                            <param id="0" name="Cursor style">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="137109855971519">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="372440202237225" type="System" />
+                        <condition id="7" name="Cursor is over object" sid="195521423667909" type="Mouse">
+                            <param id="0" name="Object">ScrollBar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="404483016907299" type="Mouse">
+                            <param id="0" name="Cursor style">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="478075811722279">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="438172972576634" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="584191976852545" type="Mouse">
+                            <param id="0" name="Cursor style">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="391324984706179">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="144768762550215" type="System">
+                    <param id="0" name="Variable">scenario</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="687843736957273">
+                    <conditions>
+                        <condition id="-16" name="Is on layer" sid="274161680150534" type="Hoverable">
+                            <param id="0" name="Layer">&quot;Properties&quot;</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="369074099419259" type="System">
+                            <param id="0" name="Layer">&quot;Names&quot;</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">10</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="699135267522164">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="632836578275258" type="Mouse">
+                                    <param id="0" name="Object">Hoverable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="201319039202581" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="557109974373663">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="759580910418894" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="930361180016168" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="528578440630438">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="238697662277366" type="System">
+                            <param id="0" name="Layer">&quot;Names&quot;</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Opacity">10</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="711160260924385">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="439648518893295" type="Hoverable">
+                                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                                </condition>
+                                <condition id="7" name="Cursor is over object" sid="598276471456173" type="Mouse">
+                                    <param id="0" name="Object">Hoverable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="316131926881909" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="818536393271258">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="589428843015981" type="System" />
+                                <condition id="-16" name="Is on layer" sid="391621078717396" type="Hoverable">
+                                    <param id="0" name="Layer">&quot;NamesBlend&quot;</param>
+                                </condition>
+                                <condition id="7" name="Cursor is over object" sid="924420577243536" type="Mouse">
+                                    <param id="0" name="Object">Hoverable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="399362008095784" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="603981262023479">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="194006281575313" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="591727257572532" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="849555964116963" title="TagsHover">
+            <sub-events>
+                <event-block sid="665942560008479">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="772522263907003" type="ScenarioBtn" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="lastHoverUID" sid="327862290902836" static="1" type="number">0</variable>
+                        <event-block sid="277246887605361">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="640783130352559" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="689600117333743" type="System">
+                                    <param id="0" name="Variable">lastHoverUID</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="595188060323385" type="ScenarioOverlay">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="374077769794719">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="463678048139317" type="ScenarioBtn">
+                                    <param id="0" name="Unique ID">lastHoverUID</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="208927274019777" type="Mouse">
+                                    <param id="0" name="Object">ScenarioBtn</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="658639581884215" type="ScenarioOverlay">
+                                    <param id="0" name="Target is">3</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="607534086672434" type="ScenarioOverlay">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="649436196429227">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="230392873458070" type="System">
+                                            <param id="0" name="Object">ScenarioTag</param>
+                                            <param id="1" name="Expression">ScenarioTag.Pin.PinnedUID</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">lastHoverUID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="LiteTween" id="3" name="Set target" sid="137430087446470" type="ScenarioTag">
+                                            <param id="0" name="Target is">3</param>
+                                            <param id="1" name="Relativity">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                        <action behavior="LiteTween" id="10" name="Start" sid="134623857359181" type="ScenarioTag">
+                                            <param id="0" name="Start Mode">0</param>
+                                            <param id="1" name="Force use current">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="483514508729008">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="900316218084356" type="System">
+                                            <param id="0" name="Variable">lastHoverUID</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="529158833700073">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="534588167595758" type="Mouse">
+                                    <param id="0" name="Object">ScenarioBtn</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="425541336193217" type="ScenarioBtn">
+                                    <param id="0" name="Instance variable">active</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="479196291552043" type="System">
+                                    <param id="0" name="Variable">lastHoverUID</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">ScenarioBtn.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="494194402171816" type="ScenarioOverlay">
+                                    <param id="0" name="Target is">3</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">90</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="957952920648337" type="ScenarioOverlay">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="195436384001482" type="System">
+                                    <param id="0" name="Variable">lastHoverUID</param>
+                                    <param id="1" name="Value">ScenarioBtn.UID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="891146414277656">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="853775941782084" type="System">
+                                            <param id="0" name="Object">ScenarioTag</param>
+                                            <param id="1" name="Expression">ScenarioTag.Pin.PinnedUID</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">lastHoverUID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="LiteTween" id="3" name="Set target" sid="378735509588274" type="ScenarioTag">
+                                            <param id="0" name="Target is">3</param>
+                                            <param id="1" name="Relativity">0</param>
+                                            <param id="2" name="Value">100</param>
+                                        </action>
+                                        <action behavior="LiteTween" id="10" name="Start" sid="758256521903583" type="ScenarioTag">
+                                            <param id="0" name="Start Mode">0</param>
+                                            <param id="1" name="Force use current">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="490062059382125" title="Pages">
+            <sub-events>
+                <variable constant="0" name="page" sid="658122678391896" static="1" type="number">0</variable>
+                <variable constant="0" name="MaxPages" sid="244845754624731" static="1" type="number">3</variable>
+                <event-block sid="993536442882856">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="102329712354527" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="769823521337987" type="ScenarioBtn">
+                            <param id="0" name="Instance variable">startX</param>
+                            <param id="1" name="Value">Self.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="731352351193579" type="System">
+                            <param id="0" name="Variable">page</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="226190690833329" type="TagsText" />
+                        <action id="-16" name="Set opacity" sid="481736963798410" type="TagOverlay">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="583770916258748" type="TagOverlay">
+                            <param id="0" name="Width">Tags.Width</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="977563055639303">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="887131503253145" type="TagsDifficultyIcon">
+                                    <param id="0" name="Layer">&quot;Tags&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="665986584495846" type="TagsDifficultyIcon">
+                                    <param id="0" name="Pin to">TagsToggleThumb</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="738993980209783">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="822697980903710" type="Tags">
+                                    <param id="0" name="Instance variable">tag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;*&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="367599004267913" type="TagOverlay">
+                                    <param id="0" name="Opacity">60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="288880591254818">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="719637519290891" type="Function">
+                                    <param id="0" name="Name">&quot;updTagsSwitch&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="793461781304952" type="Function">
+                                    <param id="0" name="Name">&quot;updScenariosFill&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="832748628044577" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="867951530971577" type="ScenarioTitle">
+                                    <param id="0" name="Object">ScenarioBtn</param>
+                                    <param id="1" name="Image point (optional)">&quot;title&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="760075949576420" type="ScenarioTitle">
+                                    <param id="0" name="Pin to">ScenarioBtn</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="735802245458513" type="ScenarioOverlay">
+                                    <param id="0" name="Pin to">ScenarioBtn</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="736055810477001">
+                    <conditions>
+                        <condition id="0" name="On function" sid="299798273554411" type="Function">
+                            <param id="0" name="Name">&quot;loadSujets&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="108423787240266" type="ScenarioBtn">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="538127521825904" type="ScenarioOverlay">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="shownScenarios" sid="343144904285996" static="0" type="number">0</variable>
+                        <variable constant="0" name="query" sid="994718293207183" static="0" type="text"></variable>
+                        <event-block sid="243400478241630">
+                            <conditions>
+                                <condition id="-10" name="Compare opacity" sid="260134015937847" type="TagOverlay">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Opacity">60</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="469788524739215" type="System">
+                                    <param id="0" name="Variable">query</param>
+                                    <param id="1" name="Value">&quot;scenarios/*[tags/&quot;&amp;Tags.tag&amp;&quot; and tags/&quot;&amp;TagsToggleThumb.tag&amp;&quot;]&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="893059309634194" type="ScenarioTitle">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="676902359613412" type="ScenarioTag" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="894382351476765">
+                            <conditions>
+                                <condition id="0" name="For each node" sid="327311647581241" type="Data">
+                                    <param id="0" name="XPath">query</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="746578080191645" type="ScenarioBtn">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">loopindex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="598413925197672" type="ScenarioBtn">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="691145211330829" type="ScenarioOverlay">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="356881051789536" type="ScenarioBtn">
+                                    <param id="0" name="Animation">Data.StringValue(&quot;name()&quot;)</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="797730992803619" type="ScenarioTitle">
+                                    <param id="0" name="Text">Data.StringValue(&quot;title&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="tags" sid="715354842817912" static="0" type="number">0</variable>
+                                <variable constant="0" name="step" sid="493061880745830" static="0" type="number">0</variable>
+                                <event-block sid="833132968302909">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="657540456051240" type="System">
+                                            <param id="0" name="Variable">tags</param>
+                                            <param id="1" name="Value">Data.NodeCount(&quot;tags/*&quot;)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="449860975302665" type="System">
+                                            <param id="0" name="Variable">step</param>
+                                            <param id="1" name="Value">(ScenarioOverlay.ImagePointY(&quot;bottom&quot;)-ScenarioOverlay.ImagePointY(&quot;top&quot;))/tags</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="438942070325090">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="475548605176418" type="System">
+                                            <param id="0" name="Name">&quot;&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">tags-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="391793257147545" type="System">
+                                            <param id="0" name="Object to create">ScenarioTag</param>
+                                            <param id="1" name="Layer">&quot;Sujets&quot;</param>
+                                            <param id="2" name="X">ScenarioBtn.X</param>
+                                            <param id="3" name="Y">ScenarioOverlay.ImagePointY(&quot;top&quot;)+loopindex*step</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="863703157388965" type="ScenarioTag">
+                                            <param id="0" name="Opacity">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="542130737807384" type="ScenarioTag">
+                                            <param id="0" name="Pin to">ScenarioBtn</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <variable constant="0" name="tagName" sid="489599225054768" static="0" type="text"></variable>
+                                        <event-block sid="942019929957675">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="323403380935544" type="System">
+                                                    <param id="0" name="Variable">tagName</param>
+                                                    <param id="1" name="Value">Data.StringValue(&quot;name(tags/*[&quot;&amp;loopindex+1&amp;&quot;])&quot;)</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="112331117555717" type="ScenarioTag">
+                                                    <param id="0" name="Text">Data.StringValue(&quot;//tag-translations/&quot;&amp;tagName)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="507252140235449">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="570066128171728" type="System">
+                                    <param id="0" name="Variable">MaxPages</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="224744365102247">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="320904157715650" type="ScenarioBtn" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="637448086723685" type="System">
+                                    <param id="0" name="Variable">MaxPages</param>
+                                    <param id="1" name="Value">ceil(ScenarioBtn.PickedCount/6)-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="942604162989367">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="301490166131099" type="ScrollThumb">
+                                    <param id="0" name="Layer">&quot;Sujets&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="105198648700400" type="Function">
+                                    <param id="0" name="Name">&quot;updScenariosFill&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="946020742511931" type="ScrollBar">
+                                    <param id="0" name="Target is">4</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">(MaxPages+1)*ScrollThumb.Width</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="883671348016577" type="ScrollBar">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="226208427344015">
+                    <conditions>
+                        <condition id="-16" name="Is on layer" sid="514776938783313" type="ScrollThumb">
+                            <param id="0" name="Layer">&quot;Sujets&quot;</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="363549817624225" type="System">
+                            <param id="0" name="Layer">&quot;Properties&quot;</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Opacity">10</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="402096389278785">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="152749572239705" type="System">
+                                    <param id="0" name="First value">ScenarioBtn.X-(ScenarioBtn.startX-470*page*3)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">40</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="901959176190299">
+                                    <conditions>
+                                        <condition id="8" name="On mouse wheel" sid="414125093898865" type="Mouse">
+                                            <param id="0" name="Direction">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="622375404897530" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="651702921381358" type="Function">
+                                            <param id="0" name="Name">&quot;updScenariosFill&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="772453850942370">
+                                    <conditions>
+                                        <condition id="8" name="On mouse wheel" sid="539647784049905" type="Mouse">
+                                            <param id="0" name="Direction">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="251978715846851" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="506669430974294" type="Function">
+                                            <param id="0" name="Name">&quot;updScenariosFill&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="698187785249867">
+                            <conditions>
+                                <condition behavior="LiteTween" id="0" name="Is active" sid="238350264983149" type="ScrollBar" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="234446149970197" type="ScrollThumb">
+                                    <param id="0" name="Instance variable">from</param>
+                                    <param id="1" name="Value">ScrollBar.BBoxLeft+Self.Width/2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="450242103354361" type="ScrollThumb">
+                                    <param id="0" name="Instance variable">to</param>
+                                    <param id="1" name="Value">ScrollBar.BBoxRight-Self.Width/2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="973721030032686">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="419776430322272" type="Touch">
+                                    <param id="0" name="Object">ScrollThumb</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="826706313485969" type="ScrollThumb">
+                                    <param id="0" name="Instance variable">active</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="262707007599445">
+                            <conditions>
+                                <condition id="1" name="On any touch end" sid="708827462674502" type="Touch" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="748224816544391" type="ScrollThumb">
+                                    <param id="0" name="Instance variable">active</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="160731502056486">
+                            <conditions>
+                                <condition id="2" name="Is in touch" sid="385955872952372" type="Touch" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="928059605257977">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="615638139101022" type="Touch">
+                                            <param id="0" name="Object">ScrollBar</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="340265150739383" type="ScrollThumb">
+                                            <param id="0" name="Instance variable">active</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="692744058625180" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">round(MaxPages*(clamp(Touch.X, ScrollThumb.from, ScrollThumb.to)-ScrollThumb.from)/(ScrollThumb.to-ScrollThumb.from))</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="821885091239319" type="Function">
+                                            <param id="0" name="Name">&quot;updScenariosFill&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="618353677931253">
+                            <conditions />
+                            <actions>
+                                <action id="-1" name="Set X" sid="909274748847618" type="ScenarioBtn">
+                                    <param id="0" name="X">lerp(Self.X, Self.startX-470*page*3, 0.2*60/fps)</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="579717236097697" type="ScrollThumb">
+                                    <param id="0" name="X">lerp(Self.X, Self.from + (page/max(MaxPages,1)) * (Self.to - Self.from), 0.2*60/fps)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="443404964407265">
+                    <conditions>
+                        <condition id="0" name="On function" sid="864336378633791" type="Function">
+                            <param id="0" name="Name">&quot;updScenariosFill&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="663321884177454" type="System">
+                            <param id="0" name="Variable">page</param>
+                            <param id="1" name="Value">clamp(page,0,MaxPages)</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="723735744119776" type="ScenarioBtn">
+                            <param id="0" name="Instance variable">active</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="856397865981739">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="499454270307254" type="System">
+                                    <param id="0" name="Object">ScenarioBtn</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="bri" sid="852312987363787" static="0" type="number">60</variable>
+                                <event-block sid="315772444410139">
+                                    <conditions>
+                                        <condition id="-21" name="Is between values" sid="526314775241184" type="System">
+                                            <param id="0" name="Value">ScenarioBtn.startX-470*page*3</param>
+                                            <param id="1" name="Lower bound">50</param>
+                                            <param id="2" name="Upper bound">OriginalWindowWidth-50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="591513580534307" type="System">
+                                            <param id="0" name="Variable">bri</param>
+                                            <param id="1" name="Value">100</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="761431259871874" type="ScenarioBtn">
+                                            <param id="0" name="Instance variable">active</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="626898941233136">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-28" name="Set effect parameter" sid="894993965162425" type="ScenarioBtn">
+                                            <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">bri</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="206504021495222" type="ScenarioBtn">
+                                            <param id="0" name="Effect">&quot;Contrast&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">bri</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="446620827776683" type="ScenarioTitle">
+                                            <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">bri</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="954660850818813" type="ScenarioTitle">
+                                            <param id="0" name="Effect">&quot;Contrast&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">bri</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="560434517391946">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="798660911799664" type="Touch">
+                            <param id="0" name="Object">ScenarioBtn</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="695081992159192" type="System">
+                            <param id="0" name="Variable">scenario</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="360038034886040" type="ScenarioBtn" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="878550757012043">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="257880231197691" type="ScenarioBtn">
+                                    <param id="0" name="Instance variable">active</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="507390299872103" type="System">
+                                    <param id="0" name="Variable">scenario</param>
+                                    <param id="1" name="Value">lowercase(ScenarioBtn.AnimationName)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="256676071996557" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Properties&quot;{###}100{###}0.15</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="527851087211113" type="Preview">
+                                    <param id="0" name="Animation">scenario</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="105244395199378" type="PropsHeader">
+                                    <param id="0" name="Text">Data.StringValue(&quot;scenarios/&quot;&amp;scenario&amp;&quot;/title&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="294218173209859" type="PropsDescr">
+                                    <param id="0" name="Text">Function.Call(&quot;replaceNames&quot;, Data.StringValue(&quot;scenarios/&quot;&amp;scenario&amp;&quot;/description&quot;))</param>
+                                </action>
+                                <action id="0" name="Call function" sid="829748226950561" type="Function">
+                                    <param id="0" name="Name">&quot;loadPlot&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="448402232908816">
+                                    <conditions>
+                                        <condition id="-16" name="Is on layer" sid="313504873760352" type="TagsDifficultyIcon">
+                                            <param id="0" name="Layer">&quot;Properties&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="353256468858881" type="TagsDifficultyIcon">
+                                            <param id="0" name="Animation">Data.StringValue(&quot;name(scenarios/&quot;&amp;scenario&amp;&quot;/tags/*[1])&quot;)</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <variable constant="0" name="tags" sid="464864722832051" static="0" type="number">0</variable>
+                                <event-block sid="183314312963435">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="438130717970982" type="System">
+                                            <param id="0" name="Variable">tags</param>
+                                            <param id="1" name="Value">Data.NodeCount(&quot;scenarios/&quot;&amp;scenario&amp;&quot;/tags/*&quot;)-1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="320600768702528" type="PropsTagInfo">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="728567885916697">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="625787656746412" type="PropsTagInfo">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="615883544841376" type="PropsTagInfo">
+                                            <param id="0" name="X">561</param>
+                                            <param id="1" name="Y">881</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="347053705716107">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="911265104892974" type="System">
+                                            <param id="0" name="Variable">tags</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="516604522713655">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="277529630920187" type="PropsTagInfo">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="338265200061343" type="PropsTagInfo">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="848088002510493" type="PropsTagInfo">
+                                                    <param id="0" name="Animation">Data.StringValue(&quot;name(scenarios/&quot;&amp;scenario&amp;&quot;/tags/*[2])&quot;)</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action disabled="1" id="-3" name="Set position" sid="796023374925596" type="PropsTagInfo">
+                                                    <param id="0" name="X">554</param>
+                                                    <param id="1" name="Y">848</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="903725799854350" type="PropsTagInfo">
+                                                    <param id="0" name="X">554.5</param>
+                                                    <param id="1" name="Y">815</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="271604996453525">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="873721270809204" type="System">
+                                            <param id="0" name="Variable">tags</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="914482890199858">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="831202081330412" type="PropsTagInfo">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="832249601349654" type="PropsTagInfo">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="930375340378314" type="PropsTagInfo">
+                                                    <param id="0" name="Animation">Data.StringValue(&quot;name(scenarios/&quot;&amp;scenario&amp;&quot;/tags/*[2])&quot;)</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="503792598397256">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="745710857769516" type="PropsTagInfo">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="630147381998994" type="PropsTagInfo">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="547321220229623" type="PropsTagInfo">
+                                                    <param id="0" name="Animation">Data.StringValue(&quot;name(scenarios/&quot;&amp;scenario&amp;&quot;/tags/*[3])&quot;)</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="251951713114724">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="840807444956148" type="System">
+                                            <param id="0" name="Variable">tags</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="456490057948121">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="325509465452994" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">1</param>
+                                                    <param id="2" name="End index">tags</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="389511188711647" type="PropsTagInfo">
+                                                    <param id="0" name="Instance variable">id</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">loopindex-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="428831555720286" type="PropsTagInfo">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="947795527668381" type="PropsTagInfo">
+                                                    <param id="0" name="Animation">Data.StringValue(&quot;name(scenarios/&quot;&amp;scenario&amp;&quot;/tags/*[&quot;&amp;loopindex+1&amp;&quot;])&quot;)</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="731665492731521">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="987983046050968" type="Button">
+                                            <param id="0" name="Animation">&quot;ChangeNames&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="1" name="NAMECHANGE_PRESENT" sid="593964045480043" static="0" type="text">|parents_g1|parents_g2|bullying_g1|bullying_g2|teacher_g1|teacher_g2|boy_g1|boy_g2|money|bulimia|</variable>
+                                        <event-block sid="494542972654566">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="199892774780114" type="System">
+                                                    <param id="0" name="First value">find(NAMECHANGE_PRESENT, &quot;|&quot;&amp;scenario&amp;&quot;|&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="598969162552527" type="Button">
+                                                    <param id="0" name="Frame number">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="599555330220564">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="448670752223987" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="641257769414860" type="Button">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="928700305862930">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="130484711647939" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="582200018609209">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="476822112562473" type="ScenarioBtn">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">OriginalWindowWidth/2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="260297580708800" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="169793216308173">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="387018810572650" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="354542985198731" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="737608386676891">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="420948057957936" type="Function">
+                                            <param id="0" name="Name">&quot;updScenariosFill&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="759105780356724" title="Tags">
+                    <sub-events>
+                        <event-block sid="275052856664638">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="401093974176967" type="System">
+                                    <param id="0" name="Layer">&quot;Properties&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">50</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="694717809668395">
+                                    <conditions>
+                                        <condition id="17" name="On tap object" sid="587532573288832" type="Touch">
+                                            <param id="0" name="Object">Tags</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="522137919772626">
+                                            <conditions>
+                                                <condition id="-10" name="Compare opacity" sid="776841216830460" type="TagOverlay">
+                                                    <param id="0" name="Comparison">0</param>
+                                                    <param id="1" name="Opacity">60</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="404979181237052">
+                                                    <conditions>
+                                                        <condition id="-19" name="Pick all" sid="620392409238569" type="System">
+                                                            <param id="0" name="Object">Tags</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="620353780617581" type="TagOverlay">
+                                                            <param id="0" name="Opacity">0</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="227913224062328">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="143619100502451" type="Tags">
+                                                                    <param id="0" name="Instance variable">tag</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">&quot;*&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-16" name="Set opacity" sid="148145560293384" type="TagOverlay">
+                                                                    <param id="0" name="Opacity">60</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="326042573176700">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="125344747116730" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="230757506153504">
+                                                    <conditions>
+                                                        <condition id="-19" name="Pick all" sid="712208950698397" type="System">
+                                                            <param id="0" name="Object">Tags</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="106902139917299" type="TagOverlay">
+                                                            <param id="0" name="Opacity">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="175257485034509">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="104861800803972" type="TagOverlay">
+                                                            <param id="0" name="Opacity">60</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="315200447226034">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="528014438832513" type="Function">
+                                                    <param id="0" name="Name">&quot;loadSujets&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="262997831470111" title="TagsSwitch">
+                    <sub-events>
+                        <event-block sid="455632611845076">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="280709702168139" type="System">
+                                    <param id="0" name="Layer">&quot;Properties&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">50</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="385638627827376">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="460862440307381" type="Touch">
+                                            <param id="0" name="Object">TagsToggleBar</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="953020560713322">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="693346218111255" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;*&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="640722611036515" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Value">&quot;easy&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="708661052617707">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="951956106834325" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="703507019941490" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;easy&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="951280398336124" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Value">&quot;hard&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="736057013096645">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="225327857338303" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="645267457039360" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;hard&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="210416451724886" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Value">&quot;*&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="797034046100238">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="492094808798795" type="Function">
+                                                    <param id="0" name="Name">&quot;updTagsSwitch&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="857523873877905">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="765588952761904" type="Function">
+                                            <param id="0" name="Name">&quot;updTagsSwitch&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="103945102537053" type="Text">
+                                            <param id="0" name="Instance variable">role</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;tag-difficulty&quot;</param>
+                                        </condition>
+                                        <condition id="-16" name="Is on layer" sid="416335177302317" type="TagsDifficultyIcon">
+                                            <param id="0" name="Layer">&quot;Tags&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="431226036214884" type="TagsDifficultyIcon">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="404460920877126" type="TagsDifficultyIcon">
+                                            <param id="0" name="Animation">TagsToggleThumb.tag</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="275656855446970">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="618613375487559" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;*&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="LiteTween" id="3" name="Set target" sid="910656749040686" type="TagsToggleThumb">
+                                                    <param id="0" name="Target is">0</param>
+                                                    <param id="1" name="Relativity">0</param>
+                                                    <param id="2" name="Value">TagsToggleBar.BBoxLeft+TagsToggleThumb.Width/2</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="469178371799585">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="275447129145548" type="System">
+                                                            <param id="0" name="Variable">GameMode</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;Singleplayer&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="390477567635886" type="Text">
+                                                            <param id="0" name="Text">&quot;Всі за складністю&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="122792954691763">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="290348717112981" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="774997207329357" type="Text">
+                                                            <param id="0" name="Text">&quot;Всі сценарії&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="615904503051301">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="454195392877086" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;easy&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="924446942250130" type="Text">
+                                                    <param id="0" name="Text">&quot;Звичайні&quot;</param>
+                                                </action>
+                                                <action behavior="LiteTween" id="3" name="Set target" sid="652930986967002" type="TagsToggleThumb">
+                                                    <param id="0" name="Target is">0</param>
+                                                    <param id="1" name="Relativity">0</param>
+                                                    <param id="2" name="Value">TagsToggleBar.X</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="831461504279788">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="429426458883961" type="TagsToggleThumb">
+                                                    <param id="0" name="Instance variable">tag</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;hard&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="776004876695994" type="Text">
+                                                    <param id="0" name="Text">&quot;Ускладнені&quot;</param>
+                                                </action>
+                                                <action behavior="LiteTween" id="3" name="Set target" sid="122592462985034" type="TagsToggleThumb">
+                                                    <param id="0" name="Target is">0</param>
+                                                    <param id="1" name="Relativity">0</param>
+                                                    <param id="2" name="Value">TagsToggleBar.BBoxRight-TagsToggleThumb.Width/2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="734769948776664">
+                                            <conditions />
+                                            <actions>
+                                                <action behavior="LiteTween" id="10" name="Start" sid="314891492089801" type="TagsToggleThumb">
+                                                    <param id="0" name="Start Mode">0</param>
+                                                    <param id="1" name="Force use current">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="854413152914567" type="Function">
+                                                    <param id="0" name="Name">&quot;loadSujets&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="220282726649614" title="NameChange">
+            <sub-events>
+                <event-block sid="236525716359962">
+                    <conditions>
+                        <condition id="0" name="On function" sid="750733057326912" type="Function">
+                            <param id="0" name="Name">&quot;closeNamesPane&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="141177518331802" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Names&quot;{###}0{###}0.15</param>
+                        </action>
+                        <action id="0" name="Call function" sid="446344015090676" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;NamesBlend&quot;{###}0{###}0.15</param>
+                        </action>
+                        <action id="0" name="Set text" sid="366802228268368" type="PropsDescr">
+                            <param id="0" name="Text">Function.Call(&quot;replaceNames&quot;, Data.StringValue(&quot;scenarios/&quot;&amp;scenario&amp;&quot;/description&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="376018250312038">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="895023726826595" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="394393323269026">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="446158075073984" type="System">
+                                    <param id="0" name="Layer">&quot;Properties&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">99</param>
+                                </condition>
+                                <condition id="-17" name="Compare opacity" sid="143165710158139" type="System">
+                                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Opacity">5</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="395903406258890">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="275525083583078" type="Button">
+                                            <param id="0" name="Animation">&quot;ChangeNames&quot;</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="413979716311361" type="Button">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="478702322248474" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Names&quot;{###}100{###}0.15</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="113585054186703" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;NamesBlend&quot;{###}100{###}0.15</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="886749938297391" type="Function">
+                                            <param id="0" name="Name">&quot;loadNamesPane&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="995352978364029">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="571474323554046" type="Button">
+                                            <param id="0" name="Animation">&quot;Recommendations&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Open URL in new window" sid="757271433922377" type="Browser">
+                                            <param id="0" name="URL">&quot;https://etcetera.org.ua/articles/krok/guidelines.pdf&quot;</param>
+                                            <param id="1" name="Tag">&quot;Рекомендації&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="915787962641511">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="487730907696566" type="Button">
+                                    <param id="0" name="Animation">&quot;goBack&quot;</param>
+                                </condition>
+                                <condition id="-17" name="Compare opacity" sid="570131933814214" type="System">
+                                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">99</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="669669349485583" type="Function">
+                                    <param id="0" name="Name">&quot;closeNamesPane&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="264342487419735">
+                    <conditions>
+                        <condition id="0" name="On function" sid="158550408014905" type="Function">
+                            <param id="0" name="Name">&quot;loadNamesPane&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="827328563404591" type="CharCircle" />
+                        <action id="-9" name="Destroy" sid="937221402324098" type="CharNameBg" />
+                        <action id="-9" name="Destroy" sid="605332339143597" type="CharNames" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="739850048918217">
+                            <conditions>
+                                <condition id="0" name="For each node" sid="493079615975230" type="Data">
+                                    <param id="0" name="XPath">&quot;scenarios/&quot;&amp;scenario&amp;&quot;/chars/*[names/n]&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="425616233058287" type="System">
+                                    <param id="0" name="Object to create">CharCircle</param>
+                                    <param id="1" name="Layer">&quot;NamesBlend&quot;</param>
+                                    <param id="2" name="X">439</param>
+                                    <param id="3" name="Y">350+loopindex*160</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="564220703125203" type="CharCircle">
+                                    <param id="0" name="Animation">Data.StringValue(&quot;name()&quot;)</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="309801944201262" type="System">
+                                    <param id="0" name="Object to create">CharNameBg</param>
+                                    <param id="1" name="Layer">&quot;NamesBlend&quot;</param>
+                                    <param id="2" name="X">753</param>
+                                    <param id="3" name="Y">350+loopindex*160</param>
+                                </action>
+                                <action id="0" name="Set text" sid="764271601871703" type="CharDescrText">
+                                    <param id="0" name="Text">Data.StringValue(&quot;description&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="585563168114007" type="CharNameBg">
+                                    <param id="0" name="Instance variable">startY</param>
+                                    <param id="1" name="Value">Self.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="672273879352673" type="CharDescrText">
+                                    <param id="0" name="Pin to">CharNameBg</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="824180729353243" type="CharCircle">
+                                    <param id="0" name="Pin to">CharNameBg</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="570486808122777" type="Function">
+                                    <param id="0" name="Name">&quot;makeCharName&quot;</param>
+                                    <param id="1" name="Parameter {n}">1128{###}310+loopindex*160{###}Data.StringValue(&quot;name()&quot;){###}1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="635200057163936" type="Function">
+                                    <param id="0" name="Name">&quot;makeCharName&quot;</param>
+                                    <param id="1" name="Parameter {n}">1405{###}310+loopindex*160{###}Data.StringValue(&quot;name()&quot;){###}2</param>
+                                </action>
+                                <action id="0" name="Call function" sid="956491079318033" type="Function">
+                                    <param id="0" name="Name">&quot;makeCharName&quot;</param>
+                                    <param id="1" name="Parameter {n}">1128{###}390+loopindex*160{###}Data.StringValue(&quot;name()&quot;){###}3</param>
+                                </action>
+                                <action id="0" name="Call function" sid="284346043926140" type="Function">
+                                    <param id="0" name="Name">&quot;makeCharName&quot;</param>
+                                    <param id="1" name="Parameter {n}">1405{###}390+loopindex*160{###}Data.StringValue(&quot;name()&quot;){###}4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="102928308970967">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="880871495180030" type="DarkShader">
+                                    <param id="0" name="Layer">&quot;NamesBlend&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="284908536503654" type="DarkShader" />
+                                <action id="-16" name="Wait" sid="533267601860645" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="542484170686261" type="CharNamesText">
+                                    <param id="0" name="Pin to">CharNameBg</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="324525051680733" type="CharNames">
+                                    <param id="0" name="Pin to">CharNameBg</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="125267046197096">
+                                    <conditions>
+                                        <condition id="0" name="For each node" sid="633935145028954" type="Data">
+                                            <param id="0" name="XPath">&quot;scenarios/&quot;&amp;scenario&amp;&quot;/chars/*[names/n]&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="952727451187716" type="Function">
+                                            <param id="0" name="Name">&quot;chooseName&quot;</param>
+                                            <param id="1" name="Parameter {n}">Data.StringValue(&quot;name()&quot;){###}max(NamesTranslations.Get(scenario&amp;&quot;_&quot;&amp;Data.StringValue(&quot;name()&quot;)),1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="730183877551870">
+                    <conditions>
+                        <condition id="0" name="On function" sid="589162630747980" type="Function">
+                            <param id="0" name="Name">&quot;makeCharName&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="931539325200646" type="System">
+                            <param id="0" name="Object to create">CharNames</param>
+                            <param id="1" name="Layer">&quot;NamesBlend&quot;</param>
+                            <param id="2" name="X">Function.Param(0)</param>
+                            <param id="3" name="Y">Function.Param(1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="929895314209822" type="CharNames">
+                            <param id="0" name="Instance variable">char</param>
+                            <param id="1" name="Value">Function.Param(2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="293698504582998" type="CharNames">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Value">Function.Param(3)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="269271651639363" type="CharNamesText">
+                            <param id="0" name="Text">Data.StringValue(&quot;names/n[&quot;&amp;Function.Param(3)&amp;&quot;]&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="274039456899075">
+                    <conditions>
+                        <condition id="0" name="On function" sid="541111356660689" type="Function">
+                            <param id="0" name="Name">&quot;chooseName&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="153679341686799" type="CharNames">
+                            <param id="0" name="Instance variable">char</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set font color" sid="569980873282845" type="CharNamesText">
+                            <param id="0" name="Color">rgb(171, 119, 79)</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="715857015180226" type="CharNames">
+                            <param id="0" name="Animation">&quot;Inactive&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action disabled="1" id="14" name="Log" sid="226544436600149" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Choose &quot;&amp;Function.Param(0)</param>
+                        </action>
+                        <action disabled="1" id="14" name="Log" sid="466949544520635" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Choose id &quot;&amp;Function.Param(1)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="930159105311714">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="925664882302605" type="CharNames">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="304382183406683" type="CharNamesText">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="355949952581620" type="CharNames">
+                                    <param id="0" name="Animation">&quot;Active&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="645596568048668">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="911590985639030" type="Touch">
+                            <param id="0" name="Object">CharNames</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="763595297492229" type="System">
+                            <param id="0" name="Layer">&quot;Names&quot;</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Opacity">99</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="492241924071541" type="Function">
+                            <param id="0" name="Name">&quot;chooseName&quot;</param>
+                            <param id="1" name="Parameter {n}">CharNames.char{###}CharNames.id</param>
+                        </action>
+                        <action id="0" name="Add key" sid="361136456501269" type="NamesTranslations">
+                            <param id="0" name="Key">scenario&amp;&quot;_&quot;&amp;CharNames.char</param>
+                            <param id="1" name="Value">CharNames.id</param>
+                        </action>
+                        <action id="0" name="Set item" sid="242832643887009" type="LocalStorage">
+                            <param id="0" name="Key">&quot;NamesTranslations&quot;</param>
+                            <param id="1" name="Value">NamesTranslations.AsJSON</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="958935420673159" title="NamesScroll">
+                    <sub-events>
+                        <variable constant="0" name="page" sid="990182310944693" static="1" type="number">0</variable>
+                        <variable constant="0" name="MaxPages" sid="280565293378191" static="1" type="number">7</variable>
+                        <event-block sid="108501635254428">
+                            <conditions>
+                                <condition id="0" name="On function" sid="330812517429553" type="Function">
+                                    <param id="0" name="Name">&quot;loadNamesPane&quot;</param>
+                                </condition>
+                                <condition id="-16" name="Is on layer" sid="628925208974734" type="ScrollThumb">
+                                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="621052117856605" type="System">
+                                    <param id="0" name="Variable">page</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="985258450853037" type="System">
+                                    <param id="0" name="Variable">MaxPages</param>
+                                    <param id="1" name="Value">max(0, Data.NodeCount(&quot;scenarios/&quot;&amp;scenario&amp;&quot;/chars/*[names/n]&quot;)-4)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="151138845655252">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="432879444863813" type="System">
+                                            <param id="0" name="Variable">MaxPages</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="508831792567818" type="ScrollBarVer">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="105055968046686" type="ScrollThumb">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="128974719769878">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="804241561276277" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="694365562505740" type="ScrollBarVer">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="425912417985410" type="ScrollThumb">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action behavior="LiteTween" id="3" name="Set target" sid="996957677144370" type="ScrollBarVer">
+                                            <param id="0" name="Target is">5</param>
+                                            <param id="1" name="Relativity">0</param>
+                                            <param id="2" name="Value">clamp(MaxPages+1,2,3)*ScrollThumb.Width</param>
+                                        </action>
+                                        <action behavior="LiteTween" id="10" name="Start" sid="901864139371950" type="ScrollBarVer">
+                                            <param id="0" name="Start Mode">0</param>
+                                            <param id="1" name="Force use current">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="207838241827514">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="997878006719620" type="System">
+                                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">80</param>
+                                </condition>
+                                <condition id="-16" name="Is on layer" sid="876153930449425" type="ScrollThumb">
+                                    <param id="0" name="Layer">&quot;Names&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="408630934440300" type="System">
+                                    <param id="0" name="Variable">MaxPages</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="739518675715891">
+                                    <conditions>
+                                        <condition id="8" name="On mouse wheel" sid="568105965622191" type="Mouse">
+                                            <param id="0" name="Direction">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="992513243225593" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="640025929620682">
+                                    <conditions>
+                                        <condition id="8" name="On mouse wheel" sid="591982232284178" type="Mouse">
+                                            <param id="0" name="Direction">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="812204377110960" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="541518182633439">
+                                    <conditions>
+                                        <condition behavior="LiteTween" id="0" name="Is active" sid="853639091188206" type="ScrollBarVer" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="243191946180135" type="ScrollThumb">
+                                            <param id="0" name="Instance variable">from</param>
+                                            <param id="1" name="Value">ScrollBarVer.BBoxTop+Self.Width/2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="314210054447374" type="ScrollThumb">
+                                            <param id="0" name="Instance variable">to</param>
+                                            <param id="1" name="Value">ScrollBarVer.BBoxBottom-Self.Width/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="685654540563814">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="945708334673056" type="Touch">
+                                            <param id="0" name="Object">ScrollThumb</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="349626421137223" type="ScrollThumb">
+                                            <param id="0" name="Instance variable">active</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="530361539936863">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="305852559605202" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="731108681409616" type="ScrollThumb">
+                                            <param id="0" name="Instance variable">active</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="627859485422803">
+                                    <conditions>
+                                        <condition id="2" name="Is in touch" sid="816059042366125" type="Touch" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="973083721453248">
+                                            <conditions>
+                                                <condition id="3" name="On touched object" sid="117071196567398" type="Touch">
+                                                    <param id="0" name="Object">ScrollBarVer</param>
+                                                </condition>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="650055550569349" type="ScrollThumb">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="189212700677891" type="System">
+                                                    <param id="0" name="Variable">page</param>
+                                                    <param id="1" name="Value">round(MaxPages*(clamp(Touch.Y, ScrollThumb.from, ScrollThumb.to)-ScrollThumb.from)/(ScrollThumb.to-ScrollThumb.from))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="256473933826890">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="728603464656237" type="System">
+                                            <param id="0" name="Variable">page</param>
+                                            <param id="1" name="Value">clamp(page,0,MaxPages)</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="924316874983310" type="CharNameBg">
+                                            <param id="0" name="Y">lerp(Self.Y, Self.startY-160*page, 0.2*60/fps)</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="141354400348417" type="ScrollThumb">
+                                            <param id="0" name="Y">lerp(Self.Y, Self.from + (page/max(MaxPages,1)) * (Self.to - Self.from), 0.2*60/fps)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

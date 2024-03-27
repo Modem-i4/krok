@@ -1,0 +1,87 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["whatIAnswer"],
+["Розповісти","plot&whatIAnswer_tell"],
+["Перевести тему","plot&whatIAnswer_ignore"],
+["Збрехати","plot&whatIAnswer_lie"]
+],
+
+[["howIReact"],
+["Підтвердити","plot&howIReact_confirm"],
+["Перевести тему","plot&howIReact_ignore"],
+["Заперечити","plot&howIReact_deny"]
+],
+
+[["photoReact"],
+["Оцінити фото","plot&photoReact_like"],
+["Здивуватися","plot&photoReact_surprise"],
+["Розізлитися","plot&photoReact_angry"]
+],
+
+[["whatIDo"],
+["Надіслати","plot&whatIDo_send"],
+["Ігнорувати","plot&whatIDo_ignore"],
+["Не надсилати","plot&whatIDo_dontSend"]
+],
+
+[["delete"],
+["Видалити","plot&delete_yes"],
+["Залишити","plot&delete_no"],
+["Зробити скрін переписки","plot&delete_screenshot"]
+],
+
+[["whatCanIDo"],
+["Пояснити всім","plot&whatCanIDo_explain"],
+["Відплатити Олегу","plot&whatCanIDo_avenge"],
+["Ігнорувати всіх","plot&whatCanIDo_ignore"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+],
+
+[[""],
+["","plot&"],
+["","plot&"],
+["","plot&"]
+]
+
+]}

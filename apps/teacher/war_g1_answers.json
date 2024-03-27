@@ -1,0 +1,33 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["howIReact"],
+["Дружньо","plot&howIReact_friendly"],
+["Нейтрально","plot&howIReact_neutral"],
+["Злісно","plot&howIReact_angry"]
+],
+
+[["areUok"],
+["Дружньо","plot&areUok_friendly"],
+["Нейтрально","plot&areUok_neutral"],
+["Злісно","plot&areUok_angry"]
+],
+
+[["reaction"],
+["Підтримати","plot&reaction_support"],
+["Не реагувати","plot&reaction_noreact"],
+["Повчати","plot&reaction_teach"]
+],
+
+[["shouldIDo"],
+["Підтримати Лізу","plot&shouldIDo_liza|set&support&liza"],
+["Ігнорувати","plot&shouldIDo_ignore|set&support&ignore"],
+["Підтримати Дениса","plot&shouldIDo_denis|set&support&denis"]
+],
+
+[["whatToTell"],
+["Розповісти правду","if&support&liza&whatToTell_truth_liza|if&support&ignore&whatToTell_truth_liza|if&support&denis&whatToTell_truth_denis"],
+["Промовчати","if&support&liza&whatToTell_silent_liza|if&support&ignore&whatToTell_silent_liza|if&support&denis&whatToTell_silent_denis"],
+["Збрехати","if&support&liza&whatToTell_lie_liza|if&support&ignore&whatToTell_lie_liza|if&support&denis&whatToTell_lie_denis"]
+]
+
+]}

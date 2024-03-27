@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Animations</name>
+    <events>
+        <event-block sid="536142535879538">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="976677000165251" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="630227518184631" type="StoryBox">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="316202110974929" type="System">
+                    <param id="0" name="Variable">isStoryTyping</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable constant="0" name="isStoryTyping" sid="860314072010651" static="0" type="number">0</variable>
+        <event-block any="1" sid="373617251071987">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="841118487823035" type="System" />
+                <condition id="0" name="On key pressed" sid="925197975548461" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="14" name="On tap" sid="307206151841953" type="Touch" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="849868095797796">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="619395105193602" type="System">
+                            <param id="0" name="Layer">&quot;Pause&quot;</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">1</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="623833793281108" type="System">
+                            <param id="0" name="Layer">&quot;EmoScale&quot;</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="534265460786303">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="405399843319796" type="System">
+                                    <param id="0" name="Variable">isStoryTyping</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="855964111605662">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="229143304935791" type="System">
+                                            <param id="0" name="Variable">allow_to_continue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="677090596124610" type="Function">
+                                            <param id="0" name="Name">&quot;Next&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="14" name="Log" sid="157798187918718" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Next step&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="620887247475651">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="269231230890437" type="System" />
+                                <condition id="-14" name="Compare variable" sid="393052611582554" type="System">
+                                    <param id="0" name="Variable">isStoryTyping</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="156227531744802" type="System">
+                                    <param id="0" name="Variable">isStoryTyping</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="560175326272761" type="StoryBox">
+                                    <param id="0" name="Text">Self.targetText</param>
+                                </action>
+                                <action id="17" name="Raise event" sid="678085697340347" type="Photon">
+                                    <param id="0" name="Code">25</param>
+                                    <param id="1" name="Data">0</param>
+                                    <param id="2" name="InterestGroup">0</param>
+                                    <param id="3" name="Cache">0</param>
+                                    <param id="4" name="Receivers">0</param>
+                                    <param id="5" name="TargetActors">&quot;&quot;</param>
+                                    <param id="6" name="WebForward">0</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="303077669824049" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Skip&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="366058606756582">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="737042792908534" type="System">
+                    <param id="0" name="Variable">isStoryTyping</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="530724161543505" type="System">
+                    <param id="0" name="Interval (seconds)">(somePhoneMsg = 1 ? 0.02 : 0.04)*fps/60</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="569060984360264" type="System">
+                    <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Opacity">0</param>
+                </condition>
+                <condition id="5" inverted="1" name="Contains value" sid="868147100757480" type="LayersToLerp">
+                    <param id="0" name="Value">&quot;Curtain&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="911723959698655" type="StoryBox">
+                    <param id="0" name="Text">Self.Text&amp;mid(Self.targetText,len(Self.Text),1)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>full</comment>
+                <event-block sid="838814042199012">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="172894654388716" type="System">
+                            <param id="0" name="First value">StoryBox.Text</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">StoryBox.targetText</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="959971554441742" type="System">
+                            <param id="0" name="Variable">isStoryTyping</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="546502795258897">
+            <conditions>
+                <condition id="0" name="On function" sid="505174563841368" type="Function">
+                    <param id="0" name="Name">&quot;generateMessage&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="785082793343101">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="459153615641725" type="System">
+                            <param id="0" name="First value">len(Plots.At(cur_plot,cur_msg,1))</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="566670573627208">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="978055988117375" type="System">
+                                    <param id="0" name="First value">speaker</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">&quot;me&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="366802644089240" type="Audio">
+                                    <param id="0" name="Audio file">notification</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="236646993935910">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="924129457735500" type="System">
+                    <param id="0" name="Variable">isStoryTyping</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="960121144932278" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;options&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="969943394606226" type="Option">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="680095010143526" type="OptionText">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="547670841590770">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="343655208848086" type="System">
+                            <param id="0" name="Variable">GameMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Singleplayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="680015890059367" type="StoryBox">
+                            <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="578145964702953" type="VotePercentageText">
+                            <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="292318763578783" type="PercentageTracker">
+                            <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="574496957095223">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="736672833136774" type="System">
+                            <param id="0" name="Variable">GameMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Create&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="769581219010974" type="StoryBox">
+                            <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="507910720034862" type="VotePercentageText">
+                            <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="830057220465697" type="PercentageTracker">
+                            <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="510994249236930">
+            <conditions>
+                <condition id="-22" name="Else" sid="425234558908753" type="System" />
+                <condition id="-14" name="Compare variable" sid="297089485401463" type="System">
+                    <param id="0" name="Variable">isStoryTyping</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="792735006412270" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;awaitAnswers&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="371366259140857" type="Option">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="738593633207427" type="PercentageTracker">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="907323523937508" type="VotePercentageText">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="541262952417698" type="OptionText">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="772266398253841" type="StoryBox">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="353462366261530">
+            <conditions>
+                <condition id="-22" name="Else" sid="119668763176050" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="529111439077887" type="Option">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="367553887983505" type="PercentageTracker">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="960887389330003" type="OptionText">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="157819025639149" type="VotePercentageText">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="756895284524514" type="StoryBox">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="313773784552458" title="PercentageTracker2">
+            <sub-events>
+                <event-block sid="577938804561887">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="846868900949810" type="System">
+                            <param id="0" name="Object">Option</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Set height" sid="206150499223944" type="PercentageTracker">
+                            <param id="0" name="Height">lerp(Self.Height,Option.percentage/100*130, 0.1*60/fps)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

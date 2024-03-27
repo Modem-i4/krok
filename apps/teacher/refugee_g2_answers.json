@@ -1,0 +1,45 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["howISearch"],
+["Шукати в інтернеті","plot&howISearch_internet"],
+["Запитати однокласників","plot&howISearch_ask"],
+["Опублікувати оголошення","plot&howISearch_ad"]
+],
+
+[["whatIAnswer"],
+["Зацікавитись","plot&whatIAnswer_interest"],
+["Нейтрально відповісти","plot&whatIAnswer_neutral"],
+["Заперечити","plot&whatIAnswer_refuse"]
+],
+
+[["howIAnswer"],
+["Сказати правду","plot&howIAnswer_truth"],
+["Збрехати","plot&howIAnswer_lie"],
+["Перепитати","plot&howIAnswer_reask"]
+],
+
+[["whatITell"],
+["Погодитись","plot&whatITell_agree"],
+["Обдумати","plot&whatITell_think"],
+["Відмовитись","plot&whatITell_refuse"]
+],
+
+[["whatIDo"],
+["Погодитись","plot&whatIDo_agree"],
+["Відмовитись","plot&whatIDo_refuse"],
+["Перепитати","plot&whatIDo_reask"]
+],
+
+[["giveTelephone"],
+["Погодитись","plot&giveTelephone_agree"],
+["Відмовитись","plot&giveTelephone_no"],
+["Перепитати","plot&giveTelephone_ask"]
+],
+
+[["whatCanIDo"],
+["Терпіти","plot&whatCanIDo_tolerate"],
+["Спробувати втекти","plot&whatCanIDo_run|set&final&police"],
+["Звернутись до поліції","plot&whatCanIDo_police|set&final&embassy"]
+]
+
+]}

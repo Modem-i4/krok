@@ -1,0 +1,45 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["gravityfalls"],
+["Процес створення","plot&gravityfalls_process|set&gravityfalls&process"],
+["Смішна історія","plot&gravityfalls_story|set&gravityfalls&story"],
+["Романтичний кліп","plot&gravityfalls_romantic|set&gravityfalls&romantic"]
+],
+
+[["whatIDo"],
+["Відповісти","plot&whatIDo_answer"],
+["Ігнорувати","plot&whatIDo_ignore"],
+["Переглянути профіль","plot&whatIDo_profile"]
+],
+
+[["whatIanswer"],
+["Сказати правду","plot&whatIanswer_truth"],
+["Збрехати","plot&whatIanswer_lie"],
+["Ухилитись від відповіді","plot&whatIanswer_ignore"]
+],
+
+[["telegram"],
+["Погодитись","plot&telegram_agree"],
+["Відмовитись","plot&telegram_refuse"],
+["Ухилитись від відповіді","plot&telegram_ignore"]
+],
+
+[["sendSelfie"],
+["Погодитись","plot&sendSelfie_agree"],
+["Відмовитись","plot&sendSelfie_refuse"],
+["Ухилитись від відповіді","plot&sendSelfie_ignore"]
+],
+
+[["shouldISendPhoto"],
+["Погодитись","plot&shouldISendPhoto_agree"],
+["Відмовитись","plot&shouldISendPhoto_refuse"],
+["Ухилитись від відповіді","plot&shouldISendPhoto_ignore"]
+],
+
+[["tellMum"],
+["Довіритись","plot&tellMum_tell"],
+["Збрехати","plot&tellMum_lie"],
+["Ухилитись від відповіді","plot&tellMum_ignore"]
+]
+
+]}

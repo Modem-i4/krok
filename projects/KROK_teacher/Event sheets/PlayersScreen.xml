@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PlayersScreen</name>
+    <events>
+        <variable constant="0" name="code" sid="951008718292873" static="0" type="text"></variable>
+        <event-block sid="559999578639894">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="512527744794146" type="System" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="183038861043895" type="System">
+                    <param id="0" name="Layer">&quot;PlayersScreen&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="172895432973886" type="qr">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="975267091279881">
+            <conditions>
+                <condition id="0" name="On function" sid="220435421486804" type="Function">
+                    <param id="0" name="Name">&quot;StartPhoton&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="695164347670653" type="Function">
+                    <param id="0" name="Name">&quot;getCode&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="10" name="Connect" sid="321218282724886" type="Photon" />
+                <action id="-18" name="Set layer opacity" sid="896692682012320" type="System">
+                    <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="426554279942182" type="System">
+                    <param id="0" name="Layer">&quot;PlayersScreen&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="488864552802377">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="279844786334973" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;players&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="565967395606085" type="Text">
+                            <param id="0" name="Text">&quot;Підключення...&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="392184334182435">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="644046692359984" type="MultiplayerInfo">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;players&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="185404383028904" type="MultiplayerInfo">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="385532264567092">
+            <conditions>
+                <condition id="14" name="On join room" sid="744528207735905" type="Photon" />
+            </conditions>
+            <actions>
+                <action id="103" name="Set property of my room" sid="653827126948706" type="Photon">
+                    <param id="0" name="PropName">&quot;scenario&quot;</param>
+                    <param id="1" name="Value">scenario</param>
+                    <param id="2" name="WebForward">0</param>
+                    <param id="3" name="CheckAndSet">0</param>
+                    <param id="4" name="ExpectedValue">0</param>
+                </action>
+                <action id="103" name="Set property of my room" sid="105390498550645" type="Photon">
+                    <param id="0" name="PropName">&quot;teacher&quot;</param>
+                    <param id="1" name="Value">Photon.MyActorNr</param>
+                    <param id="2" name="WebForward">0</param>
+                    <param id="3" name="CheckAndSet">0</param>
+                    <param id="4" name="ExpectedValue">0</param>
+                </action>
+                <action id="102" name="Set property of actor by nr." sid="932662618563727" type="Photon">
+                    <param id="0" name="ActorNr">Photon.MyActorNr</param>
+                    <param id="1" name="PropName">&quot;isTeacher&quot;</param>
+                    <param id="2" name="Value">1</param>
+                    <param id="3" name="WebForward">0</param>
+                    <param id="4" name="CheckAndSet">0</param>
+                    <param id="5" name="ExpectedValue">0</param>
+                </action>
+                <action id="108" name="Set empty room live time" sid="772960898742409" type="Photon">
+                    <param id="0" name="EmptyRoomLiveTime">15000</param>
+                </action>
+                <action id="106" name="Set my room is open" sid="246253016693027" type="Photon">
+                    <param id="0" name="IsOpen">1</param>
+                </action>
+                <action id="107" name="Set my room max players" sid="887400233449426" type="Photon">
+                    <param id="0" name="MaxPlayers">MAXPLAYERS</param>
+                </action>
+                <action id="14" name="Log" sid="144645040418487" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Joined to room: &quot; &amp; code</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="558173114297169">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="851534712325349" type="MultiplayerInfo">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;players&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="810835673694466" type="MultiplayerInfo">
+                            <param id="0" name="Text">&quot;Код: &quot; &amp; code &amp; newline &amp; &quot;Гравці: &quot;&amp;Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="985132002093826">
+            <conditions>
+                <condition id="15" name="On actor join" sid="102494354251567" type="Photon" />
+                <condition id="16" name="On actor leave" sid="239703785973224" type="Photon" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="477014650430143">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="795906608868826" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;players&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="136676248444330" type="Text">
+                            <param id="0" name="Text">Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="160745592800488" type="Text">
+                            <param id="0" name="Text">15&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="897856461081744">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="919103678443938" type="MultiplayerInfo">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;players&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="557399914906749" type="MultiplayerInfo">
+                            <param id="0" name="Text">&quot;Код: &quot; &amp; code &amp; newline &amp; &quot;Гравці: &quot;&amp;Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="351007113537211">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="850887336093442" type="System">
+                            <param id="0" name="Variable">mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;awaitAnswers&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="649794794299881" type="Function">
+                            <param id="0" name="Name">&quot;updateVotes&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="628315909863986">
+            <conditions>
+                <condition id="0" name="On function" sid="858765024455497" type="Function">
+                    <param id="0" name="Name">&quot;getCode&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="188333769569088" type="System">
+                    <param id="0" name="Variable">code</param>
+                    <param id="1" name="Value">zeropad(int(random(9999)),4)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="835817413219154">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="337925288720325" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;code&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="489518327786590" type="Text">
+                            <param id="0" name="Text">code</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="904529040128960">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="843234973194999" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;players&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="367681636381635" type="Text">
+                            <param id="0" name="Text">Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="url" sid="572468508665760" static="0" type="text"></variable>
+                <event-block sid="516222666042646">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="218327814358061" type="MultiplayerInfo">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;url&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="663648691342624" type="System">
+                            <param id="0" name="Variable">url</param>
+                            <param id="1" name="Value">&quot;etcetera.org.ua/krok&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="245920444591387" type="MultiplayerInfo">
+                            <param id="0" name="Text">url</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="647214109297400" type="System">
+                            <param id="0" name="Variable">url</param>
+                            <param id="1" name="Value">&quot;https://&quot;&amp;url&amp;&quot;?room=&quot;&amp;code</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="872567660102735" type="qr">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="107696335941623" type="qr">
+                            <param id="0" name="Instance variable">request</param>
+                            <param id="1" name="Value">&quot;https://quickchart.io/qr?text=&quot;&amp;url&amp;&quot;&amp;light=fff0dc&amp;dark=473b6e&amp;margin=0&amp;size=900&quot;</param>
+                        </action>
+                        <action id="10" name="Load image from URL" sid="939606851300345" type="qr">
+                            <param id="0" name="URI">Self.request</param>
+                            <param id="1" name="Size">1</param>
+                            <param id="2" name="Cross-origin">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="624954097032878">
+            <conditions>
+                <condition id="14" name="On join room" sid="757010712224730" type="Photon" />
+                <condition id="-9" inverted="1" name="Is visible" sid="181192818422820" type="qr" />
+            </conditions>
+            <actions>
+                <action id="10" name="Load image from URL" sid="323504573037852" type="qr">
+                    <param id="0" name="URI">Self.request</param>
+                    <param id="1" name="Size">1</param>
+                    <param id="2" name="Cross-origin">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="593471177663051">
+            <conditions>
+                <condition id="10" name="On image URL loaded" sid="364224277080202" type="qr" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="105686959001980" type="qr">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="314130801925372">
+            <conditions>
+                <condition id="17" name="On tap object" sid="880851155805667" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+                <condition id="-16" name="Is on layer" sid="822851296072946" type="Button">
+                    <param id="0" name="Layer">&quot;PlayersScreen&quot;</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="292005967773338" type="System">
+                    <param id="0" name="Layer">&quot;PlayersScreen&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Opacity">100</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="361543143601808">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="107223663698343" type="Button">
+                            <param id="0" name="Animation">&quot;Start&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="742246596131060" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;PlayersScreen&quot;{###}0{###}0.15</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="507888936846522" type="System">
+                            <param id="0" name="Variable">allow_to_continue</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="452776958773650" type="System">
+                            <param id="0" name="Variable">cur_msg</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="997380489570417" type="Function">
+                            <param id="0" name="Name">&quot;Next&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="891446552685961" type="System">
+                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="1" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="995695816726216">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="405018658074566" type="MultiplayerInfo">
+                                    <param id="0" name="Instance variable">role</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;players&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="291655817526119" type="MultiplayerInfo">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="811144466064240">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="868654184908676" type="System">
+                                    <param id="0" name="Object">Button</param>
+                                </condition>
+                                <condition id="2" name="Is playing" sid="883798277408504" type="Button">
+                                    <param id="0" name="Animation">&quot;back&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="357922859151338" type="Button">
+                                    <param id="0" name="Animation">&quot;Pause&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="307248256426818">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="674474656779662" type="Button">
+                            <param id="0" name="Animation">&quot;Menu&quot;</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="120768294021137" type="Button">
+                            <param id="0" name="Animation">&quot;MenuGreen&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="344271336686079" type="Function">
+                            <param id="0" name="Name">&quot;goTo&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;StartScreen&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

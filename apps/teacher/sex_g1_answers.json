@@ -1,0 +1,39 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["whatIDo"],
+["Шукати самостійно","plot&whatIDo_searchAlone"],
+["Запитати батьків","plot&whatIDo_askParents"],
+["Почекати","plot&whatIDo_wait"]
+],
+
+[["whatIAnswer"],
+["Зацікавитись","plot&whatIAnswer_interest"],
+["Проігнорувати","plot&whatIAnswer_ignore"],
+["Відмовитись","plot&whatIAnswer_refuse"]
+],
+
+[["whatIWrite"],
+["Сказати правду","plot&whatIWrite_truth"],
+["Збрехати","plot&whatIWrite_lie"],
+["Ухилитись від відповіді","plot&whatIWrite_refuse"]
+],
+
+[["shouldIMakePhoto"],
+["Погодитись","plot&shouldIMakePhoto_yes"],
+["Відмовитись","plot&shouldIMakePhoto_no"],
+["Сумніватись","plot&shouldIMakePhoto_idk"]
+],
+
+[["makeIntimatePhoto"],
+["Погодитись","plot&makeIntimatePhoto_agree"],
+["Сумніватись","plot&makeIntimatePhoto_idk"],
+["Відмовитись","plot&makeIntimatePhoto_refuse"]
+],
+
+[["askingForHelp"],
+["Розповісти батькам","plot&askingForHelp_parents"],
+["Розповісти друзям","plot&askingForHelp_friends"],
+["Мовчати","plot&askingForHelp_keepSilent"]
+]
+
+]}

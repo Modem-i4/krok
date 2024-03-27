@@ -1,0 +1,28 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["you_are_crazy"],
+["Пояснити","plot&you_are_crazy_Explain"],
+["Проігнорувати","plot&you_are_crazy_Ignore"],
+["Розізлитися","plot&you_are_crazy_GetAngry"]],
+
+[["everyone_watch"],
+["Заплакати","plot&everyone_watch_Cry"],
+["Повторити мою версію","plot&everyone_watch_Repeat"],
+["Вибігти з класу","plot&everyone_watch_Run"]],
+
+[["you_stupid"],
+["Відповісти","plot&you_stupid_Answer"],
+["Промовчати","plot&you_stupid_Ignore"],
+["Розгубитись","plot&you_stupid_getLost"]],
+
+[["you_all_right"],
+["Уникнути відповіді","plot&you_all_right_Avoid"],
+["Промовчати","plot&you_all_right_Ignore"],
+["Чесно відповісти","plot&you_all_right_Honest"]],
+
+[["what_to_do"],
+["Піти додому","plot&what_to_do_GoHome"],
+["Заховатися у туалеті","plot&what_to_do_GoToilet"],
+["Розповісти вчительці","plot&what_to_do_TellTeacher"]]
+
+]}

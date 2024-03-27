@@ -1,0 +1,45 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["add_to_chat"],
+["Погодитись","plot&add_to_chat_Accept"],
+["Проігнорувати","plot&add_to_chat_Ignore"],
+["Заперечити","plot&add_to_chat_Decline"]
+],
+
+[["attend_more"],
+["Зацікавитись","plot&attend_more_Interested"],
+["Погодитись","plot&attend_more_Agree"],
+["Засумніватись","plot&attend_more_Doubt"]
+],
+
+[["strange"],
+["Не заперечу","plot&strange_Ok"],
+["Проігнорую","plot&strange_Ignore"],
+["Відсунусь","plot&strange_GetOff"]
+],
+
+[["watch_pictures"],
+["Розглянути","plot&watch_pictures_Yes"],
+["Не звертати увагу","plot&watch_pictures_Ignore"],
+["Засоромитись","plot&watch_pictures_Shy"]
+],
+
+[["how_to_understnd"],
+["Виправдати","plot&how_to_understnd_Justify"],
+["Ігнорувати","plot&how_to_understnd_Ignore"],
+["Обуритися","plot&how_to_understnd_Scared"]
+],
+
+[["kiss"],
+["Погодитись","plot&kiss_Agree"],
+["Не діяти","plot&kiss_Ignore"],
+["Відштовхнути","plot&kiss_Reject"]
+],
+
+
+[["what_happened"],
+["Збрехати","plot&what_happened_Lie"],
+["Розгубитись","plot&what_happened_GetConfused"],
+["Довіритись","plot&what_happened_Trust"]
+]
+]}

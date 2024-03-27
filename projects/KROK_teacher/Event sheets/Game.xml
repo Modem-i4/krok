@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game</name>
+    <events>
+        <include>Animations</include>
+        <include>Functions</include>
+        <include>PlayersScreen</include>
+        <include>Common</include>
+        <include>EndScreen</include>
+        <include>Setup</include>
+        <include>Photon</include>
+        <variable constant="0" name="allow_to_continue" sid="287981827886208" static="0" type="number">1</variable>
+        <variable constant="0" name="cur_plot" sid="770041189861629" static="0" type="number">0</variable>
+        <variable constant="0" name="cur_msg" sid="670062529596695" static="0" type="number">-1</variable>
+        <variable constant="0" name="mode" sid="315554788483548" static="0" type="text">chat</variable>
+        <variable constant="0" name="speaker" sid="443602179038317" static="0" type="text"></variable>
+        <variable constant="1" name="MAXPLAYERS" sid="543055528448447" static="0" type="number">25</variable>
+        <variable constant="0" name="IMG_ROOT" sid="578821568414963" static="0" type="text">https://etcetera.org.ua/krok/textures/HQ/</variable>
+        <event-block sid="925675476439910">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="858449194770632" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="829997297857930" type="System">
+                    <param id="0" name="Variable">allow_to_continue</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="3" name="Clear" sid="266288361921911" type="Choises" />
+                <action id="-16" name="Set opacity" sid="745980339520330" type="Option">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="122411872967361" type="Overlay" />
+                <action id="-16" name="Set opacity" sid="677312233188026" type="Blur">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="388051968640382" type="System">
+                    <param id="0" name="Layer">&quot;curtain&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="0" name="Call function" sid="300729307398687" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}0{###}0.15</param>
+                </action>
+                <action id="-9" name="Set value" sid="164129277142836" type="System">
+                    <param id="0" name="Variable">cur_plot</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="191313754796097" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Value">&quot;chat&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="496305969531949" type="System">
+                    <param id="0" name="Variable">speaker</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="470629613442210" type="System">
+                    <param id="0" name="Layer">&quot;VotesCounter&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="209035705924656" type="System">
+                    <param id="0" name="Layer">&quot;EmoScale&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="983706490245479" type="System">
+                    <param id="0" name="Layer">&quot;ConnRefused&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="141884701305253" type="System">
+                    <param id="0" name="Layer">&quot;GodVoice&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="566112636326639">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="923333424994677" type="System">
+                            <param id="0" name="Variable">GameMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Singleplayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="714855034369577" type="System">
+                            <param id="0" name="Variable">allow_to_continue</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="629226736167693" type="System">
+                            <param id="0" name="Variable">cur_msg</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="913964462190943" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Overlay&quot;{###}100{###}0.13</param>
+                        </action>
+                        <action id="0" name="Call function" sid="251657334085756" type="Function">
+                            <param id="0" name="Name">&quot;Next&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="997796793666499">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="441022484246018" type="System">
+                            <param id="0" name="Variable">GameMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Create&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="108888084733234" type="System">
+                            <param id="0" name="Variable">allow_to_continue</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="416742884261334" type="Function">
+                            <param id="0" name="Name">&quot;StartPhoton&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="239683588692043">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="347672588953987" type="System">
+                    <param id="0" name="Variable">speaker</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="553056905286114" type="CharBg">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.15*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="848857367748900" type="CharCircle">
+                    <param id="0" name="Opacity">CharBg.Opacity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="547029587639673">
+            <conditions>
+                <condition id="-22" name="Else" sid="580382222781779" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="783700316869751" type="CharBg">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.15*60/fps)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="145687778008141" type="CharCircle">
+                    <param id="0" name="Opacity">CharBg.Opacity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="896794226787803">
+            <conditions>
+                <condition id="0" name="On function" sid="107227181989513" type="Function">
+                    <param id="0" name="Name">&quot;Next&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="lastMsg" sid="475772803648842" static="1" type="text"></variable>
+                <event-block sid="989302440469850">
+                    <conditions />
+                    <actions>
+                        <action id="-10" name="Add to" sid="675499586845757" type="System">
+                            <param id="0" name="Variable">cur_msg</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="616094466566636" type="System">
+                            <param id="0" name="Variable">isStoryTyping</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="706834073921489" type="System">
+                            <param id="0" name="Variable">somePhoneMsg</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="897977347184942" type="StoryBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="414837254005056" type="StoryBox">
+                            <param id="0" name="Instance variable">targetText</param>
+                            <param id="1" name="Value">Function.Call(&quot;replaceNames&quot;,Plots.At(cur_plot,cur_msg,1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>speaker</comment>
+                <event-block sid="375322919869086">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="312455318320023" type="System">
+                            <param id="0" name="Variable">speaker</param>
+                            <param id="1" name="Value">Plots.At(cur_plot,cur_msg,0)</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="620085433339763" type="CharCircle">
+                            <param id="0" name="Animation">speaker</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="223993575069612" type="Speaker">
+                            <param id="0" name="Text">Function.Call(&quot;getSpeakerName&quot;, speaker)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="255023686261524" type="Function">
+                            <param id="0" name="Name">&quot;godVoice&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;off&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Action</comment>
+                <event-block sid="883707027415825">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="157340185554999" type="System">
+                            <param id="0" name="First value">len(Plots.At(cur_plot,cur_msg,2))</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="542313770836632" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Actions: &quot;&amp;Plots.At(cur_plot,cur_msg,2)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="226897165480079" type="Function">
+                            <param id="0" name="Name">&quot;FuncDecryptor&quot;</param>
+                            <param id="1" name="Parameter {n}">Plots.At(cur_plot,cur_msg,2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="543069951112916">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="104892376745444" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="681977045385387" type="Function">
+                            <param id="0" name="Name">&quot;sync&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="499864932388890" title="FuncsDec">
+            <sub-events>
+                <variable constant="0" name="persistedFunction" sid="910474387578177" static="1" type="text"></variable>
+                <event-block sid="115022665021780">
+                    <conditions>
+                        <condition id="0" name="On function" sid="428120047106782" type="Function">
+                            <param id="0" name="Name">&quot;ApplyPersistedFunction&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="225153615035323" type="Function">
+                            <param id="0" name="Name">&quot;FuncDecryptor&quot;</param>
+                            <param id="1" name="Parameter {n}">persistedFunction</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="643796802839020" type="System">
+                            <param id="0" name="Variable">persistedFunction</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="153060499987380">
+                    <conditions>
+                        <condition id="0" name="On function" sid="486423000814276" type="Function">
+                            <param id="0" name="Name">&quot;FuncDecryptor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="399435358048179">
+                            <conditions>
+                                <condition id="-10" name="For" sid="254967288206026" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(Function.Param(0),&quot;|&quot;)-1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="func" sid="133216814624074" static="0" type="text"></variable>
+                                <event-block sid="710298792811600">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="434812504242641" type="System">
+                                            <param id="0" name="Variable">func</param>
+                                            <param id="1" name="Value">tokenat(Function.Param(0),loopindex,&quot;|&quot;)</param>
+                                        </action>
+                                        <action id="2" name="Call expression" sid="635949720025744" type="Function">
+                                            <param id="0" name="Expression">Function.Call(tokenat(func,0,&quot;&amp;&quot;),tokenat(func,1,&quot;&amp;&quot;),tokenat(func,2,&quot;&amp;&quot;),tokenat(func,3,&quot;&amp;&quot;),tokenat(func,4,&quot;&amp;&quot;),tokenat(func,5,&quot;&amp;&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="615782867092194">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="138052383060301" type="System">
+                                            <param id="0" name="First value">tokenat(func,0,&quot;&amp;&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;curtain&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-24" name="Stop loop" sid="357650745119818" type="System" />
+                                        <action id="-9" name="Set value" sid="874929281869068" type="System">
+                                            <param id="0" name="Variable">persistedFunction</param>
+                                            <param id="1" name="Value">tokenat(Function.Param(0),1,func&amp;&quot;|&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="489903325520805">
+            <conditions>
+                <condition id="17" name="On tap object" sid="126678411384983" type="Touch">
+                    <param id="0" name="Object">Option</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="561103966776325" type="Option">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Opacity">95</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="386359573296403" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;options&quot;</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="252191254729136" type="System">
+                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="868781144756030" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Actions: &quot; &amp; Option.action</param>
+                </action>
+                <action id="0" name="Call function" sid="925444511454074" type="Function">
+                    <param id="0" name="Name">&quot;FuncDecryptor&quot;</param>
+                    <param id="1" name="Parameter {n}">Option.action</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="295612679103717">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="959395916918947" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;no-votes&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="698082174000210" type="Text">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="170262206513976">
+                    <conditions>
+                        <condition id="34" name="Is joined to a room" sid="271230361693787" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="17" name="Raise event" sid="998577625152553" type="Photon">
+                            <param id="0" name="Code">101</param>
+                            <param id="1" name="Data">&quot;ask|&quot;&amp;OptionText.Text</param>
+                            <param id="2" name="InterestGroup">0</param>
+                            <param id="3" name="Cache">0</param>
+                            <param id="4" name="Receivers">0</param>
+                            <param id="5" name="TargetActors">&quot;&quot;</param>
+                            <param id="6" name="WebForward">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="176028769001077">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="971562289358338" type="System">
+                            <param id="0" name="Object">Option</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="110966675370043" type="Option">
+                            <param id="0" name="Instance variable">chosen</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="393459680530456" type="Option">
+                            <param id="0" name="Instance variable">percentage</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="594408134971874" type="VotePercentageText">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="504437469185303">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="414518121883682" type="Button">
+                            <param id="0" name="Animation">&quot;NextHidden&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="848977251123091" type="Button">
+                            <param id="0" name="Animation">&quot;Next&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="313417347720044" title="HoverControl">
+            <sub-events>
+                <event-block sid="520167896161526">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="120111916934566" type="System">
+                            <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Opacity">0</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="601844040297989" type="System">
+                            <param id="0" name="Layer">&quot;Pause&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="971319501507037">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="864015810377020" type="Mouse">
+                                    <param id="0" name="Object">Option</param>
+                                </condition>
+                                <condition id="-10" name="Compare opacity" sid="810671597861060" type="Option">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Opacity">99</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="379573075872629" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="283676290797560">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="184974038986562" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="757311291958462" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="948108167632068" title="Pause">
+            <sub-events>
+                <event-block sid="531677398597959">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="828552907295964" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="898065829483185">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="122020305092709" type="Button">
+                                    <param id="0" name="Animation">&quot;Pause&quot;</param>
+                                </condition>
+                                <condition id="-17" name="Compare opacity" sid="729236371442420" type="System">
+                                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">1</param>
+                                </condition>
+                                <condition id="-17" name="Compare opacity" sid="365055961857922" type="System">
+                                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="833040284659959" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Pause&quot;{###}100{###}0.2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="458422954805473">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="365754444912242" type="System">
+                                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">99</param>
+                                </condition>
+                                <condition id="-16" name="Is on layer" sid="445676085499905" type="Button">
+                                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="969170168546463">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="137840389190163" type="Button">
+                                            <param id="0" name="Animation">&quot;Menu&quot;</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="437892871110341" type="Button">
+                                            <param id="0" name="Animation">&quot;MenuGreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="383937689842757" type="Function">
+                                            <param id="0" name="Name">&quot;goTo&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;StartScreen&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="150709950025353">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="196474541102788" type="Button">
+                                            <param id="0" name="Animation">&quot;ContinuePlot&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="236192331852639" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Pause&quot;{###}0{###}0.2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="427456665401297">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="836676881010500" type="Button">
+                                    <param id="0" name="Animation">&quot;back&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="885891001956155" type="Function">
+                                    <param id="0" name="Name">&quot;goTo&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;StartScreen&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

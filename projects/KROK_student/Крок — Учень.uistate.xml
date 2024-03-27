@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="1">Vote</layout>
+        <layout order="5">GameObjects</layout>
+        <layout order="7">StartScreen</layout>
+        <layout order="8">Loading</layout>
+        <event-sheet order="0">Vote</event-sheet>
+        <event-sheet order="2">Photon</event-sheet>
+        <event-sheet active="1" order="3">Common</event-sheet>
+        <event-sheet order="4">Sync</event-sheet>
+        <event-sheet order="6">StartScreen</event-sheet>
+        <event-sheet order="9">Loading</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="1" name="InterBlack" />
+        <family expanded="1" name="CandaraBold" />
+        <family expanded="1" name="Candara" />
+        <family expanded="1" name="InterSemiBold" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Vote/" />
+        <folder expanded="1" path="object-folder/Variative/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/Includes/" />
+        <folder expanded="1" path="event-folder/Layouts/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="0" path="file-folder/fonts/" />
+        <folder expanded="1" path="animation-folder/PercentageTracker/" />
+        <folder expanded="1" path="animation-folder/Option/" />
+        <folder expanded="1" path="animation-folder/Play/" />
+        <folder expanded="1" path="animation-folder/Button/" />
+        <folder expanded="1" path="animation-folder/DarkShader/" />
+        <folder expanded="1" path="animation-folder/Keys/" />
+        <folder expanded="1" path="animation-folder/Icon/" />
+        <folder expanded="1" path="animation-folder/Hyperlink/" />
+        <folder expanded="1" path="animation-folder/Char/" />
+        <folder expanded="1" path="animation-folder/Char/Girl/" />
+        <folder expanded="1" path="animation-folder/Char/general/" />
+        <folder expanded="1" path="animation-folder/Overlay/" />
+        <folder expanded="1" path="animation-folder/Bg/" />
+        <folder expanded="1" path="animation-folder/StoryWindow/" />
+        <folder expanded="1" path="animation-folder/CharBg/" />
+        <folder expanded="1" path="animation-folder/CharCircle/" />
+        <folder expanded="1" path="animation-folder/Blur/" />
+        <folder expanded="1" path="animation-folder/ChatAvatar/" />
+        <folder expanded="1" path="animation-folder/ChatBg/" />
+        <folder expanded="1" path="animation-folder/GUI_Bg/" />
+        <folder expanded="1" path="animation-folder/StartBg/" />
+        <folder expanded="1" path="animation-folder/LoadingBar/" />
+        <folder expanded="1" path="animation-folder/ProgressGem/" />
+        <folder expanded="1" path="animation-folder/OptionMsg/" />
+        <folder expanded="1" path="animation-folder/EmoScaleBar/" />
+        <folder expanded="1" path="animation-folder/EmoScaleProgress/" />
+        <folder expanded="1" path="animation-folder/Loader/" />
+    </folders-expanded>
+</c2uistate>

@@ -1,0 +1,33 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["whichSong"],
+["Melovin - \"Вітрила\"","plot&whichSong_melovin"],
+["Tember Blanche - \"Вечорниці\"","plot&whichSong_temberBlanche"],
+["ENLEO - \"Інша любов\"","plot&whichSong_anotherLove"]
+],
+
+[["whatIDo"],
+["Себе","plot&whatIDo_myself"],
+["Пісню","plot&whatIDo_song"],
+["Виконавця","plot&whatIDo_singer"]
+],
+
+[["whatIDoComments"],
+["Заборонити коментування","plot&whatIDoComments_forbid"],
+["Заблокувати коментаторів","plot&whatIDoComments_block"],
+["Ігнорувати","plot&whatIDoComments_ignore"]
+],
+
+[["whatIAnswer"],
+["Відповісти","plot&whatIAnswer_answer"],
+["Розізлитись","plot&whatIAnswer_angry"],
+["Ігнорувати","plot&whatIAnswer_ignore"]
+],
+
+[["whatIAnswerDad"],
+["Довіритись","plot&whatIAnswerDad_truth"],
+["Уникнути відповіді","plot&whatIAnswerDad_ignore"],
+["Збрехати","plot&whatIAnswerDad_lie"]
+]
+
+]}

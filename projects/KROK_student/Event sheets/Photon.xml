@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Photon</name>
+    <events>
+        <event-group description="" sid="642632300007878" title="PhotonConnects">
+            <sub-events>
+                <variable constant="0" name="photonInited" sid="553151695207119" static="1" type="number">0</variable>
+                <variable constant="1" name="LOADING_OPTIONS" sid="884839490033549" static="0" type="text">|ConnectingToNameServer|ConnectedToNameServer|ConnectingToMasterserver|ConnectedToMaster|JoinedLobby|ConnectingToGameserver|ConnectedToGameserver|</variable>
+                <event-block sid="933376923349251">
+                    <conditions>
+                        <condition id="0" name="On function" sid="840721900360968" type="Function">
+                            <param id="0" name="Name">&quot;goToMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="877579487931514" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}100{###}0.15</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="669294294740165" type="System">
+                            <param id="0" name="Variable">goToMenu</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="190615094451998">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="899033569657326" type="System">
+                            <param id="0" name="Variable">goToMenu</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="721640579695780" type="System">
+                            <param id="0" name="Layer">&quot;curtain&quot;</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Opacity">99</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="859506769425893" type="System">
+                            <param id="0" name="Variable">goToMenu</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="485251753768092" type="System">
+                            <param id="0" name="Layer">&quot;Pause&quot;</param>
+                            <param id="1" name="Opacity">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="774525913556923" type="System">
+                            <param id="0" name="Layout">StartScreen</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="284972623824829" type="System">
+                            <param id="0" name="Variable">photonInited</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="201" name="Reset" sid="635607364398672" type="Photon" />
+                    </actions>
+                </event-block>
+                <event-block sid="617150363225152">
+                    <conditions>
+                        <condition id="0" name="On function" sid="940670670396476" type="Function">
+                            <param id="0" name="Name">&quot;isLoading&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="893454479606324">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="889358489477913" type="System">
+                                    <param id="0" name="First value">find(LOADING_OPTIONS,&quot;|&quot;&amp;Photon.StateString&amp;&quot;|&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="686705745123689" type="Function">
+                                    <param id="0" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="917190071259692">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="359356348841611" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="273494647776954" type="Function">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="133525299561436" title="Gameserver Retry">
+                    <sub-events>
+                        <variable constant="0" name="retries" sid="892787851986412" static="1" type="number">0</variable>
+                        <event-block sid="167130701788643">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="186415407234662" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="860274474600743" type="System">
+                                    <param id="0" name="Variable">retries</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="500686961517645">
+                            <conditions>
+                                <condition id="1" name="On state change" sid="552763337004370" type="Photon" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="474606972801016">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="972860850591258" type="System">
+                                            <param id="0" name="First value">Photon.StateString</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;ConnectingToGameserver&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="792789079063733" type="System">
+                                            <param id="0" name="Seconds">6</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="523908538871515">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="952044782439014" type="System">
+                                                    <param id="0" name="Variable">retries</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="608598948149036" type="System">
+                                                    <param id="0" name="First value">Photon.StateString</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;ConnectingToGameserver&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="987083112240556" type="System">
+                                                    <param id="0" name="Variable">retries</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="201" name="Reset" sid="475173481267112" type="Photon" />
+                                                <action disabled="1" id="-9" name="Set value" sid="739297129484771" type="System">
+                                                    <param id="0" name="Variable">photonInited</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action disabled="1" id="16" name="Leave room" sid="662745021832858" type="Photon" />
+                                                <action disabled="1" id="14" name="Log" sid="575203342771335" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;RE LEAVE&quot;</param>
+                                                </action>
+                                                <action disabled="1" id="-16" name="Wait" sid="523947114318996" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action disabled="1" id="12" name="Join room" sid="246565175594950" type="Photon">
+                                                    <param id="0" name="Room">code</param>
+                                                    <param id="1" name="Rejoin">0</param>
+                                                    <param id="2" name="CreateIfNotExists">0</param>
+                                                    <param id="3" name="LobbyName">&quot;&quot;</param>
+                                                    <param id="4" name="LobbyType">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="536563976504369">
+                    <conditions>
+                        <condition id="22" name="On join lobby" sid="570406981888231" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="529867464899056" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="727499024820486">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="626173092302316" type="System">
+                                    <param id="0" name="First value">Photon.StateString</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;JoinedLobby&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="12" name="Join room" sid="115539699730709" type="Photon">
+                                    <param id="0" name="Room">code</param>
+                                    <param id="1" name="Rejoin">0</param>
+                                    <param id="2" name="CreateIfNotExists">0</param>
+                                    <param id="3" name="LobbyName">&quot;&quot;</param>
+                                    <param id="4" name="LobbyType">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="230369749710640">
+                    <conditions>
+                        <condition id="24" name="On disconnect" sid="724063881129255" type="Photon" />
+                        <condition disabled="1" id="-14" name="Compare variable" sid="534708838344156" type="System">
+                            <param id="0" name="Variable">photonInited</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="798140495857241" type="System">
+                            <param id="0" name="Variable">code</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                        <condition id="-17" inverted="1" name="Compare opacity" sid="202342446244375" type="System">
+                            <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="791143787870881" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;DISCONNNNNNNNNNNNNNNNNNNNNNEECT&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="443336071690148" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="162294814625066">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="612118416546991" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;isLoading&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Connect" sid="588515583670804" type="Photon" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="428630989023011">
+                    <conditions>
+                        <condition id="0" name="On error" sid="534896263436706" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="380188042383720" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;ERRROR: &quot;&amp;Photon.ErrorMessage</param>
+                        </action>
+                        <action id="201" name="Reset" sid="681009488913826" type="Photon" />
+                    </actions>
+                </event-block>
+                <event-group description="" sid="785222524148460" title="Self ping">
+                    <sub-events>
+                        <variable constant="0" name="SelfPinged" sid="636339225390323" static="1" type="number">0</variable>
+                        <event-block sid="119067043512731">
+                            <conditions>
+                                <condition id="3" name="On event" sid="856083320794484" type="Photon">
+                                    <param id="0" name="Code">24</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="584228130805424" type="System">
+                                    <param id="0" name="Variable">SelfPinged</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="343677739719941">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="948945590868023" type="System">
+                                    <param id="0" name="Variable">photonInited</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="738054688868976" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;isLoading&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-17" name="Compare opacity" sid="341460393045978" type="System">
+                                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Opacity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="498748182652142">
+                                    <conditions>
+                                        <condition id="8" name="On resumed" sid="313899643000743" type="Browser" />
+                                        <condition id="-6" name="Every X seconds" sid="847380643526388" type="System">
+                                            <param id="0" name="Interval (seconds)">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="965180632736829" type="System">
+                                            <param id="0" name="Variable">SelfPinged</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="17" name="Raise event" sid="508312338858689" type="Photon">
+                                            <param id="0" name="Code">24</param>
+                                            <param id="1" name="Data">0</param>
+                                            <param id="2" name="InterestGroup">0</param>
+                                            <param id="3" name="Cache">0</param>
+                                            <param id="4" name="Receivers">1</param>
+                                            <param id="5" name="TargetActors">str(Photon.MyActorNr)</param>
+                                            <param id="6" name="WebForward">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="228962321214688" type="System">
+                                            <param id="0" name="Seconds">4.5</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="342923960838971">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="170466201152118" type="System">
+                                                    <param id="0" name="Variable">SelfPinged</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="201" name="Reset" sid="818841218016394" type="Photon" />
+                                                <action id="14" name="Log" sid="588045790177124" type="Browser">
+                                                    <param id="0" name="Type">1</param>
+                                                    <param id="1" name="Message">&quot;RESET self ping&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="269208505513133">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="143250029227546" type="System">
+                                            <param id="0" name="Interval (seconds)">1</param>
+                                        </condition>
+                                        <condition id="34" inverted="1" name="Is joined to a room" sid="654486513051333" type="Photon" />
+                                        <condition id="-8" name="Compare two values" sid="993100635940804" type="System">
+                                            <param id="0" name="First value">Function.Call(&quot;isLoading&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="201" name="Reset" sid="685390461361697" type="Photon" />
+                                        <action id="14" name="Log" sid="758806635802544" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;RESET every sec &quot;&amp;Function.Call(&quot;isLoading&quot;)&amp;&quot; &quot;&amp;Photon.StateString</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="790988673349176">
+                    <conditions>
+                        <condition id="14" name="On join room" sid="776683029277369" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="382939001967495" type="System">
+                            <param id="0" name="Variable">photonInited</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="526345675155999">
+                    <conditions>
+                        <condition id="15" name="On actor join" sid="895647512496484" type="Photon" />
+                        <condition id="16" name="On actor leave" sid="809599478229448" type="Photon" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="633935889459165">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="781365531852215" type="Text">
+                                    <param id="0" name="Instance variable">role</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;players&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="207430101266150" type="Text">
+                                    <param id="0" name="Text">Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="546098385301643">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="728966036552884" type="SubtitleText">
+                                    <param id="0" name="Instance variable">role</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;playersAmount&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="397004559276929" type="SubtitleText">
+                                    <param id="0" name="Text">Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="876158863545909">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="154777778040856" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;StartScreen&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="900742187641458">
+                            <conditions>
+                                <condition id="14" name="On join room" sid="450869322964538" type="Photon" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="424847107451316">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="219067661307289" type="Icon">
+                                            <param id="0" name="Animation">&quot;Alert&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="142657378838777" type="Icon">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="561733877907041" type="Text">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

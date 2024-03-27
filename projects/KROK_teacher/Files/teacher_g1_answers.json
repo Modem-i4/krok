@@ -1,0 +1,26 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["share"],
+["Поділитись","plot&share_Share"],
+["Запитати","plot&share_Ask"],
+["Розповісти про друга","plot&share_TellAboutFriend"]
+],
+
+[["touch"],
+["Торкнутися","plot&touch_Agree|set&touch&yes"],
+["Змінити тему","plot&touch_Evade|set&touch&no"],
+["Відмовитися","plot&touch_Decline|set&touch&no"]
+],
+
+[["whySoEarly"],
+["Натякнути","plot&whySoEarly_hint"],
+["Розказати","plot&whySoEarly_tell"],
+["Відмазатись","plot&whySoEarly_smear"]
+],
+
+[["help"],
+["Злякатися","plot&help_Scare"],
+["Розповісти","plot&help_Tell"],
+["Сказати не все","plot&help_Evade"]
+]
+]}

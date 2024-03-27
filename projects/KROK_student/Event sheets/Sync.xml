@@ -1,0 +1,2087 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Sync</name>
+    <events>
+        <variable constant="0" name="IMG_ROOT" sid="737726485693838" static="0" type="text">https://etcetera.org.ua/krok/textures/LQ/</variable>
+        <variable constant="0" name="somePhoneMsg" sid="685060029284120" static="0" type="number">0</variable>
+        <event-group description="" sid="879394066297095" title="Sync">
+            <sub-events>
+                <variable constant="0" name="isStoryTyping" sid="805973263620540" static="1" type="number">0</variable>
+                <event-block sid="754604166605690">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="609560756701416" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="198912660089877" type="Blur">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="0" name="Clear" sid="745506506659317" type="Charlist" />
+                        <action id="-18" name="Set layer opacity" sid="554942072546828" type="System">
+                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="1" name="Opacity">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="717926768421273" type="System">
+                            <param id="0" name="Variable">curBg</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="636729796355043" type="System">
+                            <param id="0" name="Variable">lastTime</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="196322226462057" type="System">
+                            <param id="0" name="Variable">somePhoneMsg</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="330977598531265">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="164781032769966" type="System" />
+                        <condition id="14" name="On join room" sid="122498529280854" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="891939086590361" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="638971479857510">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="310539686248245" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;Vote&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="17" name="Raise event" sid="814443658221513" type="Photon">
+                                    <param id="0" name="Code">90</param>
+                                    <param id="1" name="Data">&quot;&quot;</param>
+                                    <param id="2" name="InterestGroup">0</param>
+                                    <param id="3" name="Cache">0</param>
+                                    <param id="4" name="Receivers">0</param>
+                                    <param id="5" name="TargetActors">&quot;&quot;</param>
+                                    <param id="6" name="WebForward">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="curBg" sid="970674455118950" static="1" type="text"></variable>
+                <variable constant="0" name="lastTime" sid="704510464771014" static="1" type="number">0</variable>
+                <event-block sid="744146699841930">
+                    <conditions>
+                        <condition id="3" name="On event" sid="526205398547357" type="Photon">
+                            <param id="0" name="Code">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Load" sid="713365474000519" type="DataPack">
+                            <param id="0" name="JSON">Photon.EventData</param>
+                        </action>
+                        <action id="14" name="Log" sid="967673388757462" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">DataPack.AsJSON</param>
+                        </action>
+                        <action id="0" name="Call function" sid="485130214875928" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;StartWindow&quot;{###}0{###}0.15</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="611271576242710">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="258635574264279" type="System">
+                                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Opacity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="786832161821110" type="System">
+                                    <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                                    <param id="1" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="673436911088429">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="902209427967027" type="DataPack">
+                                    <param id="0" name="Key">&quot;time&quot;</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">lastTime</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="683808324222306" type="System">
+                                    <param id="0" name="Variable">lastTime</param>
+                                    <param id="1" name="Value">DataPack.Get(&quot;time&quot;)</param>
+                                </action>
+                                <action id="14" name="Log" sid="142257061877615" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Accepted&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="995327170874459" type="Function">
+                                    <param id="0" name="Name">&quot;ApplyPersistedFunction&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="865870810448696" type="Function">
+                                    <param id="0" name="Name">&quot;godVoice&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;off&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="358164890159311">
+                                    <conditions />
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="319709756135693" type="CharCircle">
+                                            <param id="0" name="Animation">DataPack.Get(&quot;speaker&quot;)</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="380095989790104" type="Speaker">
+                                            <param id="0" name="Text">DataPack.Get(&quot;speaker_ukr&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="445452772607642">
+                                    <conditions>
+                                        <condition id="0" inverted="1" name="Compare text" sid="387340120215657" type="StoryBox">
+                                            <param id="0" name="Text to compare">DataPack.Get(&quot;text&quot;)</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="872264313715142" type="StoryBox">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="126830136396035" type="StoryBox">
+                                            <param id="0" name="Instance variable">targetText</param>
+                                            <param id="1" name="Value">DataPack.Get(&quot;text&quot;)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="701760573652689" type="System">
+                                            <param id="0" name="Variable">isStoryTyping</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="222315794588632">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="424288519314960" type="System">
+                                            <param id="0" name="First value">find(DataPack.Get(&quot;funcs&quot;), &quot;bg&amp;&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="687713689630702" type="System">
+                                            <param id="0" name="Variable">curBg</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">DataPack.Get(&quot;bg&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="811945890217924" type="Function">
+                                            <param id="0" name="Name">&quot;bg&quot;</param>
+                                            <param id="1" name="Parameter {n}">DataPack.Get(&quot;bg&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="850007407994398">
+                                    <conditions>
+                                        <condition id="3" inverted="1" name="Has key" sid="494128676482350" type="DataPack">
+                                            <param id="0" name="Key">&quot;blur&quot;</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="583313398127693" type="Blur">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Opacity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="FadeOut" id="1" name="Start fade" sid="544412233141375" type="Blur" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="826422735597209">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="681873870990315" type="Function">
+                                            <param id="0" name="Name">&quot;FuncDecryptor&quot;</param>
+                                            <param id="1" name="Parameter {n}">DataPack.Get(&quot;funcs&quot;)</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="586671631342729" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">DataPack.Get(&quot;funcs&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="530789341431908">
+                                    <conditions>
+                                        <condition id="3" name="Has key" sid="463369411898624" type="DataPack">
+                                            <param id="0" name="Key">&quot;answers&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="357204010912941" type="Function">
+                                            <param id="0" name="Name">&quot;displayAnswers&quot;</param>
+                                            <param id="1" name="Parameter {n}">DataPack.Get(&quot;answers&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="412842206571134">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="831089615694121" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="272328878291416" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;options&quot;{###}0{###}0.15</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="237773344801298">
+                                            <conditions>
+                                                <condition id="3" name="Has key" sid="876723795454668" type="DataPack">
+                                                    <param id="0" name="Key">&quot;emoScale&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="221401423214119">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="526595825258597" type="EmoScaleBar">
+                                                            <param id="0" name="Instance variable">lastEmoScale</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Value">tokenat(DataPack.Get(&quot;emoScale&quot;),0,&quot;&amp;&quot;)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="590009800063330" type="EmoScaleBar">
+                                                            <param id="0" name="Instance variable">lastEmoScale</param>
+                                                            <param id="1" name="Value">tokenat(DataPack.Get(&quot;emoScale&quot;),0,&quot;&amp;&quot;)</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="956063403828825" type="Function">
+                                                            <param id="0" name="Name">&quot;displayEmoScale&quot;</param>
+                                                            <param id="1" name="Parameter {n}">DataPack.Get(&quot;emoScale&quot;)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="967700709300704">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="377713744516591" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="181025389843868" type="System">
+                                                    <param id="0" name="Variable">mode</param>
+                                                    <param id="1" name="Value">&quot;&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="519589517505445" type="Function">
+                                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;EmoScale&quot;{###}0{###}0.15</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <variable constant="0" name="receivedCharlist" sid="954986478745922" static="0" type="text"></variable>
+                                <event-block sid="614860029500019">
+                                    <conditions>
+                                        <condition id="1" name="For each key" sid="736365019086947" type="DataPack" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="509134109207983">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="525352884844382" type="System">
+                                                    <param id="0" name="First value">find(DataPack.CurrentKey,&quot;char&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="579126824691461" type="Function">
+                                                    <param id="0" name="Name">&quot;updateChar&quot;</param>
+                                                    <param id="1" name="Parameter {n}">DataPack.CurrentValue</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="431885200841677" type="System">
+                                                    <param id="0" name="Variable">receivedCharlist</param>
+                                                    <param id="1" name="Value">tokenat(DataPack.CurrentValue,0,&quot;|&quot;)&amp;&quot;|&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="985260206801857">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="847037486986042" type="Char">
+                                            <param id="0" name="Instance variable">leaving</param>
+                                        </condition>
+                                        <condition id="-11" name="For Each" sid="836081247841771" type="System">
+                                            <param id="0" name="Object">Char</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="464641818899627">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="963067856164775" type="System">
+                                                    <param id="0" name="First value">find(receivedCharlist, Char.name)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="888664673690467" type="Char" />
+                                                <action id="0" name="Call function" sid="629310382146132" type="Function">
+                                                    <param id="0" name="Name">&quot;delChar&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Char.name</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="363876976509671">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="673792929026675" type="CodeTxt">
+                                    <param id="0" name="Layer">&quot;GUI&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="399590742512420" type="CodeTxt">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="991370379959072">
+                    <conditions>
+                        <condition id="0" name="On function" sid="945310095979033" type="Function">
+                            <param id="0" name="Name">&quot;appear&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="497443646275324" type="Charlist">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="155752574694760">
+                    <conditions>
+                        <condition id="0" name="On function" sid="672607674125910" type="Function">
+                            <param id="0" name="Name">&quot;bg&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="569294122736591" type="System">
+                            <param id="0" name="Variable">curBg</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="543001956352196">
+                    <conditions>
+                        <condition id="0" name="On function" sid="426426117524906" type="Function">
+                            <param id="0" name="Name">&quot;leave&quot;</param>
+                        </condition>
+                        <condition id="0" name="On function" sid="395199632100067" type="Function">
+                            <param id="0" name="Name">&quot;disappear&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="935817140363719" type="Function">
+                            <param id="0" name="Name">&quot;delChar&quot;</param>
+                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="810127889352025">
+                    <conditions>
+                        <condition id="0" name="On function" sid="670111268100977" type="Function">
+                            <param id="0" name="Name">&quot;delChar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="674787169823049">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="484798015799265" type="Charlist">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                                <condition id="4" name="Compare current value" sid="353253583388486" type="Charlist">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Delete" sid="253891280697450" type="Charlist">
+                                    <param id="0" name="Index">Charlist.CurX</param>
+                                    <param id="1" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="819419989612368">
+                    <conditions>
+                        <condition id="0" name="On function" sid="343183949616285" type="Function">
+                            <param id="0" name="Name">&quot;updateChar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="name" sid="257081097723180" static="0" type="text"></variable>
+                        <variable constant="0" name="emotion" sid="228408989021699" static="0" type="text">default</variable>
+                        <variable constant="0" name="pos" sid="994452963752166" static="0" type="number">0</variable>
+                        <variable constant="0" name="mirrored" sid="219807736039408" static="0" type="text"></variable>
+                        <event-block sid="956714491339083">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="910678176135473" type="System">
+                                    <param id="0" name="Variable">name</param>
+                                    <param id="1" name="Value">tokenat(Function.Param(0),0,&quot;|&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="830435921765112" type="System">
+                                    <param id="0" name="Variable">emotion</param>
+                                    <param id="1" name="Value">tokenat(Function.Param(0),1,&quot;|&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="267322861173146" type="System">
+                                    <param id="0" name="Variable">pos</param>
+                                    <param id="1" name="Value">tokenat(Function.Param(0),2,&quot;|&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="827088875732543">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="241691449239833" type="System">
+                                    <param id="0" name="First value">tokenat(Function.Param(0),3,&quot;|&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;mirrored&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="192703767053041" type="System">
+                                    <param id="0" name="Variable">mirrored</param>
+                                    <param id="1" name="Value">&quot;1&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>if missing</comment>
+                        <event-block sid="752621441497723">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="479955922032215" type="Char">
+                                    <param id="0" name="Instance variable">name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">name</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="910496666679910">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="915596602280419" type="System" />
+                                <condition id="5" inverted="1" name="Contains value" sid="189262915607141" type="Charlist">
+                                    <param id="0" name="Value">name</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="183826848038178" type="Function">
+                                    <param id="0" name="Name">&quot;appear&quot;</param>
+                                    <param id="1" name="Parameter {n}">name{###}pos{###}0{###}emotion{###}mirrored</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="240620140483200">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="413443118269510" type="Char">
+                                    <param id="0" name="Instance variable">name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">name</param>
+                                </condition>
+                                <condition id="-17" name="Pick top/bottom" sid="516989929171333" type="Char">
+                                    <param id="0" name="Which">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="854171821894896">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="823564869548808" type="Char">
+                                            <param id="0" name="Instance variable">pos</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">pos</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="220993142532629" type="Char">
+                                            <param id="0" name="Instance variable">pos</param>
+                                            <param id="1" name="Value">pos</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="930143798491387" type="Char">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Value">Function.Call(&quot;getCharX&quot;, Char.UID)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="210254208347294">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="601239418974896" type="Char">
+                                            <param id="0" name="Instance variable">emotion</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">emotion</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="413897898187258" type="Function">
+                                            <param id="0" name="Name">&quot;emote&quot;</param>
+                                            <param id="1" name="Parameter {n}">name{###}emotion</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="464723412323691">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="513524931034333" type="System">
+                                            <param id="0" name="Variable">mirrored</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;1&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="501850269538505" type="Char">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="801229454095746" type="Char">
+                                            <param id="0" name="Instance variable">mirrored</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="483674574327097">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="277517312302163" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="548246445138524" type="Char">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="772111317257158" type="Char">
+                                            <param id="0" name="Instance variable">mirrored</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="800116326462136" title="FuncDecr">
+                    <sub-events>
+                        <variable constant="0" name="persistedFunction" sid="563351394371329" static="1" type="text"></variable>
+                        <event-block sid="246502773548026">
+                            <conditions>
+                                <condition id="0" name="On function" sid="587710364462080" type="Function">
+                                    <param id="0" name="Name">&quot;ApplyPersistedFunction&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="323137603702354" type="Function">
+                                    <param id="0" name="Name">&quot;FuncDecryptor&quot;</param>
+                                    <param id="1" name="Parameter {n}">persistedFunction</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="294941596811094" type="System">
+                                    <param id="0" name="Variable">persistedFunction</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="543408758601257">
+                            <conditions>
+                                <condition id="0" name="On function" sid="681607942811668" type="Function">
+                                    <param id="0" name="Name">&quot;FuncDecryptor&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="268512671436191">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="606474200505252" type="System">
+                                            <param id="0" name="Name">&quot;&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">tokencount(Function.Param(0),&quot;|&quot;)-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="func" sid="211007171006342" static="0" type="text"></variable>
+                                        <variable constant="1" name="SKIP_FUNCS" sid="682230445325401" static="0" type="text">|ask|plot|emoScale|playSound|</variable>
+                                        <event-block sid="454019188361000">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="162504945377117" type="System">
+                                                    <param id="0" name="Variable">func</param>
+                                                    <param id="1" name="Value">tokenat(Function.Param(0),loopindex,&quot;|&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="374356059762219">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="344852605249019" type="System">
+                                                    <param id="0" name="First value">find(SKIP_FUNCS, &quot;|&quot; &amp; tokenat(func,0,&quot;&amp;&quot;) &amp; &quot;|&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Call expression" sid="997273306186848" type="Function">
+                                                    <param id="0" name="Expression">Function.Call(tokenat(func,0,&quot;&amp;&quot;),tokenat(func,1,&quot;&amp;&quot;),tokenat(func,2,&quot;&amp;&quot;),tokenat(func,3,&quot;&amp;&quot;),tokenat(func,4,&quot;&amp;&quot;),tokenat(func,5,&quot;&amp;&quot;))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="698626180541759">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="746336650882914" type="System">
+                                                    <param id="0" name="First value">tokenat(func,0,&quot;&amp;&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;curtain&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-24" name="Stop loop" sid="192588125353687" type="System" />
+                                                <action id="-9" name="Set value" sid="830421677024650" type="System">
+                                                    <param id="0" name="Variable">persistedFunction</param>
+                                                    <param id="1" name="Value">tokenat(Function.Param(0),1,func&amp;&quot;|&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="852721745229243">
+                    <conditions>
+                        <condition id="8" name="On resumed" sid="619218445951879" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="965871009749016" type="System">
+                            <param id="0" name="Seconds">dt*2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="158575877141108">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="375416425214673" type="Char">
+                                    <param id="0" name="Instance variable">mirrored</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="306375447233141" type="Char">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="361844535479314">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="368469355839631" type="Char">
+                                    <param id="0" name="Instance variable">mirrored</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="496940522322759" type="Char">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="534863255220155" title="COMMON">
+                    <sub-events>
+                        <event-group description="" sid="693963495664187" title="ImagePoints">
+                            <sub-events>
+                                <event-block sid="617465971937963">
+                                    <conditions>
+                                        <condition id="10" name="On image URL loaded" sid="195858139198454" type="Char" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="147961886550101" type="Char">
+                                            <param id="0" name="Scale">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="985656857541394">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="160363080482151" type="Char">
+                                                    <param id="0" name="Instance variable">inited</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="542672917654200" type="Char">
+                                                    <param id="0" name="Instance variable">inited</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="312932203870860" type="Char">
+                                                    <param id="0" name="Instance variable">offsetX</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;getOffset&quot;, Char.UID)</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="197353796757709" type="Char">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action behavior="FadeIn" id="1" name="Start fade" sid="537055656624760" type="Char" />
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="474253166083626">
+                                                    <conditions>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="121378723250731" type="Char">
+                                                            <param id="0" name="Instance variable">mirrored</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="7" name="Set mirrored" sid="668358421075292" type="Char">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="637886280175585">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="273031701616454" type="Function">
+                                                    <param id="0" name="Name">&quot;updCharPos&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Char.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>0: pos</comment>
+                                <event-block sid="662630550345709">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="142918101907538" type="Function">
+                                            <param id="0" name="Name">&quot;posToX&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="321173488143275" type="Function">
+                                            <param id="0" name="Value">LayoutWidth*float(Function.Param(0))/7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>0: charUID, (1): x/y</comment>
+                                <event-block sid="548261500793361">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="115494619004061" type="Function">
+                                            <param id="0" name="Name">&quot;charImagePoint&quot;</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="539613839013349" type="Char">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="attr" sid="914904620846177" static="0" type="text">x</variable>
+                                        <event-block sid="257238677295936">
+                                            <conditions>
+                                                <condition id="1" name="Compare parameter" sid="492339836280838" type="Function">
+                                                    <param id="0" name="Index">1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;y&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="106248218545051" type="System">
+                                                    <param id="0" name="Variable">attr</param>
+                                                    <param id="1" name="Value">&quot;y&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="191215444890153">
+                                            <conditions />
+                                            <actions>
+                                                <action id="1" name="Set return value" sid="178890897638932" type="Function">
+                                                    <param id="0" name="Value">int(CharImagePoints.StringValue(&quot;//&quot;&amp;Char.name&amp;&quot;/&quot;&amp;Char.emotion&amp;&quot;/@&quot;&amp;attr))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="668346010277590">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="474966144022996" type="Function">
+                                            <param id="0" name="Name">&quot;getCharY&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="760619570500779" type="Function">
+                                            <param id="0" name="Value">LayoutHeight-Function.Call(&quot;charImagePoint&quot;, Function.Param(0), &quot;y&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="181737948533328">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="976624996523878" type="Function">
+                                            <param id="0" name="Name">&quot;getCharX&quot;</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="669640922891851" type="Char">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="923582032751643" type="Function">
+                                            <param id="0" name="Value">Function.Call(&quot;posToX&quot;, Char.pos)+Function.Call(&quot;getOffset&quot;, Char.UID)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>0: charUID</comment>
+                                <event-block sid="320463044162119">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="934215550409044" type="Function">
+                                            <param id="0" name="Name">&quot;getOffset&quot;</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="993752645872486" type="Char">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="mirrored" sid="665896121583809" static="0" type="number">-1</variable>
+                                        <event-block sid="790187732952136">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="226890090665022" type="Char">
+                                                    <param id="0" name="Instance variable">mirrored</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="288452369159687" type="System">
+                                                    <param id="0" name="Variable">mirrored</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="828445608717089">
+                                            <conditions />
+                                            <actions>
+                                                <action id="1" name="Set return value" sid="528638338325327" type="Function">
+                                                    <param id="0" name="Value">Function.Call(&quot;charImagePoint&quot;, Function.Param(0))*mirrored</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="932161668541386">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="489724946909204" type="Function">
+                                            <param id="0" name="Name">&quot;updCharPos&quot;</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="398411949628655" type="Char">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="newOffset" sid="761405887135304" static="0" type="number">0</variable>
+                                        <event-block sid="717597771756033">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="642263604148976" type="System">
+                                                    <param id="0" name="Variable">newOffset</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;getOffset&quot;, Char.UID)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="202767858743243">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="278286655594122" type="System">
+                                                    <param id="0" name="Variable">newOffset</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">Char.offsetX</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="653823819949297" type="System">
+                                                    <param id="0" name="Variable">newOffset</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="222874466395943" type="Char">
+                                                    <param id="0" name="X">Self.X-Char.offsetX+newOffset</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="757422389967793" type="Char">
+                                                    <param id="0" name="Instance variable">offsetX</param>
+                                                    <param id="1" name="Value">newOffset</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="674507592703993" type="Char">
+                                                    <param id="0" name="Instance variable">targetX</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;getCharX&quot;, Char.UID)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="649441177437236" title="Animations">
+                            <sub-events>
+                                <event-block sid="752691628930262">
+                                    <conditions>
+                                        <condition id="3" name="On event" sid="654912036179367" type="Photon">
+                                            <param id="0" name="Code">25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="148764809484206" type="System">
+                                            <param id="0" name="Variable">isStoryTyping</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="693419210947376" type="System">
+                                            <param id="0" name="Variable">isStoryTyping</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="862885710659778" type="StoryBox">
+                                            <param id="0" name="Text">Self.targetText</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="375632362006923">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="984341176245162" type="System">
+                                            <param id="0" name="Variable">isStoryTyping</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-6" name="Every X seconds" sid="653105079984697" type="System">
+                                            <param id="0" name="Interval (seconds)">(somePhoneMsg = 1 ? 0.02 : 0.04)*fps/60</param>
+                                        </condition>
+                                        <condition id="-17" name="Compare opacity" sid="607256421796476" type="System">
+                                            <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Opacity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="617189654729644" type="StoryBox">
+                                            <param id="0" name="Text">Self.Text&amp;mid(Self.targetText,len(Self.Text),1)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="782329051669096">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="371373402131898" type="System">
+                                                    <param id="0" name="First value">StoryBox.Text</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">StoryBox.targetText</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="754487869399402" type="System">
+                                                    <param id="0" name="Variable">isStoryTyping</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="709717197537224">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="486131582943897" type="Speaker">
+                                            <param id="0" name="Text to compare">&quot;&quot;</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="898001219818958" type="CharBg">
+                                            <param id="0" name="Opacity">lerp(Self.Opacity,0,0.15*60/fps)</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="846067495312808" type="CharCircle">
+                                            <param id="0" name="Opacity">CharBg.Opacity</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="341570738151967">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="783210485748568" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="768380914946818" type="CharBg">
+                                            <param id="0" name="Opacity">lerp(Self.Opacity,100,0.15*60/fps)</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="231630287455208" type="CharCircle">
+                                            <param id="0" name="Opacity">CharBg.Opacity</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="253031792771544" title="Char positions">
+                            <sub-events>
+                                <comment>З&apos;ява</comment>
+                                <comment>0: char&#x0D;&#x0A;1: pos&#x0D;&#x0A;(2): momental&#x0D;&#x0A;(3): emotion&#x0D;&#x0A;(4): mirrored (bool)</comment>
+                                <event-block sid="838270175630816">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="873804447340659" type="Function">
+                                            <param id="0" name="Name">&quot;appear&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="912186670628901" type="System">
+                                            <param id="0" name="Object to create">Char</param>
+                                            <param id="1" name="Layer">&quot;Scene&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">-2000</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="130108784450970" type="Char">
+                                            <param id="0" name="Instance variable">name</param>
+                                            <param id="1" name="Value">Function.Param(0)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="839152290440640" type="Char">
+                                            <param id="0" name="Instance variable">emotion</param>
+                                            <param id="1" name="Value">&quot;default&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="213212493152585" type="Char">
+                                            <param id="0" name="Instance variable">pos</param>
+                                            <param id="1" name="Value">Function.Param(1)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="158854708372415">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="803870037531011" type="System">
+                                                    <param id="0" name="First value">Function.Param(2)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="FadeIn" id="2" name="Set fade-in time" sid="685548866727710" type="Char">
+                                                    <param id="0" name="Fade-in time">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="239394884804034">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="279071342290354" type="System">
+                                                    <param id="0" name="First value">Function.Param(3)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="234410497029107" type="Char">
+                                                    <param id="0" name="Instance variable">emotion</param>
+                                                    <param id="1" name="Value">Function.Param(3)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="626211317386684">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="918713839726877" type="System">
+                                                    <param id="0" name="First value">Function.Param(4)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;mirror&quot;</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="917903672553432" type="System">
+                                                    <param id="0" name="First value">Function.Param(4)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;mirrored&quot;</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="728651181409621" type="System">
+                                                    <param id="0" name="First value">Function.Param(4)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="7" name="Set mirrored" sid="366993732284773" type="Char">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="398161506237783" type="Char">
+                                                    <param id="0" name="Instance variable">mirrored</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="933267198452781">
+                                            <conditions />
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="554938482515911" type="Char">
+                                                    <param id="0" name="Animation">Self.name</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="891849692995006" type="Char">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="329752104803623" type="Char">
+                                                    <param id="0" name="X">Function.Call(&quot;getCharX&quot;, Char.UID)</param>
+                                                    <param id="1" name="Y">Function.Call(&quot;getCharY&quot;, Char.UID)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="125192923908367" type="Char">
+                                                    <param id="0" name="Instance variable">targetX</param>
+                                                    <param id="1" name="Value">Char.X</param>
+                                                </action>
+                                                <action id="10" name="Load image from URL" sid="815215200779551" type="Char">
+                                                    <param id="0" name="URI">IMG_ROOT&amp;&quot;chars/&quot;&amp;Self.name&amp;&quot;_&quot;&amp;Self.emotion&amp;&quot;.png&quot;</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Вихід зі сцени(зникнення)</comment>
+                                <comment>0: char&#x0D;&#x0A;(1): pos</comment>
+                                <event-block any="1" sid="720004328644043">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="850339105491452" type="Function">
+                                            <param id="0" name="Name">&quot;disappear&quot;</param>
+                                        </condition>
+                                        <condition id="0" name="On function" sid="354100725080557" type="Function">
+                                            <param id="0" name="Name">&quot;leave&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="362825248426609">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="399271526660826" type="Char">
+                                                    <param id="0" name="Instance variable">name</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">Function.Param(0)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="FadeOut" id="1" name="Start fade" sid="508043867041806" type="Char" />
+                                                <action id="-13" name="Set boolean" sid="933558162401504" type="Char">
+                                                    <param id="0" name="Instance variable">leaving</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="438406112249329">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="417792990973398" type="System">
+                                                            <param id="0" name="First value">Function.Param(1)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">-1</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="997781753718840" type="System">
+                                                            <param id="0" name="First value">Function.Param(1)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">&quot;&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="716268114860445" type="Function">
+                                                            <param id="0" name="Name">&quot;move&quot;</param>
+                                                            <param id="1" name="Parameter {n}">Function.Param(0){###}Function.Param(1)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Віддзеркалення</comment>
+                                <comment>0: char&#x0D;&#x0A;1: dir</comment>
+                                <event-block sid="438865822809867">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="131105378823581" type="Function">
+                                            <param id="0" name="Name">&quot;mirror&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="497043361058688">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="880543627660567" type="Char">
+                                                    <param id="0" name="Instance variable">name</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">Function.Param(0)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="665794768086645">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="238205357271899" type="System">
+                                                            <param id="0" name="First value">Function.Param(1)</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;0&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-13" name="Set boolean" sid="970930463145512" type="Char">
+                                                            <param id="0" name="Instance variable">mirrored</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="292327422920351" type="Char">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="780916169436452">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="722167502676515" type="System">
+                                                            <param id="0" name="First value">Function.Param(1)</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;1&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-13" name="Set boolean" sid="645841323358313" type="Char">
+                                                            <param id="0" name="Instance variable">mirrored</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="272097428586506" type="Char">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="507930270599737">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="472163791158118" type="Function">
+                                                            <param id="0" name="Name">&quot;updCharPos&quot;</param>
+                                                            <param id="1" name="Parameter {n}">Char.UID</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Конвертер, не зважай))</comment>
+                                <comment>0: pos</comment>
+                                <event-block sid="784960129221992">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="794453337008679" type="Function">
+                                            <param id="0" name="Name">&quot;posToX&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="549977184282771" type="Function">
+                                            <param id="0" name="Value">LayoutWidth*float(Function.Param(0))/7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Рух</comment>
+                                <comment>0: char&#x0D;&#x0A;1: pos&#x0D;&#x0A;(2): immediately</comment>
+                                <event-block sid="400682836716580">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="102489304887855" type="Function">
+                                            <param id="0" name="Name">&quot;move&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="218706959038236" type="Char">
+                                            <param id="0" name="Instance variable">name</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="563263149570554" type="Char">
+                                            <param id="0" name="Instance variable">pos</param>
+                                            <param id="1" name="Value">Function.Param(1)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="473016965734144" type="Char">
+                                            <param id="0" name="Instance variable">targetX</param>
+                                            <param id="1" name="Value">Function.Call(&quot;getCharX&quot;, Char.UID)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="975193046205754">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="913846761732473" type="System">
+                                                    <param id="0" name="First value">Function.ParamCount</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">3</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="970954700072344" type="System">
+                                                    <param id="0" name="First value">int(Function.Param(2))</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="674995856401176" type="Char">
+                                                    <param id="0" name="X">Self.targetX</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="963249317839575">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="253311293285649" type="System">
+                                            <param id="0" name="Object">Char</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="883640420087716" type="Char">
+                                            <param id="0" name="X">lerp(Self.X,Self.targetX,0.1*60/fps)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Як близько до екрану</comment>
+                                <comment>0: char&#x0D;&#x0A;1: top/bottom</comment>
+                                <event-block sid="309156588881905">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="501741881978842" type="Function">
+                                            <param id="0" name="Name">&quot;zIndex&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="945823041633546" type="Char">
+                                            <param id="0" name="Instance variable">name</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="386691345291655">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="195157854207127" type="System">
+                                                    <param id="0" name="First value">Function.Param(1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;top&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-24" name="Move to top" sid="940018771796825" type="Char" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="634855664145333">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="915268033679333" type="System">
+                                                    <param id="0" name="First value">Function.Param(1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;bottom&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-25" name="Move to bottom" sid="352731790422684" type="Char" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="926962684308344" title="Misk">
+                            <sub-events>
+                                <comment>0: char_name&#x0D;&#x0A;1: emotion_name</comment>
+                                <event-block sid="707330224364457">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="437553043441680" type="Function">
+                                            <param id="0" name="Name">&quot;emote&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="952176752689486" type="Char">
+                                            <param id="0" name="Instance variable">name</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="479129162310287" type="Char">
+                                            <param id="0" name="Instance variable">emotion</param>
+                                            <param id="1" name="Value">Function.Param(1)</param>
+                                        </action>
+                                        <action id="10" name="Load image from URL" sid="597419306020529" type="Char">
+                                            <param id="0" name="URI">IMG_ROOT&amp;&quot;chars/&quot;&amp;Self.name &amp; &quot;_&quot; &amp; Self.emotion&amp;&quot;.png&quot;</param>
+                                            <param id="1" name="Size">1</param>
+                                            <param id="2" name="Cross-origin">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>0: char_name&#x0D;&#x0A;1: animation_name</comment>
+                                <event-block sid="923185593697890">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="191592432315848" type="Function">
+                                            <param id="0" name="Name">&quot;animate&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="305542546542570" type="Char">
+                                            <param id="0" name="Instance variable">name</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="337598591017956">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="772081557386538" type="System">
+                                                    <param id="0" name="First value">Function.Param(1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;jump&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Jump" id="0" name="Set active" sid="463440764208651" type="Char">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="110690024409614" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action behavior="Jump" id="5" name="Set cycle position" sid="133797926221870" type="Char">
+                                                    <param id="0" name="Cycle position">0.5</param>
+                                                </action>
+                                                <action behavior="Jump" id="0" name="Set active" sid="890298081718700" type="Char">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="834012123141590" title="bg">
+                            <sub-events>
+                                <comment>Встановити фон</comment>
+                                <comment>location bg&#x0D;&#x0A;0: bg name&#x0D;&#x0A;(1): immideately</comment>
+                                <event-block sid="374623743685367">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="493376837001662" type="Function">
+                                            <param id="0" name="Name">&quot;bg&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="302749621750047" type="Bg">
+                                            <param id="0" name="Animation">&quot;Bg&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <variable constant="0" name="newBg" sid="755903015438499" static="1" type="text"></variable>
+                                        <event-block sid="333530677460180">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="107988087581021" type="System">
+                                                    <param id="0" name="Variable">newBg</param>
+                                                    <param id="1" name="Value">Function.Param(0)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="569277460176114">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="154895342379560" type="System">
+                                                    <param id="0" name="First value">Function.Param(1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="10" name="Load image from URL" sid="955609357155321" type="Bg">
+                                                    <param id="0" name="URI">IMG_ROOT&amp;&quot;bgs/&quot;&amp;newBg&amp;&quot;.png&quot;</param>
+                                                    <param id="1" name="Size">0</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="414193113627872">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="233960666109379" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="FadeOut" id="1" name="Start fade" sid="202269804812913" type="Bg" />
+                                                <action id="-16" name="Wait" sid="520881396562671" type="System">
+                                                    <param id="0" name="Seconds">0.15</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <variable constant="0" name="frame" sid="231968825348270" static="0" type="number">1</variable>
+                                                <event-block sid="656182140437107">
+                                                    <conditions>
+                                                        <condition id="3" name="Compare frame" sid="484410738026659" type="Bg">
+                                                            <param id="0" name="Comparison">0</param>
+                                                            <param id="1" name="Number">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="780027516392314" type="System">
+                                                            <param id="0" name="Variable">frame</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="529016785773500">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="-3" name="Create object" sid="722610975763367" type="System">
+                                                            <param id="0" name="Object to create">Bg</param>
+                                                            <param id="1" name="Layer">&quot;Bg&quot;</param>
+                                                            <param id="2" name="X">0</param>
+                                                            <param id="3" name="Y">0</param>
+                                                        </action>
+                                                        <action id="5" name="Set frame" sid="711365736121572" type="Bg">
+                                                            <param id="0" name="Frame number">frame</param>
+                                                        </action>
+                                                        <action id="10" name="Load image from URL" sid="907650703957620" type="Bg">
+                                                            <param id="0" name="URI">IMG_ROOT&amp;&quot;bgs/&quot;&amp;newBg&amp;&quot;.png&quot;</param>
+                                                            <param id="1" name="Size">0</param>
+                                                            <param id="2" name="Cross-origin">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Встановити оверлей</comment>
+                                <comment>0: overlay name&#x0D;&#x0A;1: pos</comment>
+                                <event-block sid="994587769615107">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="835002017707223" type="Function">
+                                            <param id="0" name="Name">&quot;overlay&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="posX" sid="928667720890545" static="1" type="number">0</variable>
+                                        <event-block sid="909787300076182">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="542633899366603" type="System">
+                                                    <param id="0" name="First value">int(Function.Param(1))</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="603827189588514" type="System">
+                                                    <param id="0" name="Variable">posX</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;posToX&quot;, Function.Param(1))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="601627272802569">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="337341961694905" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="966305798479129" type="System">
+                                                    <param id="0" name="Variable">posX</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;posToX&quot;, 3)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="736722550293085">
+                                            <conditions />
+                                            <actions>
+                                                <action behavior="FadeOut" id="1" name="Start fade" sid="727867463245420" type="Overlay" />
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="718302141849884">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="507239858957900" type="System">
+                                                            <param id="0" name="First value">lowercase(Function.Param(0))</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">&quot;default&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Create object" sid="525166717466287" type="System">
+                                                            <param id="0" name="Object to create">Overlay</param>
+                                                            <param id="1" name="Layer">&quot;Bg&quot;</param>
+                                                            <param id="2" name="X">posX</param>
+                                                            <param id="3" name="Y">544</param>
+                                                        </action>
+                                                        <action id="10" name="Load image from URL" sid="764330036378369" type="Overlay">
+                                                            <param id="0" name="URI">IMG_ROOT&amp;&quot;overlays/&quot;&amp;Function.Param(0)&amp;&quot;.png&quot;</param>
+                                                            <param id="1" name="Size">0</param>
+                                                            <param id="2" name="Cross-origin">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Блюр</comment>
+                                <comment>0: bool&#x0D;&#x0A;(1): pulse</comment>
+                                <event-block sid="372827155957575">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="551345861758382" type="Function">
+                                            <param id="0" name="Name">&quot;blur&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="461922534275509">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="897395987367174" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="FadeIn" id="0" name="Restart fade" sid="134735882420629" type="Blur" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="886398633958444">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="522773422623060" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="FadeOut" id="0" name="Restart fade" sid="867442683518224" type="Blur" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="516227992578514">
+                                            <conditions>
+                                                <condition disabled="1" id="-8" name="Compare two values" sid="624753134956387" type="System">
+                                                    <param id="0" name="First value">Function.ParamCount</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">2</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="653972203436390" type="System">
+                                                    <param id="0" name="First value">Function.Param(1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;pulse&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="464964474390123" type="System">
+                                                    <param id="0" name="Seconds">1</param>
+                                                </action>
+                                                <action behavior="Sine" id="0" name="Set active" sid="907981132953573" type="Blur">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="235007276984371">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="264048595245742" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Sine" id="0" name="Set active" sid="586819517098318" type="Blur">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>0: bri&#x0D;&#x0A;(1): smooth</comment>
+                                <event-block sid="664732742313996">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="461188226469184" type="Function">
+                                            <param id="0" name="Name">&quot;darkShader&quot;</param>
+                                        </condition>
+                                        <condition id="-16" name="Is on layer" sid="511585032306388" type="DarkShader">
+                                            <param id="0" name="Layer">&quot;Fg&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="534951583535223" type="DarkShader">
+                                            <param id="0" name="Opacity">Function.Param(0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Ширма&#x0D;&#x0A;Стає чорним, потім не стає чорним</comment>
+                                <event-block sid="101631662598365">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="714550945379028" type="Function">
+                                            <param id="0" name="Name">&quot;curtain&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="298960980429545" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}100{###}0.1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="774581871116082" type="StoryBox">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="350143147596066">
+                                    <conditions>
+                                        <condition id="-9" inverted="1" name="Is visible" sid="367986466923417" type="StoryBox" />
+                                        <condition id="-17" name="Compare opacity" sid="893222667878630" type="System">
+                                            <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Opacity">98</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-18" name="Set layer opacity" sid="120161876557300" type="System">
+                                            <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="249741683547547" type="Function">
+                                            <param id="0" name="Name">&quot;ApplyPersistedFunction&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="979280245635713" type="System">
+                                            <param id="0" name="Seconds">0.05</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="838143515671321" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}0{###}0.1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="274832645077782" type="StoryBox">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Струс</comment>
+                                <event-block sid="229387963700644">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="156953553804479" type="Function">
+                                            <param id="0" name="Name">&quot;shake&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-7" name="Scroll to position" sid="496811658510094" type="System">
+                                            <param id="0" name="X">LayoutWidth/2+15</param>
+                                            <param id="1" name="Y">LayoutHeight/2</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="878773563240207" type="System">
+                                            <param id="0" name="Seconds">0.05</param>
+                                        </action>
+                                        <action id="-7" name="Scroll to position" sid="507739395785929" type="System">
+                                            <param id="0" name="X">LayoutWidth/2-10</param>
+                                            <param id="1" name="Y">LayoutHeight/2+15</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="420532625660812" type="System">
+                                            <param id="0" name="Seconds">0.05</param>
+                                        </action>
+                                        <action id="-7" name="Scroll to position" sid="267851556077332" type="System">
+                                            <param id="0" name="X">LayoutWidth/2+10</param>
+                                            <param id="1" name="Y">LayoutHeight/2-10</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="866991544794374" type="System">
+                                            <param id="0" name="Seconds">0.05</param>
+                                        </action>
+                                        <action id="-7" name="Scroll to position" sid="372692661863378" type="System">
+                                            <param id="0" name="X">LayoutWidth/2+10</param>
+                                            <param id="1" name="Y">LayoutHeight/2+10</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="635703022678247" type="System">
+                                            <param id="0" name="Seconds">0.05</param>
+                                        </action>
+                                        <action id="-7" name="Scroll to position" sid="852962481028284" type="System">
+                                            <param id="0" name="X">LayoutWidth/2-5</param>
+                                            <param id="1" name="Y">LayoutHeight/2-5</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="383027652014651" type="System">
+                                            <param id="0" name="Seconds">0.05</param>
+                                        </action>
+                                        <action id="-7" name="Scroll to position" sid="321327819856939" type="System">
+                                            <param id="0" name="X">LayoutWidth/2+3</param>
+                                            <param id="1" name="Y">LayoutHeight/2+3</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="903562743837684" type="System">
+                                            <param id="0" name="Seconds">0.05</param>
+                                        </action>
+                                        <action id="-7" name="Scroll to position" sid="165269458907280" type="System">
+                                            <param id="0" name="X">LayoutWidth/2</param>
+                                            <param id="1" name="Y">LayoutHeight/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Голос Бога&#x0D;&#x0A;0: off/not</comment>
+                                <event-block sid="379677978795597">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="263185946319729" type="Function">
+                                            <param id="0" name="Name">&quot;godVoice&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="652556600666782">
+                                            <conditions>
+                                                <condition id="1" name="Compare parameter" sid="665368840460729" type="Function">
+                                                    <param id="0" name="Index">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;off&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="201815644163159" type="Function">
+                                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Overlay&quot;{###}100{###}0.15</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="378160563191652" type="Function">
+                                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;GodVoice&quot;{###}0{###}0.15</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="536264307233481">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="583863327676491" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="326855227530789" type="Function">
+                                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Overlay&quot;{###}0{###}0.15</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="648441482021729" type="Function">
+                                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;GodVoice&quot;{###}100{###}0.05</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="115339998190897" type="GodVoiceText">
+                                                    <param id="0" name="Text">StoryBox.targetText</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="766985242121613" type="StoryBox">
+                                                    <param id="0" name="Instance variable">targetText</param>
+                                                    <param id="1" name="Value">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="888348226630605" title="PhoneView">
+                            <sub-events>
+                                <comment>0: nickname&#x0D;&#x0A;(1): pos</comment>
+                                <event-block sid="727974315339673">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="789701084389044" type="Function">
+                                            <param id="0" name="Name">&quot;msg&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="128184320697880" type="ChatBg">
+                                            <param id="0" name="Instance variable">curY</param>
+                                            <param id="1" name="Value">Self.curY-190</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="275179514706972" type="System">
+                                            <param id="0" name="Variable">somePhoneMsg</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <variable constant="0" name="msg" sid="456461439900648" static="0" type="text"></variable>
+                                        <variable constant="0" name="pos" sid="797854217155959" static="0" type="number">2.3</variable>
+                                        <variable constant="0" name="nickname" sid="764753894611682" static="0" type="text"></variable>
+                                        <event-block sid="250664202996264">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="659079834568718" type="System">
+                                                    <param id="0" name="Variable">msg</param>
+                                                    <param id="1" name="Value">StoryBox.targetText</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="337907019166832">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="421465350476647" type="System">
+                                                    <param id="0" name="First value">findCase(msg, &quot;ПОВІДОМЛЕННЯ:&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="570160728706725" type="System">
+                                                    <param id="0" name="Variable">msg</param>
+                                                    <param id="1" name="Value">replace(msg, &quot;ПОВІДОМЛЕННЯ: &quot;&quot;&quot;,&quot;&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="240871691150032" type="System">
+                                                    <param id="0" name="Variable">msg</param>
+                                                    <param id="1" name="Value">left(msg, len(msg)-1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="931241564519888">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="696250831967819" type="System">
+                                                    <param id="0" name="First value">findCase(msg, &quot;КОМЕНТАР:&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="686676181340528" type="System">
+                                                    <param id="0" name="Variable">msg</param>
+                                                    <param id="1" name="Value">replace(msg, &quot;КОМЕНТАР: &quot;&quot;&quot;,&quot;&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="810608348590783" type="System">
+                                                    <param id="0" name="Variable">msg</param>
+                                                    <param id="1" name="Value">left(msg, len(msg)-1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="892794917218568">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="358936971543013" type="System">
+                                                    <param id="0" name="First value">Function.ParamCount</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="163223972160362" type="System">
+                                                    <param id="0" name="Variable">pos</param>
+                                                    <param id="1" name="Value">int(Function.Param(1))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="536115431074851">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="555802081836882" type="System">
+                                                    <param id="0" name="Object to create">ChatBg</param>
+                                                    <param id="1" name="Layer">&quot;Fg&quot;</param>
+                                                    <param id="2" name="X">Function.Call(&quot;posToX&quot;, pos)</param>
+                                                    <param id="3" name="Y">557</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <variable constant="1" name="RESERVED_BGS" sid="872028937205245" static="0" type="text">|PhotoAttached|Banned|Banned2|MailMessage|MailMessageKotek|MailMessageKus9|YouBanned|Instagram|Telegram|YouBanned|FileAttached|PhotoReceived|PhotoSent|LinkReceived|WorldWork|Deleted|</variable>
+                                                <event-block sid="941928997758277">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="954916115503597" type="System">
+                                                            <param id="0" name="First value">find(RESERVED_BGS, &quot;|&quot;&amp;Function.Param(0)&amp;&quot;|&quot;)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">-1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="451821362751621" type="ChatBg">
+                                                            <param id="0" name="Animation">Function.Param(0)</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="772231388590717">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="289198484340206" type="System" />
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="260021705169916">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="792898612341219" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;me&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="533686267790718" type="ChatBg">
+                                                                    <param id="0" name="Animation">&quot;Me&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="508194753618239" type="ChatNickname">
+                                                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                                                </action>
+                                                                <action id="4" name="Set font color" sid="780126868305820" type="ChatMsg">
+                                                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="626192296593997">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="929257560049284" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                                                </condition>
+                                                                <condition id="-8" name="Compare two values" sid="754062740830898" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">&quot;me&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Set text" sid="455711572586755" type="ChatNickname">
+                                                                    <param id="0" name="Text">Function.Param(0)</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="417974300338598">
+                                                            <conditions>
+                                                                <condition id="-22" name="Else" sid="793409007210768" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Set text" sid="239921728337811" type="ChatNickname">
+                                                                    <param id="0" name="Text">Speaker.Text</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="142045479352247">
+                                                            <conditions />
+                                                            <actions>
+                                                                <action id="0" name="Set text" sid="491915869697096" type="ChatMsg">
+                                                                    <param id="0" name="Text">msg</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="509075062682525">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="923731517714322" type="ChatAvatar">
+                                                            <param id="0" name="Animation">DataPack.Get(&quot;speaker&quot;)</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-4" name="Set position to another object" sid="748260463636176" type="ChatAvatar">
+                                                            <param id="0" name="Object">ChatBg</param>
+                                                            <param id="1" name="Image point (optional)">&quot;Avatar&quot;</param>
+                                                        </action>
+                                                        <action id="-4" name="Set position to another object" sid="721616822462350" type="ChatNickname">
+                                                            <param id="0" name="Object">ChatBg</param>
+                                                            <param id="1" name="Image point (optional)">&quot;Nickname&quot;</param>
+                                                        </action>
+                                                        <action id="-4" name="Set position to another object" sid="592666683759561" type="ChatMsg">
+                                                            <param id="0" name="Object">ChatBg</param>
+                                                            <param id="1" name="Image point (optional)">&quot;msg&quot;</param>
+                                                        </action>
+                                                        <action behavior="Pin" id="0" name="Pin to object" sid="860121949761922" type="ChatAvatar">
+                                                            <param id="0" name="Pin to">ChatBg</param>
+                                                            <param id="1" name="Mode">1</param>
+                                                        </action>
+                                                        <action behavior="Pin" id="0" name="Pin to object" sid="902691774622977" type="ChatMsg">
+                                                            <param id="0" name="Pin to">ChatBg</param>
+                                                            <param id="1" name="Mode">1</param>
+                                                        </action>
+                                                        <action behavior="Pin" id="0" name="Pin to object" sid="953905146657664" type="ChatNickname">
+                                                            <param id="0" name="Pin to">ChatBg</param>
+                                                            <param id="1" name="Mode">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="519961137025671" type="ChatBg">
+                                                            <param id="0" name="Instance variable">curY</param>
+                                                            <param id="1" name="Value">Self.Y</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="991410973892667">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="447861826489753" type="Function">
+                                            <param id="0" name="Name">&quot;msgOff&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="FadeOut" id="1" name="Start fade" sid="357203575262693" type="ChatBg" />
+                                        <action behavior="FadeOut" id="1" name="Start fade" sid="429813052310540" type="ChatAvatar" />
+                                        <action behavior="FadeOut" id="1" name="Start fade" sid="961069702344834" type="ChatMsg" />
+                                        <action behavior="FadeOut" id="1" name="Start fade" sid="641523092907546" type="ChatNickname" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="196411443955636">
+                                    <conditions>
+                                        <condition id="-16" name="Is on layer" sid="668808394275063" type="ChatBg">
+                                            <param id="0" name="Layer">&quot;Fg&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="226756976587229" type="ChatBg">
+                                            <param id="0" name="Y">lerp(Self.Y, Self.curY, 0.15*60/fps)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

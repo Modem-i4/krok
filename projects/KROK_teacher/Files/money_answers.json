@@ -1,0 +1,34 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["whatShouldIDo"],
+["Промовчати","plot&whatShouldIDo_silence"],
+["Образити","plot&whatShouldIDo_offend"],
+["Відпихнути","plot&whatShouldIDo_pushAway"]
+],
+
+[["whatCanIDoGym"],
+["Промовчати","plot&whatCanIDoGym_silence"],
+["Заперечити","plot&whatCanIDoGym_deny"],
+["Обуритися","plot&whatCanIDoGym_angry"]
+],
+
+[["whatShouldIDoCoat"],
+["Промовчати","plot&whatShouldIDoCoat_silence"],
+["Відповісти спокійно","plot&whatShouldIDoCoat_calm"],
+["Відповісти різко","plot&whatShouldIDoCoat_angry"]
+],
+
+[["whatDoIFeel"],
+["Ступор","plot&whatDoIFeel_stop"],
+["Образу","plot&whatDoIFeel_offended"],
+["Злість","plot&whatDoIFeel_anger"]
+],
+
+[["whatIReply"],
+["Правду","plot&whatIReply_truth"],
+["Перевести тему","plot&whatIReply_changeTopic"],
+["Збрехати","plot&whatIReply_lie"]
+]
+
+]
+}

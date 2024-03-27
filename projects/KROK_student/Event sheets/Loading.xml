@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Loading</name>
+    <events>
+        <event-group description="" sid="319381174029470" title="Loading">
+            <sub-events>
+                <variable constant="0" name="pxProgress" sid="499978869776415" static="0" type="number">0</variable>
+                <event-block sid="324357651120466">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="342837978716012" type="StartBg">
+                            <param id="0" name="Animation">&quot;Bar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="917462507168954" type="System">
+                            <param id="0" name="Variable">pxProgress</param>
+                            <param id="1" name="Value">(StartBg.BBoxRight-StartBg.BBoxLeft)*loadingprogress</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="128927868587688">
+                            <conditions />
+                            <actions>
+                                <action id="-5" name="Set width" sid="130629995127137" type="LoadingBar">
+                                    <param id="0" name="Width">pxProgress</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="672065871058113" type="ProgressGem">
+                                    <param id="0" name="X">StartBg.BBoxLeft+pxProgress</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="100286953454742" type="LoadingBarBlend">
+                                    <param id="0" name="X">Self.X+3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="611504426236987">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="141388987321892" type="LoadingBarBlend">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="X co-ordinate">128+66</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="713584978848791" type="LoadingBarBlend">
+                                    <param id="0" name="X">128</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="691948648062318">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="862017305413866" type="System">
+                            <param id="0" name="First value">loadingprogress</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="813007485395956" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="775588113574861" type="System">
+                            <param id="0" name="Object to create">Char</param>
+                            <param id="1" name="Layer">&quot;Loading&quot;</param>
+                            <param id="2" name="X">2253</param>
+                            <param id="3" name="Y">415</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="411227020292195" type="System">
+                            <param id="0" name="Layout">StartScreen</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="585671057153424">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="539507625793626" type="Touch" />
+                        <condition id="10" inverted="1" name="Is fullscreen" sid="788150920597398" type="Browser" />
+                        <condition id="-8" name="Compare two values" sid="159721262086266" type="System">
+                            <param id="0" name="First value">Browser.Domain</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot;localhost&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Request fullscreen" sid="481653274373633" type="Browser">
+                            <param id="0" name="Mode">3</param>
+                        </action>
+                        <action id="18" name="Lock orientation" sid="988530619611828" type="Browser">
+                            <param id="0" name="Orientation">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

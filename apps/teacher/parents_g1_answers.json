@@ -1,0 +1,12 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["what_did_i_do_last_night"],["Просидів у шафі","plot&sat_in_shelf"],["Слухав музику у навушниках","plot&listened_to_music"],["Намагався заснути","plot&tried_to_fall_asleep"]],
+[["who_i_stay_with"],["Сам","plot&stay_alone|set&stayWith&alone"],["З подругою","plot&stay_with_gf|set&stayWith&girl"],["З другом","plot&stay_with_friend|set&stayWith&boy"]],
+[["do_parents_know"],["Сказати відверто","plot&sincereAnswer"],["Ухилитись від відповіді","plot&evasiveAnswer"],["Збрехати","plot&lieAnswer"]],
+[["rise_sleeves_ask"],["Погодитись","plot&agreeToRiseSleeves"],["Заперечити","plot&denyToRiseSleeves"],["Проігнорувати","plot&ignoreToRiseSleeves"]],
+[["why_bruises"],["Сказати правду","plot&trueAboutBruises"],["Ухилитися від відповіді","plot&evadeAboutBruises"],["Збрехати","plot&lieAboutBruises"]],
+[["why_bruises_2"],["Розповісти","plot&truthAboutBruises2"],["Не говорити","plot&evadeAboutBruises2"],["Збрехати","plot&lieAboutBruises2"]],
+[["tell_me_more"],["Взяти провину на себе","plot&tellMoreTakeTheBlame"],["Ухилитися від відповіді","plot&tellMoreEvade"],["Відмовитись","plot&tellNoMore"]],
+[["what_your_mom_say"],["Процитувати маму","plot&momQuote"],["Розповісти історію","plot&tellTheStory"],["Виправдати тата","plot&justifyFather"]],
+[["youre_not_alone"],["Погодитись","plot&finalAccept"],["Проігнорувати","plot&finalIgnore"],["Відмовитись","plot&finalReject"]]
+]}

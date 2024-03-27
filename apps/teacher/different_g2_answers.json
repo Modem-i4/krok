@@ -1,0 +1,39 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["hit"],
+["Проігнорувати","plot&hit_ignore"],
+["Звернутися до вчителя","plot&hit_teacher"],
+["Розсердитися","plot&hit_getAngry"]
+],
+
+[["itemsOnFloor"],
+["Проігнорувати","plot&itemsOnFloor_ignore"],
+["Звернутися до вчителя","plot&itemsOnFloor_teacher"],
+["Розсердитися","plot&itemsOnFloor_getAngry"]
+],
+
+[["whyAreYouHere"],
+["Пройду повз","plot&whyAreYouHere_ignore"],
+["Запитаю","plot&whyAreYouHere_ask"],
+["Попрошу піти","plot&whyAreYouHere_leave"]
+],
+
+[["howToFinish"],
+["Закінчу прибирання","plot&howToFinish_finish"],
+["Зачекаю","plot&howToFinish_wait"],
+["Попрошу піти","plot&howToFinish_askLeave"]
+],
+
+[["killThem"],
+["Промовчати","plot&killThem_silent"],
+["Кричати","plot&killThem_scream"],
+["Бити","plot&killThem_beat"]
+],
+
+[["whatHappened"],
+["Сказати правду","plot&whatHappened_tell"],
+["Ухилитись від відповіді","plot&whatHappened_evade"],
+["Збрехати","plot&whatHappened_lie"]
+]
+
+]}

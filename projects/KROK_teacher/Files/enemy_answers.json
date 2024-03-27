@@ -1,0 +1,57 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+    [["whySkipSchool"],
+    ["Горло болить","plot&whySkipSchool_hurts"],
+    ["Не хочу йти","plot&whySkipSchool_dontWanna"],
+    ["Ще збираюсь","plot&whySkipSchool_inProgress"]
+    ],
+    
+    [["enemyMockery"],
+    ["терплячість","plot&enemyMockery_calm"],
+    ["образу","plot&enemyMockery_offense|emote&..."],
+    ["роздратування","plot&enemyMockery_offense|emote&..."]
+    ],
+    
+    [["badMark"],
+    ["невдоволення","plot&badMark_grieve"],
+    ["здивування","plot&badMark_suprrise"],
+    ["роздратування","plot&badMark_irritation"]
+    ],
+    
+    [["markRevenge"],
+    ["Поскаржитися","plot&markRevenge_appeal"],
+    ["Відповісти","plot&markRevenge_answer"],
+    ["Дати прочухана","plot&markRevenge_fight"]
+    ],
+    
+    [["fightDecision"],
+    ["Піти","plot&fightDecision_escape"],
+    ["Поговорити","plot&fightDecision_speak"],
+    ["Пригрозити","plot&fightDecision_threat"]
+    ],
+    
+    [["fightDecision2"],
+    ["Розштовхати","plot&fightDecision2_push"],
+    ["Повернутися і поговорити","plot&fightDecision2_truth"],
+    ["Повернутися і пригрозити","plot&fightDecision_threat"]
+    ],
+    
+    [["negotiations"],
+    ["Слухати","plot&negotiations_listen"],
+    ["Чому прийшов","plot&negotiations_why"],
+    ["розсердитися через бійку","plot&negotiations_angry"]
+    ],
+    
+    [["trust"],
+    ["Щиро повірити","if&fight&yes&trust_iEscaped|if&fight&no&peace_yes"],
+    ["Пересвідчитися","plot&trust_doubt"],
+    ["Нехай вибачиться","plot&trust_apologize"]
+    ],
+    
+    [["peace"],
+    ["ні","plot&peace_no"],
+    ["не знаю","plot&peace_dunno"],
+    ["так","plot&peace_yes"]
+    ]                      
+    
+    ]}

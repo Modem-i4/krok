@@ -1,0 +1,33 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["reels"],
+["Косплей персонажа","plot&cosplay"],
+["Дорослий макіяж","plot&adultsMakeUp"],
+["Шкільний макіяж","plot&schoolMakeUp"]
+],
+
+[["videoDesign"],
+["Вставити картинки","plot&addImg"],
+["Додати смішну пісню","plot&addSong"],
+["Накласти чорно-білий фільтр","plot&changeFrame"]
+],
+
+[["commAttitude"],
+["Обмежити коментування","plot&commAttitude_forbid|set&commAttitude&forbid"],
+["Заблокувати коментаторів","plot&commAttitude_block|set&commAttitude&block"],
+["Ігнорувати","plot&commAttitude_ignore|set&commAttitude&ignore"]
+],
+
+[["replySomehow"],
+["Пояснити","plot&replySomehow_explain"],
+["Злитись","plot&replySomehow_angry"],
+["Брехати","plot&replySomehow_lie"]
+],
+
+[["tellAboutBlog"],
+["Довіритись","plot&tellAboutBlog_truth"],
+["Збрехати","plot&tellAboutBlog_lie"],
+["Уникнути відповіді","plot&tellAboutBlog_ignore"]
+]
+
+]}

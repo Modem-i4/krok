@@ -1,0 +1,33 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["showphoto"],
+["Показати","plot&showphoto_yes"],
+["Не показати","plot&showphoto_no"],
+["Запитати чи цікаво","plot&showphoto_ask"]
+],
+
+[["parkactivity"],
+["Підійти до однокласниці","plot&parkactivity_classmate"],
+["Збирати самій","plot&parkactivity_alone"],
+["Підійти до групи","plot&parkactivity_group"]
+],
+
+[["parkAskFriend"],
+["Заговорити","plot&parkAskFriend_talk"],
+["Збирати листя поруч","plot&parkAskFriend_collect"],
+["Залишитись самою","plot&parkAskFriend_alone"]
+],
+
+[["classBackpack"],
+["Кричати","plot&classBackpack_scream"],
+["Плакати","plot&classBackpack_cry"],
+["Запитати","plot&classBackpack_ask"]
+],
+
+[["whatHappened"],
+["Сказати правду","plot&whatHappened_truth"],
+["Промовчати","plot&whatHappened_none"],
+["Звинувачувати себе","plot&whatHappened_blameYourself"]
+]
+
+]}

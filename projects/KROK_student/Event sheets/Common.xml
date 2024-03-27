@@ -1,0 +1,792 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Common</name>
+    <events>
+        <include>Photon</include>
+        <variable constant="0" name="goToMenu" sid="549834129962668" static="0" type="number">0</variable>
+        <variable constant="0" name="code" sid="402199135070939" static="0" type="text"></variable>
+        <event-block sid="911293808577083">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="472122304934573" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="931900453706964" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="439976571676975" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="444847758961707">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="757707794044048" type="System">
+                            <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="724589131050892" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Curtain&quot;{###}0{###}0.15{###}1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="405357659747407">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="539551678409649" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;code&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="546421415123767" type="Text">
+                            <param id="0" name="Text">code</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="942698075157070">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="397628795318057" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;players&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="690653827769747" type="Text">
+                            <param id="0" name="Text">Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="834502756648727">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="612054591278883" type="SubtitleText">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;playersAmount&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="439060556717071" type="SubtitleText">
+                            <param id="0" name="Text">Photon.ActorCount-1&amp;&quot;/&quot;&amp;MAXPLAYERS</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="881250532127696" title="Stats">
+            <sub-events>
+                <variable constant="0" name="Saved_UID" sid="735509439461678" static="1" type="text"></variable>
+                <variable constant="0" name="lastRoom" sid="977850571018385" static="1" type="text"></variable>
+                <event-block sid="768557043030264">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="876778596318840" type="System" />
+                        <condition id="-14" name="Compare variable" sid="673353603436532" type="System">
+                            <param id="0" name="Variable">Saved_UID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="159452904056972" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="1" name="Get item" sid="539667257962298" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Saved_UID&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="412085553561531" type="LocalStorage">
+                            <param id="0" name="Key">&quot;lastRoom&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="791669460743580">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="357756668285718" type="LocalStorage">
+                            <param id="0" name="Key">&quot;Saved_UID&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="913852062249491" type="System">
+                            <param id="0" name="Variable">Saved_UID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="677864302934968" type="System">
+                            <param id="0" name="First value">LocalStorage.ItemValue</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="688505388517866" type="System">
+                            <param id="0" name="Variable">Saved_UID</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="480802218433367">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="748549342245089" type="LocalStorage">
+                            <param id="0" name="Key">&quot;lastRoom&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="957107537238035" type="System">
+                            <param id="0" name="Variable">lastRoom</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="232742725481718">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="160164241736408" type="AJAX">
+                            <param id="0" name="Tag">&quot;users&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="319674046232688">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="287920079953449" type="System">
+                                    <param id="0" name="Variable">Saved_UID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="633278488730514" type="System">
+                                    <param id="0" name="First value">AJAX.LastData</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">&quot;ERROR&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="820205522115079" type="System">
+                                    <param id="0" name="First value">int(AJAX.LastData)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="949504828576873" type="System">
+                                    <param id="0" name="Variable">Saved_UID</param>
+                                    <param id="1" name="Value">AJAX.LastData</param>
+                                </action>
+                                <action id="0" name="Set item" sid="647037644140314" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;Saved_UID&quot;</param>
+                                    <param id="1" name="Value">Saved_UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="353224162984542">
+                    <conditions>
+                        <condition id="14" name="On join room" sid="590064092668737" type="Photon" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="926811783477700">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="877521209024543" type="System">
+                                    <param id="0" name="Variable">lastRoom</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">str(code)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="338157277486881" type="Function">
+                                    <param id="0" name="Name">&quot;sendUserStat&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;started&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="570832113822372" type="System">
+                                    <param id="0" name="Variable">lastRoom</param>
+                                    <param id="1" name="Value">code</param>
+                                </action>
+                                <action id="0" name="Set item" sid="781052670961417" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;lastRoom&quot;</param>
+                                    <param id="1" name="Value">lastRoom</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>0: finished|started</comment>
+                <event-block sid="936779772761907">
+                    <conditions>
+                        <condition id="0" name="On function" sid="501371800460589" type="Function">
+                            <param id="0" name="Name">&quot;sendUserStat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="691916549358588" type="Function">
+                            <param id="0" name="Name">&quot;sendStat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;users&quot;{###}&quot;uid=&quot;&amp;Saved_UID&amp;&quot;&amp;field=student_&quot;&amp;Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>0: type&#x0D;&#x0A;1: data</comment>
+                <event-block sid="358545383059797">
+                    <conditions>
+                        <condition id="0" name="On function" sid="311285760677853" type="Function">
+                            <param id="0" name="Name">&quot;sendStat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="baseUrl" sid="472706257657279" static="0" type="text">https://etcetera.org.ua/backend/stats/krok</variable>
+                        <event-block any="1" sid="775409159697969">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="328191372043278" type="System">
+                                    <param id="0" name="First value">Browser.Domain</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">&quot;localhost&quot;</param>
+                                </condition>
+                                <condition id="1" name="Compare parameter" sid="929894361451713" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;users&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Post to URL" sid="363021742941340" type="AJAX">
+                                    <param id="0" name="Tag">Function.Param(0)</param>
+                                    <param id="1" name="URL">baseUrl&amp;&quot;/&quot;&amp;Function.Param(0)&amp;&quot;.php&quot;</param>
+                                    <param id="2" name="Data">Function.Param(1)</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="921079750164934" title="Images Loader">
+                    <sub-events>
+                        <comment>0: type&amp;animation|</comment>
+                        <event-block sid="326004769607618">
+                            <conditions>
+                                <condition id="3" name="On event" sid="721039499719479" type="Photon">
+                                    <param id="0" name="Code">30</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="961531872798768">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="187875816902619" type="System">
+                                            <param id="0" name="Name">&quot;&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">tokencount(Photon.EventData, &quot;|&quot;)-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="cell" sid="986885539932572" static="0" type="text"></variable>
+                                        <event-block sid="193892746129902">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="423227252806772" type="System">
+                                                    <param id="0" name="Variable">cell</param>
+                                                    <param id="1" name="Value">tokenat(Photon.EventData,loopindex, &quot;|&quot;)</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="730075356762431" type="Function">
+                                                    <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">tokenat(cell,0,&quot;&amp;&quot;){###}tokenat(cell,1,&quot;&amp;&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="709796774193011">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="950633372458729" type="Function">
+                                            <param id="0" name="Name">&quot;imageLoadingCompleted&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>0: type, 1: anim</comment>
+                        <event-block sid="764357682391452">
+                            <conditions>
+                                <condition id="0" name="On function" sid="134035833794097" type="Function">
+                                    <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Load image from URL" sid="726040667483363" type="Loader">
+                                    <param id="0" name="URI">IMG_ROOT&amp;Function.Param(0)&amp;&quot;s/&quot;&amp;Function.Param(1)&amp;&quot;.png&quot;</param>
+                                    <param id="1" name="Size">1</param>
+                                    <param id="2" name="Cross-origin">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="965638977175270" title="Fonts Installer">
+            <sub-events>
+                <event-block sid="798751187630207">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="260995933244619" type="Candara" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set web font" sid="181583892238334" type="Candara">
+                            <param id="0" name="Family name">&quot;candara&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="283704188458011">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="755734814914228" type="InterSemiBold" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set web font" sid="884935579248423" type="InterSemiBold">
+                            <param id="0" name="Family name">&quot;intersemibold&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="795073185503851">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="752995853010266" type="CandaraBold" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set web font" sid="344377987144849" type="CandaraBold">
+                            <param id="0" name="Family name">&quot;candarabold&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="985449627328152">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="101572577965369" type="InterBlack" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set web font" sid="604632267177776" type="InterBlack">
+                            <param id="0" name="Family name">&quot;interblack&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="458680083300091">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="785824020188246" type="System" />
+                        <condition id="-8" name="Compare two values" sid="447288423627609" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;StartScreen&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="874275288697229" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="963199391993733" type="FontsLoader">
+                            <param id="0" name="Family name">&quot;candarabold&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="802782468802784" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="829995426685237" type="FontsLoader">
+                            <param id="0" name="Family name">&quot;interblack&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="502266623850238" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="312489325302622" type="FontsLoader">
+                            <param id="0" name="Family name">&quot;intersemibold&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="996426102698197" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="898915579620040" type="FontsLoader">
+                            <param id="0" name="Family name">&quot;intermedium&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="538763481698143" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="624985385374834" type="FontsLoader">
+                            <param id="0" name="Family name">&quot;candara&quot;</param>
+                            <param id="1" name="CSS URL">&quot;fonts.css&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="109435668611273" title="Fullscreen">
+            <sub-events>
+                <event-block sid="509398466937558">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="804555904885154" type="Touch" />
+                        <condition id="10" inverted="1" name="Is fullscreen" sid="582017727902342" type="Browser" />
+                        <condition id="-8" name="Compare two values" sid="541336824240514" type="System">
+                            <param id="0" name="First value">Browser.Domain</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot;localhost&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Request fullscreen" sid="190785932512322" type="Browser">
+                            <param id="0" name="Mode">3</param>
+                        </action>
+                        <action id="18" name="Lock orientation" sid="996908554102046" type="Browser">
+                            <param id="0" name="Orientation">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="103413203601358" title="Tests">
+            <sub-events>
+                <event-block sid="590868532536284">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="382297051384231" type="System">
+                            <param id="0" name="First value">Browser.Domain</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;localhost&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="321533172376211">
+                            <conditions>
+                                <condition id="1" name="On state change" sid="460910956436669" type="Photon" />
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="331404768916167" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">Photon.State &amp; &quot; : &quot;&amp;Photon.StateString</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="818780125816238">
+                            <conditions>
+                                <condition id="4" name="On any event" sid="219278491961059" type="Photon" />
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="693916419845042" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">Photon.EventCode&amp;&quot; :: &quot;&amp;Photon.EventData</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="379363245817023">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="565194715635594" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="307314797324556">
+                                    <conditions />
+                                    <actions>
+                                        <action id="14" name="Log" sid="611660580022225" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;lobby: &quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="243072560792710">
+                                            <conditions>
+                                                <condition id="33" name="Is connected to a lobby" sid="681978418141110" type="Photon" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="14" name="Log" sid="453522552185565" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;lOL&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="726372355879191">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="179342905340770" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="14" name="Log" sid="832378955835472" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;NO&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="901890519315771">
+                                    <conditions />
+                                    <actions>
+                                        <action id="14" name="Log" sid="937305578101515" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;name: &quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="962182966491543">
+                                            <conditions>
+                                                <condition id="31" name="Is connected to Nameserver" sid="729288482489369" type="Photon" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="14" name="Log" sid="120636558005579" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;lOL&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="456521673736857">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="377110924862367" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="14" name="Log" sid="499111669362896" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;NO&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="966388315696829">
+                                    <conditions />
+                                    <actions>
+                                        <action id="14" name="Log" sid="644444578607420" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;master: &quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="877961886683625">
+                                            <conditions>
+                                                <condition id="32" name="Is connected to Master server" sid="646777203678393" type="Photon" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="14" name="Log" sid="179397786008683" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;lOL&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="435812584663002">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="498346296729099" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="14" name="Log" sid="393674480708118" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;NO&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="837710536687925">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="451913147750448" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="15" name="Suspend room" sid="494708243399341" type="Photon" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="111091971848316">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="668861283164119" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="16" name="Leave room" sid="959952379392106" type="Photon" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="985480867955007">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="274006940556222" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Disconnect" sid="988488235916646" type="Photon" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="647065298233185">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="974738001626855" type="Keyboard">
+                                    <param id="0" name="Key">20</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="373080556433747">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="146394797029312" type="System">
+                                            <param id="0" name="Object">Char</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="859345527304432">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="560533107659681" type="Char">
+                                                    <param id="0" name="Instance variable">mirrored</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="431583261609003" type="Function">
+                                                    <param id="0" name="Name">&quot;mirror&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Char.name{###}&quot;0&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="735658703646428">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="848152498390372" type="System" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="223078771630732" type="Char">
+                                                    <param id="0" name="Instance variable">mirrored</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="957995196475011" type="Function">
+                                                    <param id="0" name="Name">&quot;mirror&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Char.name{###}&quot;1&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="271234212694470" title="LayerLerp">
+            <sub-events>
+                <comment>0: layer&#x0D;&#x0A;1: lerp to&#x0D;&#x0A;2: speed&#x0D;&#x0A;(3): framerate inependant</comment>
+                <event-block sid="725419322127728">
+                    <conditions>
+                        <condition id="0" name="On function" sid="693609432950931" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="180761184051099">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="292732241191697" type="LayersToLerp">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                                <condition id="4" name="Compare current value" sid="886881242453712" type="LayersToLerp">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Delete" sid="415339681740265" type="LayersToLerp">
+                                    <param id="0" name="Index">LayersToLerp.CurX</param>
+                                    <param id="1" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="314458028965048">
+                            <conditions />
+                            <actions>
+                                <action id="5" name="Push" sid="565384326629782" type="LayersToLerp">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="860123862168418" type="LayersToLerp">
+                                    <param id="0" name="X">LayersToLerp.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="226474818590444" type="LayersToLerp">
+                                    <param id="0" name="X">LayersToLerp.Width-1</param>
+                                    <param id="1" name="Y">2</param>
+                                    <param id="2" name="Value">Function.Param(2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="711787270441459">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="703852154690987" type="System">
+                                    <param id="0" name="First value">Function.ParamCount</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="101104048699120" type="LayersToLerp">
+                                    <param id="0" name="X">LayersToLerp.Width-1</param>
+                                    <param id="1" name="Y">3</param>
+                                    <param id="2" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="507935263995850">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="767797880821040" type="LayersToLerp">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="multipler" sid="282707781392526" static="0" type="number">1</variable>
+                        <event-block sid="694220302202534">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="247352073227119" type="LayersToLerp">
+                                    <param id="0" name="X">LayersToLerp.CurX</param>
+                                    <param id="1" name="Y">3</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="261375520070997" type="System">
+                                    <param id="0" name="Variable">multipler</param>
+                                    <param id="1" name="Value">60/fps</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="353540225312735">
+                            <conditions />
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="119106335004609" type="System">
+                                    <param id="0" name="Layer">LayersToLerp.At(LayersToLerp.CurX)</param>
+                                    <param id="1" name="Opacity">lerp(LayerOpacity(LayersToLerp.At(LayersToLerp.CurX)),LayersToLerp.At(LayersToLerp.CurX,1),LayersToLerp.At(LayersToLerp.CurX,2) * multipler )</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="176945492846634">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="645962748368456" type="System">
+                                    <param id="0" name="First value">abs(LayerOpacity(LayersToLerp.At(LayersToLerp.CurX))-LayersToLerp.At(LayersToLerp.CurX,1))</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">1.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="712513078710092" type="System">
+                                    <param id="0" name="Layer">LayersToLerp.At(LayersToLerp.CurX)</param>
+                                    <param id="1" name="Opacity">LayersToLerp.At(LayersToLerp.CurX,1)</param>
+                                </action>
+                                <action id="9" name="Delete" sid="710899234893461" type="LayersToLerp">
+                                    <param id="0" name="Index">LayersToLerp.CurX</param>
+                                    <param id="1" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>0: finished|started</comment>
+    </events>
+</c2eventsheet>

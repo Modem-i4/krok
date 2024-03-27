@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EndScreen</name>
+    <events>
+        <event-group description="" sid="124171845473922" title="EndScreen">
+            <sub-events>
+                <event-block sid="414449524067436">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="270147851429287" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="916365655698508" type="System">
+                            <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                            <param id="1" name="Opacity">0</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="922203934570047" type="System">
+                            <param id="0" name="Layer">&quot;Curtain&quot;</param>
+                            <param id="1" name="Opacity">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="463480938016511">
+                    <conditions>
+                        <condition id="0" name="On function" sid="485997979108899" type="Function">
+                            <param id="0" name="Name">&quot;finish&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="972293843736990" type="System">
+                            <param id="0" name="Variable">allow_to_continue</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="17" name="Raise event" sid="100922834483527" type="Photon">
+                            <param id="0" name="Code">6</param>
+                            <param id="1" name="Data">0</param>
+                            <param id="2" name="InterestGroup">0</param>
+                            <param id="3" name="Cache">0</param>
+                            <param id="4" name="Receivers">0</param>
+                            <param id="5" name="TargetActors">&quot;&quot;</param>
+                            <param id="6" name="WebForward">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="854331477094764" type="Function">
+                            <param id="0" name="Name">&quot;sendUserStat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;finished&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="454607569414429">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="909075432573099" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;EndScreen&quot;{###}100{###}0.13</param>
+                                </action>
+                                <action id="0" name="Call function" sid="666372135980154" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Overlay&quot;{###}0{###}0.13</param>
+                                </action>
+                                <action id="0" name="Call function" sid="246031799293457" type="Function">
+                                    <param id="0" name="Name">&quot;setEndScreenPagination&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-3" name="Create object" sid="241775663564555" type="System">
+                                    <param id="0" name="Object to create">Placeholder</param>
+                                    <param id="1" name="Layer">&quot;EndScreen&quot;</param>
+                                    <param id="2" name="X">961</param>
+                                    <param id="3" name="Y">522</param>
+                                </action>
+                                <action id="0" name="Call function" sid="450792088796890" type="Function">
+                                    <param id="0" name="Name">&quot;setSlide&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="765587325889378" title="Slider">
+                    <sub-events>
+                        <variable constant="0" name="slide" sid="820284823588939" static="1" type="number">0</variable>
+                        <variable constant="0" name="maxPages" sid="651988185325461" static="1" type="number">0</variable>
+                        <event-block sid="945706637789809">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="277671948011800" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="137573476853477" type="System">
+                                    <param id="0" name="Variable">slide</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="110081222825854" type="SliderArrow">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="900297032063502">
+                            <conditions>
+                                <condition id="0" name="On function" sid="817206854371894" type="Function">
+                                    <param id="0" name="Name">&quot;setEndScreenPagination&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="549857043416491">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="909611184155521" type="System">
+                                            <param id="0" name="Variable">maxPages</param>
+                                            <param id="1" name="Value">Data.NodeCount(&quot;//scenarios/&quot;&amp;scenario&amp;&quot;/questions/*&quot;)-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="848528628762037">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="621283224130080" type="System">
+                                            <param id="0" name="Name">&quot;&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">maxPages</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="314576314003039" type="System">
+                                            <param id="0" name="Object to create">PageIndicator</param>
+                                            <param id="1" name="Layer">&quot;EndScreen&quot;</param>
+                                            <param id="2" name="X">LayoutWidth/2+(loopindex-maxPages/2)*45</param>
+                                            <param id="3" name="Y">784</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="932311735083306" type="PageIndicator">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="687434035027180" type="PageIndicator">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Value">loopindex</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="631283157757179">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="361175925883574" type="System">
+                                                    <param id="0" name="First value">loopindex</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="474284375357228" type="PageIndicator">
+                                                    <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="758854586152115">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="762092150391096" type="System">
+                                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">99</param>
+                                </condition>
+                                <condition id="-16" name="Is on layer" sid="963019750325831" type="Hoverable">
+                                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="253280432390011">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="454737015772419" type="Mouse">
+                                            <param id="0" name="Object">Hoverable</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set cursor style" sid="714895227579367" type="Mouse">
+                                            <param id="0" name="Cursor style">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="169422048218356">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="956066975193176" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set cursor style" sid="920951226163496" type="Mouse">
+                                            <param id="0" name="Cursor style">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="709695418276748">
+                                    <conditions>
+                                        <condition id="17" name="On tap object" sid="168146017969697" type="Touch">
+                                            <param id="0" name="Object">Button</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="428011779636379" type="Button">
+                                            <param id="0" name="Animation">&quot;Menu&quot;</param>
+                                        </condition>
+                                        <condition id="-16" name="Is on layer" sid="142223468874324" type="Button">
+                                            <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="744207117259579" type="Function">
+                                            <param id="0" name="Name">&quot;goTo&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;StartScreen&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="715332554041809">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="852899065843919" type="SliderArrow">
+                                            <param id="0" name="Animation">&quot;Left&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="819747452874878">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="610635938440223" type="System">
+                                                    <param id="0" name="Variable">slide</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="211856550835928" type="SliderArrow">
+                                                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.05*60/fps)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="925797129198172">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="888300361386807" type="System">
+                                                    <param id="0" name="Variable">slide</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="770167482363364" type="SliderArrow">
+                                                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.05*60/fps)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block any="1" sid="423301640474412">
+                                                    <conditions>
+                                                        <condition id="17" name="On tap object" sid="530383589184026" type="Touch">
+                                                            <param id="0" name="Object">SliderArrow</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="256079530787971" type="System">
+                                                            <param id="0" name="Variable">slide</param>
+                                                            <param id="1" name="Value">-1</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="148486760531368" type="Function">
+                                                            <param id="0" name="Name">&quot;setSlide&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="436663371612166">
+                                                    <conditions>
+                                                        <condition id="0" name="On key pressed" sid="570566472804368" type="Keyboard">
+                                                            <param id="0" name="Key">37</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="477626094337498" type="System">
+                                                            <param id="0" name="Variable">slide</param>
+                                                            <param id="1" name="Value">-1</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="350138569111273" type="Function">
+                                                            <param id="0" name="Name">&quot;setSlide&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="640956465974936">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="936976928672386" type="SliderArrow">
+                                            <param id="0" name="Animation">&quot;Right&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="640049526313577">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="455645125258264" type="System">
+                                                    <param id="0" name="Variable">slide</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">maxPages</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="431084183136827" type="SliderArrow">
+                                                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.05*60/fps)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="318268043787819">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="406460289011271" type="System">
+                                                    <param id="0" name="Variable">slide</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">maxPages</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="732048195140143" type="SliderArrow">
+                                                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.05*60/fps)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block any="1" sid="182195823206152">
+                                                    <conditions>
+                                                        <condition id="17" name="On tap object" sid="186891487122249" type="Touch">
+                                                            <param id="0" name="Object">SliderArrow</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="888815737384624" type="System">
+                                                            <param id="0" name="Variable">slide</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="778329321720865" type="Function">
+                                                            <param id="0" name="Name">&quot;setSlide&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="907191816641835">
+                                                    <conditions>
+                                                        <condition id="0" name="On key pressed" sid="718705430958047" type="Keyboard">
+                                                            <param id="0" name="Key">39</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="883453537416415" type="System">
+                                                            <param id="0" name="Variable">slide</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="677893882816094" type="Function">
+                                                            <param id="0" name="Name">&quot;setSlide&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="568759961455395">
+                                    <conditions>
+                                        <condition id="17" name="On tap object" sid="450205597791589" type="Touch">
+                                            <param id="0" name="Object">PageIndicator</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="810668872443751" type="PageIndicator">
+                                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="392618788345420" type="System">
+                                            <param id="0" name="Variable">slide</param>
+                                            <param id="1" name="Value">PageIndicator.id</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="747983214159475" type="Function">
+                                            <param id="0" name="Name">&quot;setSlide&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="337112111137437">
+                            <conditions>
+                                <condition id="0" name="On function" sid="462236044098661" type="Function">
+                                    <param id="0" name="Name">&quot;setSlide&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="FadeOut" id="0" name="Restart fade" sid="119898968376129" type="TextFaders" />
+                                <action id="-16" name="Wait" sid="359104501048370" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action behavior="FadeIn" id="0" name="Restart fade" sid="500073306282729" type="TextFaders" />
+                                <action id="0" name="Set text" sid="740446912933731" type="QuestionIndicatorTxt">
+                                    <param id="0" name="Text">&quot;Питання &quot;&amp; slide+1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="850836152431887" type="PageIndicator">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="slideText" sid="468874179679782" static="0" type="text"></variable>
+                                <event-block sid="602074332446807">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="155482489485939" type="System">
+                                            <param id="0" name="Variable">slideText</param>
+                                            <param id="1" name="Value">Data.StringValue(&quot;//scenarios/&quot;&amp;scenario&amp;&quot;/questions/question[&quot;&amp;slide+1&amp;&quot;]&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="165706944449609" type="ConclusionTxt">
+                                            <param id="0" name="Text">Function.Call(&quot;replaceNames&quot;,slideText)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="978586735179158">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="131167421849905" type="PageIndicator">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">slide</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="929830156619265" type="PageIndicator">
+                                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

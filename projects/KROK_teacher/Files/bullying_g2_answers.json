@@ -1,0 +1,45 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["classmatesAround"],
+["Проігнорую","plot&classmatesAround_ignore"],
+["Попрошу не глузувати","plot&classmatesAround_noBullying"],
+["Заплачу","plot&classmatesAround_cry"]
+],
+
+[["nickname"],
+["Обізвати у відповідь","plot&nickname_bull"],
+["Піти додому","plot&nickname_goHome"],
+["Нацькувати собаку","plot&nickname_sendDog"]
+],
+
+[["remind"],
+["Кричати","plot&remind_scream"],
+["Плакати","plot&remind_cry"],
+["Мовчати","plot&remind_silent"]
+],
+
+[["howToAvoid"],
+["Залишитись у класі","plot&howToAvoid_stayInClass"],
+["Піти в їдальню","plot&howToAvoid_canteen"],
+["Прогулятись по школі","plot&howToAvoid_walkAround"]
+],
+
+[["showFanfic"],
+["Дати почитати","plot&showFanfic_letRead"],
+["Відмовитись","plot&showFanfic_reject"],
+["Засумніватися","plot&showFanfic_doubt"]
+],
+
+[["doIDeserve"],
+["Відповісти злісно","plot&doIDeserve_getAngry"],
+["Благати","plot&doIDeserve_beg"],
+["Промовчати","plot&doIDeserve_silent"]
+],
+
+[["whoDidItToYou"],
+["Збрехати","plot&whoDidItToYou_lie"],
+["Сказати не все","plot&whoDidItToYou_tellPart"],
+["Сказати правду","plot&whoDidItToYou_tellTruth"]
+]
+
+]}

@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Setup</name>
+    <events>
+        <event-group description="" sid="642109046067289" title="Setup">
+            <sub-events>
+                <event-block sid="808752595202270">
+                    <conditions>
+                        <condition id="0" name="On function" sid="795244963971247" type="Function">
+                            <param id="0" name="Name">&quot;loadPlot&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="346029711744238" type="Function">
+                            <param id="0" name="Name">&quot;requestAJAX&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="612666786000119" type="Function">
+                            <param id="0" name="Name">&quot;requestAJAX&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;answers&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="523619509583238">
+                    <conditions>
+                        <condition id="0" name="On function" sid="145171862280951" type="Function">
+                            <param id="0" name="Name">&quot;setup&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="781589377971487" type="Function">
+                            <param id="0" name="Name">&quot;sendUserStat&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;started&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="346147485936724" type="Function">
+                            <param id="0" name="Name">&quot;loadImages&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;all&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="485245544529884" type="Function">
+                            <param id="0" name="Name">&quot;goTo&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>0: file</comment>
+                <event-block sid="657005864341770">
+                    <conditions>
+                        <condition id="0" name="On function" sid="197198806392882" type="Function">
+                            <param id="0" name="Name">&quot;requestAJAX&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Request URL" sid="574598345602050" type="AJAX">
+                            <param id="0" name="Tag">Function.Param(0)</param>
+                            <param id="1" name="URL">scenario&amp;&quot;_&quot;&amp;Function.Param(0)&amp;&quot;.json&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="654265075374265" title="LoadImages">
+                    <sub-events>
+                        <variable constant="1" name="REGEX1" sid="386020372680958" static="0" type="text">(?&lt;=</variable>
+                        <variable constant="1" name="regex2" sid="781920754089315" static="0" type="text">&amp;).*?(?=[\&amp;\|\&quot;])</variable>
+                        <variable constant="1" name="REGEX2_1" sid="463755598280948" static="0" type="text">&amp;).*?(?=[\|\&quot;])</variable>
+                        <variable constant="0" name="loadList" sid="671539750353007" static="1" type="text"></variable>
+                        <event-block sid="568984262494931">
+                            <conditions>
+                                <condition id="15" name="On actor join" sid="461255927295112" type="Photon" />
+                                <condition id="-8" name="Compare two values" sid="209433163344944" type="System">
+                                    <param id="0" name="First value">Photon.ActorNr</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">Photon.MyActorNr</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="17" name="Raise event" sid="329467205333087" type="Photon">
+                                    <param id="0" name="Code">30</param>
+                                    <param id="1" name="Data">loadList</param>
+                                    <param id="2" name="InterestGroup">0</param>
+                                    <param id="3" name="Cache">0</param>
+                                    <param id="4" name="Receivers">0</param>
+                                    <param id="5" name="TargetActors">str(Photon.ActorNr)</param>
+                                    <param id="6" name="WebForward">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>0: type 1: fds</comment>
+                        <event-block sid="667821588372508">
+                            <conditions>
+                                <condition id="0" name="On function" sid="718249499492990" type="Function">
+                                    <param id="0" name="Name">&quot;getComplexImgUrl&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="result" sid="329319282307108" static="0" type="text"></variable>
+                                <variable constant="0" name="emotion" sid="131231873803844" static="0" type="text">default</variable>
+                                <variable constant="0" name="char" sid="633147320718576" static="0" type="text"></variable>
+                                <event-block sid="672125255667882">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="158744823767233" type="System">
+                                            <param id="0" name="Variable">result</param>
+                                            <param id="1" name="Value">RegexMatchAt(Plots.AsJSON,REGEX1&amp;Function.Param(0)&amp;REGEX2_1,&quot;gm&quot;,Function.Param(1))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="447965762212454" type="System">
+                                            <param id="0" name="Variable">char</param>
+                                            <param id="1" name="Value">tokenat(result,0,&quot;&amp;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="655218075352129">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="552386554701029" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;appear&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="194805520241477">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="878914778606137" type="System">
+                                                    <param id="0" name="First value">tokenat(result,3,&quot;&amp;&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="254663888540241" type="System">
+                                                    <param id="0" name="Variable">emotion</param>
+                                                    <param id="1" name="Value">tokenat(result,3,&quot;&amp;&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="266837571232972">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="598236405773683" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;emote&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="483731634409923" type="System">
+                                            <param id="0" name="Variable">emotion</param>
+                                            <param id="1" name="Value">tokenat(result,1,&quot;&amp;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="986233100537008">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="137259173967607" type="Function">
+                                            <param id="0" name="Value">Char&amp;&quot;_&quot;&amp;emotion</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>0: type, 1: anim</comment>
+                        <event-block sid="178376484190692">
+                            <conditions>
+                                <condition id="0" name="On function" sid="652635537548248" type="Function">
+                                    <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="loadExpression" sid="317728489534960" static="0" type="text"></variable>
+                                <variable constant="0" name="load" sid="808505242947054" static="0" type="number">1</variable>
+                                <event-block sid="484534373926072">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="784384650559773" type="System">
+                                            <param id="0" name="Variable">loadExpression</param>
+                                            <param id="1" name="Value">Function.Param(0)&amp;&quot;&amp;&quot;&amp;Function.Param(1)&amp;&quot;|&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="970481075521044">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="309487237737120" type="System">
+                                            <param id="0" name="First value">find(loadList, loadExpression)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="101765462930307" type="System">
+                                            <param id="0" name="First value">Function.Param(1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="366893109944521" type="System">
+                                            <param id="0" name="Variable">load</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="967105169960497">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="550369228614509" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;overlay&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="117929007829551">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="538246242041830" type="System">
+                                                    <param id="0" name="First value">lowercase(Function.Param(1))</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;default&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="907267497772403" type="System">
+                                                    <param id="0" name="Variable">load</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="824160831869557">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="920964692573693" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;char&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="487543065322047">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="419772389792453" type="System">
+                                                    <param id="0" name="First value">tokenat(Function.Param(1),0,&quot;_&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="531147574567586" type="System">
+                                                    <param id="0" name="First value">tokenat(Function.Param(1),1,&quot;_&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="224978155481253" type="System">
+                                                    <param id="0" name="Variable">load</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="760200491105930">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="153001206985192" type="System">
+                                            <param id="0" name="Variable">load</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="708083964424571" type="System">
+                                            <param id="0" name="Variable">loadList</param>
+                                            <param id="1" name="Value">loadExpression</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="696039329596704">
+                                            <conditions>
+                                                <condition id="1" name="Compare parameter" sid="675766863818413" type="Function">
+                                                    <param id="0" name="Index">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;bg&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="727902347808893" type="Loader">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;bg&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="10" name="Load image from URL" sid="521469616501132" type="Loader">
+                                                    <param id="0" name="URI">IMG_ROOT&amp;Function.Param(0)&amp;&quot;s/&quot;&amp;Function.Param(1)&amp;&quot;.png&quot;</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="469715967152272">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="191913279543209" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="307473008344857" type="Loader">
+                                                    <param id="0" name="Instance variable">type</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">&quot;bg&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="10" name="Load image from URL" sid="758322606631359" type="Loader">
+                                                    <param id="0" name="URI">IMG_ROOT&amp;Function.Param(0)&amp;&quot;s/&quot;&amp;Function.Param(1)&amp;&quot;.png&quot;</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>0: first/all</comment>
+                        <event-block sid="968668155015882">
+                            <conditions>
+                                <condition id="0" name="On function" sid="193615618575172" type="Function">
+                                    <param id="0" name="Name">&quot;loadImages&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="584167716798255" type="System">
+                                    <param id="0" name="Variable">loadList</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="260419253309393">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="644261988063468" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;first&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="325919983083097" type="Function">
+                                            <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;bg&quot;{###}RegexMatchAt(Plots.AsJSON,REGEX1&amp;&quot;bg&quot;&amp;REGEX2,&quot;gm&quot;,0)</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="702546123632665" type="Function">
+                                            <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;char&quot;{###}Function.Call(&quot;getComplexImgUrl&quot;,&quot;appear&quot;,0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="620768085213937">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="405878344236469" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;all&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="351282929128828">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="444621772809175" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">RegexMatchCount(Plots.AsJSON,REGEX1&amp;&quot;appear&quot;&amp;REGEX2_1,&quot;gm&quot;)-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="888754949620412" type="Function">
+                                                    <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;char&quot;{###}Function.Call(&quot;getComplexImgUrl&quot;,&quot;appear&quot;,loopindex)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="164561126984552">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="111046417314925" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">RegexMatchCount(Plots.AsJSON,REGEX1&amp;&quot;emote&quot;&amp;REGEX2,&quot;gm&quot;)-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="371398837709825" type="Function">
+                                                    <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;char&quot;{###}Function.Call(&quot;getComplexImgUrl&quot;,&quot;emote&quot;,loopindex)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="269100575218826">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="453205977547317" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">RegexMatchCount(Plots.AsJSON,REGEX1&amp;&quot;bg&quot;&amp;REGEX2,&quot;gm&quot;)-1</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="794149693588860" type="System">
+                                                    <param id="0" name="First value">RegexMatchCount(Plots.AsJSON,REGEX1&amp;&quot;bg&quot;&amp;REGEX2,&quot;gm&quot;)-1</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="100692113991533" type="Function">
+                                                    <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;bg&quot;{###}RegexMatchAt(Plots.AsJSON,REGEX1&amp;&quot;bg&quot;&amp;REGEX2,&quot;gm&quot;,loopindex)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="231212089050032">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="539977939296589" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">RegexMatchCount(Plots.AsJSON,REGEX1&amp;&quot;overlay&quot;&amp;REGEX2,&quot;gm&quot;)-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="218316775824989" type="Function">
+                                                    <param id="0" name="Name">&quot;loadImg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;overlay&quot;{###}RegexMatchAt(Plots.AsJSON,REGEX1&amp;&quot;overlay&quot;&amp;REGEX2,&quot;gm&quot;,loopindex)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="601455636523142">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="593599634234514" type="AJAX">
+                            <param id="0" name="Tag">&quot;plot&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Load" sid="674605643859755" type="Plots">
+                            <param id="0" name="JSON">AJAX.LastData</param>
+                        </action>
+                        <action id="0" name="Call function" sid="258010139730129" type="Function">
+                            <param id="0" name="Name">&quot;loadImages&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;first&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="452447244649880">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="425342043935599" type="AJAX">
+                            <param id="0" name="Tag">&quot;answers&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Load" sid="360725871091716" type="Answers">
+                            <param id="0" name="JSON">AJAX.LastData</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

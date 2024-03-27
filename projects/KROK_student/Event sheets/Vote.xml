@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Vote</name>
+    <events>
+        <include>Common</include>
+        <include>Sync</include>
+        <variable constant="0" name="mode" sid="161906264766639" static="0" type="text"></variable>
+        <variable constant="1" name="maxplayers" sid="589537288171830" static="0" type="number">25</variable>
+        <event-block sid="328796594451435">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="839786093095827" type="System" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="457831798679950" type="System">
+                    <param id="0" name="Layer">&quot;StartWindow&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="156955034095038" type="System">
+                    <param id="0" name="Layer">&quot;options&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="894926487909333" type="System">
+                    <param id="0" name="Layer">&quot;EmoScale&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="103470577934117" type="System">
+                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="284874049851649" type="System">
+                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="529211950396334" type="System">
+                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="429740345316155" type="System">
+                    <param id="0" name="Layer">&quot;GodVoice&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="0" name="Set text" sid="511296368978272" type="CodeTxt">
+                    <param id="0" name="Text">&quot;Код: &quot;&amp;code</param>
+                </action>
+                <action id="17" name="Execute Javascript" sid="918302174345143" type="Browser">
+                    <param id="0" name="Javascript">&quot;window.history.pushState({}, &apos;Крок&apos;, &apos;&quot;&amp;Browser.PathName&amp;&quot;?room=&quot;&amp;code&amp;&quot;&apos;);&quot; </param>
+                </action>
+                <action id="-9" name="Set value" sid="296446293637156" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-3" name="Create object" sid="354301970715351" type="System">
+                    <param id="0" name="Object to create">Char</param>
+                    <param id="1" name="Layer">&quot;Preload&quot;</param>
+                    <param id="2" name="X">2253</param>
+                    <param id="3" name="Y">415</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="569232198215222">
+            <conditions>
+                <condition id="3" name="On touched object" sid="297231022297499" type="Touch">
+                    <param id="0" name="Object">Hyperlink</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="168567019369814" type="System">
+                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Opacity">99</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="262505898510563">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="524353486780158" type="System">
+                            <param id="0" name="First value">find(Hyperlink.link, &quot;tel:&quot;)</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Go to URL" sid="446927255042701" type="Browser">
+                            <param id="0" name="URL">Hyperlink.link</param>
+                            <param id="1" name="Target">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="236406201995679">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="997874507862754" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Open URL in new window" sid="230788309763168" type="Browser">
+                            <param id="0" name="URL">Hyperlink.link</param>
+                            <param id="1" name="Tag">&quot;link&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="125207393968827" title="Leave">
+            <sub-events>
+                <event-block sid="876213434450625">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="366001256761153" type="System">
+                            <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="918063675761060">
+                            <conditions>
+                                <condition id="3" name="On event" sid="269331840795058" type="Photon">
+                                    <param id="0" name="Code">15</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="17" name="Execute Javascript" sid="710788405429609" type="Browser">
+                                    <param id="0" name="Javascript">&quot;window.history.pushState({}, &apos;Крок — Учень&apos;, &apos;&quot;&amp;Browser.PathName&amp;&quot;&apos;);&quot; </param>
+                                </action>
+                                <action id="14" name="Log" sid="372682707029432" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;TEACHER HAS LEFT&quot;</param>
+                                </action>
+                                <action id="14" name="Log" sid="675655396849855" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">Browser.PathName</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="205336429409847" type="System">
+                                    <param id="0" name="Variable">code</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="495660637035589" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;EndScreen&quot;{###}100{###}0.15</param>
+                                </action>
+                                <action id="0" name="Call function" sid="952412293216830" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Overlay&quot;{###}0{###}0.15</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="218246245601872" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="14" name="Disconnect" sid="854429166074590" type="Photon" />
+                            </actions>
+                            <sub-events>
+                                <event-block disabled="1" sid="100334811684363">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="652393480026029" type="Button">
+                                            <param id="0" name="Animation">&quot;Menu&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="111861085887954" type="Button">
+                                            <param id="0" name="X">977.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="920547973462302">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="790654894399017" type="Button">
+                                            <param id="0" name="Animation">&quot;Rejoin&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="654587457631068" type="Button">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="633950372122278">
+            <conditions>
+                <condition id="3" name="On touched object" sid="385313664661181" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="915955152533302" type="System">
+                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Opacity">99</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="694626726446121" type="Button">
+                    <param id="0" name="Animation">&quot;MainScreen&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="17" name="Execute Javascript" sid="590096718102724" type="Browser">
+                    <param id="0" name="Javascript">&quot;window.history.pushState({}, &apos;Krok&apos;, &apos;&quot;&amp;Browser.PathName&amp;&quot;&apos;);&quot; </param>
+                </action>
+                <action id="0" name="Call function" sid="929793412091181" type="Function">
+                    <param id="0" name="Name">&quot;goToMenu&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="485169047546602" title="PercentageTracker">
+            <sub-events>
+                <event-block sid="540411576600162">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="253314486408652" type="System">
+                            <param id="0" name="Object">Option</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="620590273466791" type="PercentageTracker">
+                            <param id="0" name="Width">lerp(Self.Width,Option.percentage/100*300, 0.1*60/fps)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="837358387012629">
+            <conditions>
+                <condition id="17" name="On tap object" sid="220407407571444" type="Touch">
+                    <param id="0" name="Object">Option</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="180926838466525" type="System">
+                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="288816482491463" type="Text">
+                    <param id="0" name="Instance variable">role</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;bottom&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="249564687500756" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;awaitAnswers&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="418085275440058">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="362679880369199" type="Option">
+                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="766110120922500" type="PercentageTracker">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Opacity">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="141172030394047" type="Text">
+                            <param id="0" name="Text">&quot;Очікуємо на відповіді інших..&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="882334765559221">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="196728006878875" type="System">
+                                    <param id="0" name="Object">Option</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="308183161639098" type="Option">
+                                    <param id="0" name="Animation">&quot;Inactive&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="454680142606590" type="OptionText">
+                                    <param id="0" name="Color">rgb(70, 58, 53)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="452423464361568">
+                            <conditions />
+                            <actions>
+                                <action id="4" name="Set animation" sid="973762869280476" type="Option">
+                                    <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="797190493655991" type="OptionText">
+                                    <param id="0" name="Color">rgb(127, 38, 16)</param>
+                                </action>
+                                <action id="102" name="Set property of actor by nr." sid="470268912846002" type="Photon">
+                                    <param id="0" name="ActorNr">Photon.MyActorNr</param>
+                                    <param id="1" name="PropName">&quot;vote&quot;</param>
+                                    <param id="2" name="Value">Option.id</param>
+                                    <param id="3" name="WebForward">0</param>
+                                    <param id="4" name="CheckAndSet">0</param>
+                                    <param id="5" name="ExpectedValue">0</param>
+                                </action>
+                                <action id="17" name="Raise event" sid="899859487850504" type="Photon">
+                                    <param id="0" name="Code">2</param>
+                                    <param id="1" name="Data">&quot;ask&quot;</param>
+                                    <param id="2" name="InterestGroup">0</param>
+                                    <param id="3" name="Cache">0</param>
+                                    <param id="4" name="Receivers">1</param>
+                                    <param id="5" name="TargetActors">&quot;&quot;</param>
+                                    <param id="6" name="WebForward">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="939522537096033">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="444899529831379" type="DarkShader">
+                                    <param id="0" name="Instance variable">func</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;options&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="349066823856326" type="DarkShader">
+                                    <param id="0" name="Width">1080</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="822480288337477" type="DarkShader">
+                                    <param id="0" name="Y">Text.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="807460645005559" title="VoteEmoScale">
+            <sub-events>
+                <event-block sid="591118233073959">
+                    <conditions>
+                        <condition id="0" name="On function" sid="629351115704262" type="Function">
+                            <param id="0" name="Name">&quot;displayEmoScale&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="988435790299574" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;emoScaleText&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="464130609271625" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;EmoScale&quot;{###}100{###}0.15</param>
+                        </action>
+                        <action id="0" name="Set text" sid="444728735196925" type="Text">
+                            <param id="0" name="Text">&quot;Зроби свій вибір!&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="433044675799728" type="System">
+                            <param id="0" name="Variable">mode</param>
+                            <param id="1" name="Value">&quot;awaitEmoScale&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="856893864793351" type="EmoScaleProgress" />
+                        <action id="0" name="Spawn another object" sid="992569981453786" type="EmoScaleBar">
+                            <param id="0" name="Object">EmoScaleProgress</param>
+                            <param id="1" name="Layer">&quot;EmoScale&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Sine" id="6" name="Update initial state" sid="266871231796323" type="EmoScaleProgress" />
+                        <action behavior="Sine" id="0" name="Set active" sid="285507532709351" type="EmoScaleProgress">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="484990041042042" type="OptionMsg" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="996042130012382">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="368985945194345" type="System">
+                                    <param id="0" name="Object">EmoScaleText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="428854413378545" type="EmoScaleText">
+                                    <param id="0" name="Text">tokenat(Function.Param(0),loopindex+1,&quot;&amp;&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="436535601036447">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="556056237034350" type="System">
+                            <param id="0" name="Variable">mode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;awaitEmoScale&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="691252311834693">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="102292918620549" type="Touch">
+                                    <param id="0" name="Object">EmoScaleProgress</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="181112184689695" type="EmoScaleProgress">
+                                    <param id="0" name="Instance variable">active</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="299512891080671">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="160837552287358" type="Touch">
+                                    <param id="0" name="Object">EmoScaleBar</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="108263976952865" type="EmoScaleProgress">
+                                    <param id="0" name="Instance variable">active</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="325820054171954">
+                            <conditions>
+                                <condition id="1" name="On any touch end" sid="413999090342859" type="Touch" />
+                                <condition id="-8" name="Is boolean instance variable set" sid="381027265739647" type="EmoScaleProgress">
+                                    <param id="0" name="Instance variable">active</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="824747348988790" type="EmoScaleProgress">
+                                    <param id="0" name="Instance variable">active</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="392290129438071">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="354340523730753" type="EmoScaleProgress">
+                                            <param id="0" name="Instance variable">dummy</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="139178435784253" type="Text">
+                                            <param id="0" name="Instance variable">role</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;emoScaleText&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="535354591616336" type="Text">
+                                            <param id="0" name="Text">&quot;Очікуємо на відповіді інших..&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <variable constant="0" name="percent" sid="935185406250446" static="0" type="number">0</variable>
+                                        <variable constant="0" name="touchX" sid="448900529014361" static="0" type="number">0</variable>
+                                        <event-block sid="697115708790410">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="795615411435791" type="System">
+                                                    <param id="0" name="Variable">touchX</param>
+                                                    <param id="1" name="Value">clamp(Touch.X,EmoScaleBar.BBoxLeft,EmoScaleBar.BBoxRight)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="636573709811458" type="System">
+                                                    <param id="0" name="Variable">percent</param>
+                                                    <param id="1" name="Value">round((1+(touchX-EmoScaleBar.BBoxRight)/(EmoScaleBar.BBoxRight-EmoScaleBar.BBoxLeft))*100)</param>
+                                                </action>
+                                                <action disabled="1" id="14" name="Log" sid="593253446797796" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;PERCENT: &quot;&amp;percent</param>
+                                                </action>
+                                                <action id="102" name="Set property of actor by nr." sid="686337446389856" type="Photon">
+                                                    <param id="0" name="ActorNr">Photon.MyActorNr</param>
+                                                    <param id="1" name="PropName">&quot;vote&quot;</param>
+                                                    <param id="2" name="Value">percent</param>
+                                                    <param id="3" name="WebForward">0</param>
+                                                    <param id="4" name="CheckAndSet">0</param>
+                                                    <param id="5" name="ExpectedValue">0</param>
+                                                </action>
+                                                <action id="17" name="Raise event" sid="631855368526908" type="Photon">
+                                                    <param id="0" name="Code">2</param>
+                                                    <param id="1" name="Data">&quot;emoScale&quot;</param>
+                                                    <param id="2" name="InterestGroup">0</param>
+                                                    <param id="3" name="Cache">0</param>
+                                                    <param id="4" name="Receivers">1</param>
+                                                    <param id="5" name="TargetActors">&quot;&quot;</param>
+                                                    <param id="6" name="WebForward">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="150955254882615">
+                            <conditions>
+                                <condition id="2" name="Is in touch" sid="830964515201302" type="Touch" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="854352003840299">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="273108868794078" type="EmoScaleProgress">
+                                            <param id="0" name="Instance variable">active</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="LiteTween" id="3" name="Set target" sid="649500431669706" type="EmoScaleProgress">
+                                            <param id="0" name="Target is">0</param>
+                                            <param id="1" name="Relativity">0</param>
+                                            <param id="2" name="Value">clamp(Touch.X,EmoScaleBar.BBoxLeft,EmoScaleBar.BBoxRight)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="468572231210854">
+                                            <conditions>
+                                                <condition behavior="LiteTween" id="0" inverted="1" name="Is active" sid="754690732889014" type="EmoScaleProgress" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Sine" id="0" name="Set active" sid="803671607084343" type="EmoScaleProgress">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                                <action behavior="LiteTween" id="10" name="Start" sid="719930852430346" type="EmoScaleProgress">
+                                                    <param id="0" name="Start Mode">0</param>
+                                                    <param id="1" name="Force use current">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Reveal Votes</comment>
+                <event-block sid="440892021766287">
+                    <conditions>
+                        <condition id="3" name="On event" sid="413323354221407" type="Photon">
+                            <param id="0" name="Code">5</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="639139485915379" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;emoScaleText&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="831844806966383" type="System">
+                            <param id="0" name="First value">tokenat(Photon.EventData,0,&quot;|&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;emoScale&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="287314292701865" type="Text">
+                            <param id="0" name="Text">&quot;Результати&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="470025036280685" type="System">
+                            <param id="0" name="Variable">mode</param>
+                            <param id="1" name="Value">&quot;emoScale&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="newX" sid="596292557243749" static="0" type="number">0</variable>
+                        <event-block sid="236741187390959">
+                            <conditions />
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="728858559845823" type="EmoScaleProgress">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="202666153928438" type="EmoScaleProgress">
+                                    <param id="0" name="Instance variable">active</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="467450021222213">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="530800855494188" type="EmoScaleProgress">
+                                    <param id="0" name="Instance variable">dummy</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="336905458334659" type="EmoScaleProgress" />
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="percent" sid="448668295874263" static="0" type="number">0</variable>
+                        <event-block sid="702848837420578">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="267980248695163" type="System">
+                                    <param id="0" name="Variable">percent</param>
+                                    <param id="1" name="Value">tokenat(Photon.EventData,1,&quot;|&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="512895103904953" type="System">
+                                    <param id="0" name="Variable">newX</param>
+                                    <param id="1" name="Value">EmoScaleBar.BBoxLeft+(percent/100) * (EmoScaleBar.BBoxRight-EmoScaleBar.BBoxLeft)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="255367078477670">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="857616036134701" type="System">
+                                    <param id="0" name="First value">abs(EmoScaleProgress.X - newX)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">150</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="645943939657243" type="EmoScaleProgress">
+                                    <param id="0" name="Opacity">45</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="266028346967042" type="EmoScaleProgress">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">EmoScaleBar</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="442154060843562">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="840657022944160" type="EmoScaleBar">
+                                    <param id="0" name="Object">EmoScaleProgress</param>
+                                    <param id="1" name="Layer">&quot;EmoScale&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="875240358580390" type="EmoScaleProgress">
+                                    <param id="0" name="X">newX</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="331856930093503" type="EmoScaleProgress">
+                                    <param id="0" name="Instance variable">dummy</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="560692274761944" type="EmoScaleProgress">
+                                    <param id="0" name="Animation">&quot;Dummy&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="427584874817598">
+                    <conditions>
+                        <condition id="3" name="On event" sid="615021230409097" type="Photon">
+                            <param id="0" name="Code">101</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="791647493210420" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;emoScaleText&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="460720322359938" type="System">
+                            <param id="0" name="First value">tokenat(Photon.EventData,0,&quot;|&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;emoScale&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="842718282332135" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;EmoScale&quot;{###}0{###}0.15</param>
+                        </action>
+                        <action id="0" name="Set text" sid="632082705846335" type="Text">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="429626827052202" type="System">
+                            <param id="0" name="Variable">mode</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="848162407282031" type="System">
+                            <param id="0" name="Seconds">1.5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="421838290512085">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="455518114638874" type="System">
+                                    <param id="0" name="Variable">mode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;awaitEmoScale&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="895818056729768" type="System">
+                                    <param id="0" name="Variable">mode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;emoScale&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="817055970522867" type="EmoScaleProgress" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="984434897405027" title="VotePhoton">
+            <sub-events>
+                <comment>displayAnswers&#x0D;&#x0A;0: questions &amp;&amp;&amp;</comment>
+                <event-block sid="126811459253310">
+                    <conditions>
+                        <condition id="0" name="On function" sid="277946846326779" type="Function">
+                            <param id="0" name="Name">&quot;displayAnswers&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="557248293437273" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;bottom&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="445313541802168" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;options&quot;{###}100{###}0.15</param>
+                        </action>
+                        <action id="0" name="Set text" sid="229374504791854" type="Text">
+                            <param id="0" name="Text">&quot;Зроби свій вибір!&quot;</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="596601928586141" type="Text">
+                            <param id="0" name="Y">219</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="278667522573281" type="OptionText">
+                            <param id="0" name="Color">rgb(127, 38, 16)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="731748711510631" type="VotePercentageText">
+                            <param id="0" name="Text">&quot;0%&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="721628167864122" type="System">
+                            <param id="0" name="Variable">mode</param>
+                            <param id="1" name="Value">&quot;awaitAnswers&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="940831472626630" type="Option">
+                            <param id="0" name="Animation">&quot;Active&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="109575949819733" type="Option">
+                            <param id="0" name="Instance variable">chosen</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="651313993725323" type="Option">
+                            <param id="0" name="Instance variable">percentage</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="809517136146632" type="OptionMsg" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="725866721176117">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="939172017791548" type="System">
+                                    <param id="0" name="Object">Option</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="394766950512190" type="OptionText">
+                                    <param id="0" name="Text">tokenat(Function.Param(0),loopindex,&quot;&amp;&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="998335553606108">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="776017072707724" type="DarkShader">
+                                    <param id="0" name="Instance variable">func</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;options&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="208836605450248" type="DarkShader">
+                                    <param id="0" name="Y">Text.Y</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="416458340860983" type="DarkShader">
+                                    <param id="0" name="Width">680</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="559308623668489">
+                    <conditions>
+                        <condition id="3" name="On event" sid="110821930741404" type="Photon">
+                            <param id="0" name="Code">101</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="495432468020002" type="Text">
+                            <param id="0" name="Instance variable">role</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;bottom&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="837458145363045" type="System">
+                            <param id="0" name="First value">tokenat(Photon.EventData,0,&quot;|&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;ask&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="553491085174227" type="Function">
+                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;options&quot;{###}0{###}0.15</param>
+                        </action>
+                        <action id="0" name="Set text" sid="872927592757234" type="Text">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="275505225490903" type="System">
+                            <param id="0" name="Variable">mode</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="689571523423613">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="936833560595454" type="DarkShader">
+                                    <param id="0" name="Instance variable">func</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;options&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="588825940478877" type="DarkShader">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="932018796590547">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Destroy" sid="797198751400184" type="OptionMsg" />
+                                <action id="-3" name="Create object" sid="336584055585441" type="System">
+                                    <param id="0" name="Object to create">OptionMsg</param>
+                                    <param id="1" name="Layer">&quot;GUI&quot;</param>
+                                    <param id="2" name="X">965</param>
+                                    <param id="3" name="Y">570</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="122790602099379" type="OptionMsgText">
+                                    <param id="0" name="Pin to">OptionMsg</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="968534561248162" type="OptionMsgText">
+                                    <param id="0" name="Text">tokenat(Photon.EventData,1,&quot;|&quot;)</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="969549168098039" type="OptionMsg">
+                                    <param id="0" name="Angle">-90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>UpdateVotes</comment>
+                <event-block sid="317511950074684">
+                    <conditions>
+                        <condition id="3" name="On event" sid="600104256735202" type="Photon">
+                            <param id="0" name="Code">2</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="334033100008031" type="System">
+                            <param id="0" name="First value">Photon.EventData</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;ask&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="774931016279843">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="158870402770455" type="System">
+                                    <param id="0" name="Object">Option</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="241603069763963" type="Option">
+                                    <param id="0" name="Instance variable">chosen</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="totalVotes" sid="425521744349088" static="0" type="number">0</variable>
+                        <event-block sid="398156763175946">
+                            <conditions>
+                                <condition id="-10" name="For" sid="512871828371387" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">Photon.ActorCount</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="274154360820249" type="Option">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Photon.PropertyOfActorByNr(Photon.ActorNrAt(loopindex), &quot;vote&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="431323274029631" type="Option">
+                                    <param id="0" name="Instance variable">chosen</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="589506239149436" type="System">
+                                    <param id="0" name="Variable">totalVotes</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="282388147599118">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="514803632468682" type="System">
+                                    <param id="0" name="Object">Option</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="912319782823197" type="Option">
+                                    <param id="0" name="Instance variable">percentage</param>
+                                    <param id="1" name="Value">Self.chosen &gt; 0 ? int(Self.chosen/totalVotes*100) : 0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="392329941706840" type="VotePercentageText">
+                                    <param id="0" name="Text">Option.percentage&amp;&quot;%&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Reveal Votes</comment>
+        <event-block sid="361333124826577">
+            <conditions>
+                <condition id="3" name="On event" sid="855289208796007" type="Photon">
+                    <param id="0" name="Code">5</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="236868945378369" type="Text">
+                    <param id="0" name="Instance variable">role</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;bottom&quot;</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="295807025741797" type="System">
+                    <param id="0" name="First value">Photon.EventData</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">&quot;ask&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="583185952949951" type="PercentageTracker">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="0" name="Set text" sid="583307686062025" type="Text">
+                    <param id="0" name="Text">&quot;Результати&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="363211659686277" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Value">&quot;options&quot;</param>
+                </action>
+                <action id="-2" name="Set Y" sid="946519270131711" type="Text">
+                    <param id="0" name="Y">168</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="365382348509881">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="560507611841245" type="Option">
+                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="809522979956885" type="Option">
+                            <param id="0" name="Animation">&quot;Inactive&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="425985884928672">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="491456461773675" type="DarkShader">
+                            <param id="0" name="Instance variable">func</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;options&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="189609076461750" type="DarkShader">
+                            <param id="0" name="Width">470</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="635604299661768" type="DarkShader">
+                            <param id="0" name="Y">Text.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Finish game</comment>
+        <event-block sid="462236199033954">
+            <conditions>
+                <condition id="3" name="On event" sid="996631588483430" type="Photon">
+                    <param id="0" name="Code">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="423345096799301" type="System">
+                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                    <param id="1" name="Opacity">0.1</param>
+                </action>
+                <action id="0" name="Call function" sid="432825106542990" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;EndScreen&quot;{###}100{###}0.15</param>
+                </action>
+                <action id="0" name="Call function" sid="272752094155745" type="Function">
+                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;Overlay&quot;{###}0{###}0.15</param>
+                </action>
+                <action id="0" name="Call function" sid="654993410857238" type="Function">
+                    <param id="0" name="Name">&quot;sendUserStat&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;finished&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="860055426540116" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="14" name="Disconnect" sid="813007379092738" type="Photon" />
+            </actions>
+        </event-block>
+        <event-block sid="121868378439836">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="975555629178188" type="System">
+                    <param id="0" name="Variable">mode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;options&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="886998781936381" type="PercentageTracker">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,100,0.1*60/fps)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="102045660901748">
+            <conditions>
+                <condition id="-22" name="Else" sid="709850560738626" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="503112692169839" type="PercentageTracker">
+                    <param id="0" name="Opacity">lerp(Self.Opacity,0,0.1*60/fps)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="266377590211746">
+            <conditions />
+            <actions>
+                <action id="-16" name="Set opacity" sid="987413490648305" type="VotePercentageText">
+                    <param id="0" name="Opacity">PercentageTracker.Opacity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="608197916668852" title="Pause">
+            <sub-events>
+                <event-block sid="259651309630191">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="931356072831299" type="Touch">
+                            <param id="0" name="Object">Button</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="579788855618287">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="134191873838952" type="Button">
+                                    <param id="0" name="Animation">&quot;Pause&quot;</param>
+                                </condition>
+                                <condition id="-17" name="Compare opacity" sid="256498644634164" type="System">
+                                    <param id="0" name="Layer">&quot;EndScreen&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">1</param>
+                                </condition>
+                                <condition id="-17" name="Compare opacity" sid="376653811061218" type="System">
+                                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="460870646472692" type="Function">
+                                    <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Pause&quot;{###}100{###}0.2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="357272512804649">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="532872169312595" type="System">
+                                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">99</param>
+                                </condition>
+                                <condition id="-16" name="Is on layer" sid="863829475429710" type="Button">
+                                    <param id="0" name="Layer">&quot;Pause&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="387097476538891">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="249488962838237" type="Button">
+                                            <param id="0" name="Animation">&quot;Menu&quot;</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="423361022102708" type="Button">
+                                            <param id="0" name="Animation">&quot;MenuGreen&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="127122505527167" type="Function">
+                                            <param id="0" name="Name">&quot;goToMenu&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="271261882905105">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="495413740620197" type="Button">
+                                            <param id="0" name="Animation">&quot;ContinuePlot&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="685786144202239" type="Function">
+                                            <param id="0" name="Name">&quot;layerLerp&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Pause&quot;{###}0{###}0.2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,45 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["whatDoIFeel"],
+["Страх","plot&whatDoIFeel_fearAndWorry"],
+["Хвилювання","plot&whatDoIFeel_fearAndWorry"],
+["Роздратування","plot&whatDoIFeel_angry"]
+],
+
+[["whatIReply"],
+["Промовчати","plot&whatIReply_silence"],
+["Погодитись","plot&whatIReply_agree"],
+["Заперечити","plot&whatIReply_refuse"]
+],
+
+[["feelingsAgency"],
+["Впевненість","plot&feelingsAgency_confident"],
+["Образу","plot&feelingsAgency_obraza"],
+["Роздратування","plot&feelingsAgency_angry"]
+],
+
+[["whatShouldIDo"],
+["Піти додому","plot&whatShouldIDo_goHome"],
+["Запитати","plot&whatShouldIDo_ask"],
+["Не погодитися","plot&whatShouldIDo_disagree"]
+],
+
+[["whatIDoPark"],
+["Відмовитись","plot&whatIDoPark_no"],
+["Погодитись","plot&whatIDoPark_yes"],
+["Перевести тему","plot&whatIDoPark_changeTopic"]
+],
+
+[["whatIAnswer"],
+["Правду","plot&whatIAnswer_truth"],
+["Перевести тему","plot&whatIAnswer_changeTopic"],
+["Збрехати","plot&whatIAnswer_lie"]
+],
+
+[["tellMeTheTruth"],
+["Страх","plot&tellMeTheTruth_fear"],
+["Знесилення","plot&tellMeTheTruth_noStrength"],
+["Недовіру","plot&tellMeTheTruth_noTrust"]
+]
+
+]}

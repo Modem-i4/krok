@@ -1,0 +1,33 @@
+{"c2array":true,"size":[100,5,3],"data":[
+
+[["wannaLift"],
+["Попроситися до дівчат","plot&wannaLift_goToGirls"],
+["Відмазатись","plot&wannaLift_avoid"],
+["Не сперечатись","plot&wannaLift_ok"]
+],
+
+[["killMudaks"],
+["Пояснити","plot&killMudaks_explain"],
+["Розізлитися","plot&killMudaks_getAngry"],
+["Ігнорувати","plot&killMudaks_ignore"]
+],
+
+[["section"],
+["Танці","plot&section_dancing"],
+["Волейбол","plot&section_volleyball"],
+["Бокс","plot&section_box"]
+],
+
+[["chooseTogether"],
+["Погодитись","plot&chooseTogether_agree"],
+["Засумніватись","plot&chooseTogether_doubt"],
+["Відмовитись","plot&chooseTogether_decline"]
+],
+
+[["howAreYou"],
+["Приховати","plot&howAreYou_evage"],
+["Збрехати","plot&howAreYou_lie"],
+["Розповісти","plot&howAreYou_tell"]
+]
+
+]}
